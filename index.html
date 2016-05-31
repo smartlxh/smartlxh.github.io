@@ -86,8 +86,10 @@ browser.get(url)
 browser.save_screenshot(&quot;codingpy.png&quot;)
 browser.close()
 </code></pre><p>现在就目录下就有啦codingpy.png了。<br>但是有的网站采用按需加载技术，所以我们要使Selenium注入js脚本，<br>即 页面的滚动条拖到底部，然后在拖到顶部，从而进行截图</p>
-<p>from selenium import webdriver<br>import time</p>
-<pre><code>def take_screenshot(url, save_fn=&quot;capture.png&quot;):
+<pre><code>from selenium import webdriver
+import time
+
+def take_screenshot(url, save_fn=&quot;capture.png&quot;):
     browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/bin/phantomjs&quot;) 
     browser.set_window_size(1200, 900)
     browser.get(url) # Load page
@@ -1173,7 +1175,7 @@ $ git diff --stat master...erlang
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Облако меток</h3>
+  <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
     <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
   </div>
