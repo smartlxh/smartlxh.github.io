@@ -81,12 +81,12 @@
         <p>作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题</p>
 <h3 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a>一、分析</h3><p>首先我找到知乎的<a href="http://www.zhihu.com/topics" target="_blank" rel="external">话题广场</a></p>
 <p>在这个页面我们可以看到有话题分类，点击每个话题分类后，下面有子话题，如果直接用传统的方式直接去爬取，爬取到的只是当前页面的话题，而知乎的话题远远不止这些。通过观察发现，点击<strong>更多按钮</strong>，会自动加载更多的子话题。所以这时通过chrome的开发者工具分析浏览器的请求方式<br>发现接口地址为<a href="http://www.zhihu.com/node/TopicsPlazzaListV2" target="_blank" rel="external">http://www.zhihu.com/node/TopicsPlazzaListV2</a></p>
-<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/52808842.jpg" alt=""></p>
-<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/68469688.jpg" alt=""><br>发送的数据 topic_id 是话题分类id，offset是偏移量，就是每次next方法加载的子话题数量。hash_id为空，不予考虑。每次请求offset偏移20，切换父话题要切换topic_id</p>
-<h5 id="如何找到topicid"><a href="#如何找到topicid" class="headerlink" title="如何找到topicid"></a>如何找到topicid</h5><p>分析话题广场页面源代码<br>&gt;</p>
-<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/62830113.jpg" alt=""><br>得知 每个父话题有个data-id属性，这个就是我们需要的用来模拟请求的topic_id</p>
+<p><img src="http://o84wfqn1i.bkt.clouddn.com/16-6-2/66346079.jpg" alt=""><br><img src="http://o84wfqn1i.bkt.clouddn.com/16-6-2/35034727.jpg" alt=""></p>
+<p>发送的数据 topic_id 是话题分类id，offset是偏移量，就是每次next方法加载的子话题数量。hash_id为空，不予考虑。每次请求offset偏移20，切换父话题要切换topic_id</p>
+<h5 id="如何找到topicid"><a href="#如何找到topicid" class="headerlink" title="如何找到topicid"></a>如何找到topicid</h5><p>分析话题广场页面源代码</p>
+<p><img src="http://o84wfqn1i.bkt.clouddn.com/16-6-2/75677453.jpg" alt=""><br>得知 每个父话题有个data-id属性，这个就是我们需要的用来模拟请求的topic_id</p>
 <h3 id="二、实施"><a href="#二、实施" class="headerlink" title="二、实施"></a>二、实施</h3><p>既然已经分析完啦，那就开始动手吧</p>
-<p> &gt;<br>  首先使用requests和BeautifulSoup库获取所有父话题。</p>
+<p>  首先使用requests和BeautifulSoup库获取所有父话题。</p>
 <pre><code>def getTopics():
     topics = dict()
     r = requests.get(&apos;https://www.zhihu.com/topics&apos;)
@@ -95,7 +95,7 @@
         topics[topic.a.string] = topic[&apos;data-id&apos;]
 
     return dict
-</code></pre><p>&gt;<br> 接着要获取每个父话题下的子话题，大体思路是，首先用request模拟浏览器请求，然后解析返回的json数据。过滤json使用正则表达式开快速获取。</p>
+</code></pre><p> 接着要获取每个父话题下的子话题，大体思路是，首先用request模拟浏览器请求，然后解析返回的json数据。过滤json使用正则表达式开快速获取。</p>
 <pre><code>def getSubTopic():
     url = &apos;https://www.zhihu.com/node/TopicsPlazzaListV2&apos;
 
@@ -233,11 +233,11 @@
       </li>
     
       <li>
-        <a href="/2016/05/28/git/">Git的使用方法</a>
+        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
       </li>
     
       <li>
-        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
+        <a href="/2016/05/28/git/">Git的使用方法</a>
       </li>
     
   </ul>
