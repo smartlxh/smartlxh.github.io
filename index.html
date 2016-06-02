@@ -65,6 +65,116 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-06-02T03:02:30.000Z"><a href="/2016/06/02/爬取知乎话题/">2016-06-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题</p>
+<h3 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a>一、分析</h3><p>首先我找到知乎的<a href="http://www.zhihu.com/topics" target="_blank" rel="external">话题广场</a></p>
+<p>在这个页面我们可以看到有话题分类，点击每个话题分类后，下面有子话题，如果直接用传统的方式直接去爬取，爬取到的只是当前页面的话题，而知乎的话题远远不止这些。通过观察发现，点击<strong>更多按钮</strong>，会自动加载更多的子话题。所以这时通过chrome的开发者工具分析浏览器的请求方式<br>发现接口地址为<a href="http://www.zhihu.com/node/TopicsPlazzaListV2" target="_blank" rel="external">http://www.zhihu.com/node/TopicsPlazzaListV2</a></p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/52808842.jpg" alt=""></p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/68469688.jpg" alt=""><br>发送的数据 topic_id 是话题分类id，offset是偏移量，就是每次next方法加载的子话题数量。hash_id为空，不予考虑。每次请求offset偏移20，切换父话题要切换topic_id</p>
+<h5 id="如何找到topicid"><a href="#如何找到topicid" class="headerlink" title="如何找到topicid"></a>如何找到topicid</h5><p>分析话题广场页面源代码<br>&gt;</p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/62830113.jpg" alt=""><br>得知 每个父话题有个data-id属性，这个就是我们需要的用来模拟请求的topic_id</p>
+<h3 id="二、实施"><a href="#二、实施" class="headerlink" title="二、实施"></a>二、实施</h3><p>既然已经分析完啦，那就开始动手吧</p>
+<p> &gt;<br>  首先使用requests和BeautifulSoup库获取所有父话题。</p>
+<pre><code>def getTopics():
+    topics = dict()
+    r = requests.get(&apos;https://www.zhihu.com/topics&apos;)
+    soup = BeautifulSoup(r.content)
+    for topic in soup.findAll(&apos;li&apos;, &apos;zm-topic-cat-item&apos;):
+        topics[topic.a.string] = topic[&apos;data-id&apos;]
+
+    return dict
+</code></pre><p>&gt;<br> 接着要获取每个父话题下的子话题，大体思路是，首先用request模拟浏览器请求，然后解析返回的json数据。过滤json使用正则表达式开快速获取。</p>
+<pre><code>def getSubTopic():
+    url = &apos;https://www.zhihu.com/node/TopicsPlazzaListV2&apos;
+
+    header = {
+    &apos;Cookie&apos;: &apos;_za=94e30e7b-73ef-454f-bb98-b0dad1393a9a; d_c0=&quot;AJBA0rDj9gmPTmnW-te075L2Tp0D5_djyLY=|1463967290&quot;; _zap=deb6a19c-510d-459e-826f-5379e75705e4; q_c1=d207fd0f608a4f32952362a1d26d0508|1464684476000|1464684476000; _xsrf=7eb4c102345a6fcb4103301e0069021b; login=&quot;NThmYTQ0ODBlMDUwNDQzZjkyYmJmYmVlMTg0NTEwMDQ=|1464754518|e028dfafc2c0d717c688236f3ae6fbfe15b7cca9&quot;; l_cap_id=&quot;ZGRhYWM4MmQ3NzFiNGM1NmE3NTdkMDNkYTg5MDAwMzI=|1464756742|6e1f0712d01593a5c57da2649cba5e7665afd914&quot;; cap_id=&quot;MThiNzU4MTdlNGViNDg2OWI4NWU1ODczYjk4MTlhYTA=|1464756742|84327a50b99c53486fc3eddb3c2d0b7cb1a3a7f5&quot;; __utmt=1; l_n_c=1; __utma=51854390.834842497.1464756821.1464756821.1464756864.2; __utmb=51854390.2.10.1464756864; __utmc=51854390; __utmz=51854390.1464756864.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmv=51854390.000--|3=entry_date=20160531=1; n_c=1&apos;,
+    &apos;Origin&apos;: &apos;https://www.zhihu.com&apos;,
+    &apos;Referer&apos;: &apos;https://www.zhihu.com/topics&apos;,
+    &apos;X-Requested-With&apos;: &apos;XMLHttpRequest&apos;,
+    &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded; charset=UTF-8&apos;,
+    &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36&apos;
+}
+    top = 0
+    zitop = 0
+    for to, id in getTopics().items():
+        file = &quot;./&quot; + to + &quot;.txt&quot;
+        top += 1
+        zitopic = dict()
+        offset = -20
+        isGet = True
+        while isGet:
+            offset += 20
+            values = {&apos;method&apos;: &apos;next&apos;,
+                  &apos;params&apos;: &apos;{&quot;topic_id&quot;: &apos; + id + &apos;, &quot;offset&quot;: &apos; + str(offset) + &apos;, &quot;hash_id&quot;: &quot;&quot;}&apos;}
+            data = urllib.urlencode(values)
+            try:
+                request = urllib2.Request(url, data, header)
+                response = urllib2.urlopen(request)
+                json_str = json.loads(response.read().decode(&apos;utf-8&apos;))
+                   topicMsg = &apos;.&apos;.join(json_str[&apos;msg&apos;])
+                pattern = re.compile(&apos;&lt;strong&gt;(.*?)&lt;/strong&gt;.*?&lt;p&gt;(.*?)&lt;/p&gt;&apos;, re.S)
+                results = re.findall(pattern, topicMsg)
+                if len(results) == 0:
+                    isGet = False
+                for item in results:
+                    zitop += 1
+
+                with open(file, &apos;a+&apos;) as f:
+                    f.write(item[0].encode(&apos;utf-8&apos;))
+                    f.write(&quot;-----&gt;   &quot;)
+                    f.write(item[1].encode(&apos;utf-8&apos;))
+                    f.write(&quot;\n&quot;)
+
+            except Exception,e:
+                print &quot;错误原因&quot;
+                print e
+                isGet = False
+</code></pre><p>####注意<br>构造request请求时，为了防止知乎的反爬，我最开始构造了header数据，<br>最后抱着务实的学习态度，我试了一下，依然可以请求到数据，但个人觉得还是写上比较放心。</p>
+<p>###三结果</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/06/02/爬取知乎话题/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/python/">python</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-05-31T12:49:31.000Z"><a href="/2016/05/31/Selenimu/">2016-05-31</a></time>
       
       
@@ -142,92 +252,6 @@ take_screenshot(&quot;http://codingpy.com&quot;)
   
   <div class="tags">
     <a href="/tags/python/">python</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/pattern/">2016-05-28</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/05/28/pattern/">常用的正则表达式匹配</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="知道这些正则表达式能让你少些1000行代码"><a href="#知道这些正则表达式能让你少些1000行代码" class="headerlink" title="知道这些正则表达式能让你少些1000行代码"></a>知道这些正则表达式能让你少些1000行代码</h2><h4 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1.校验密码强度"></a>1.校验密码强度</h4><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。</p>
-<pre><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
-</code></pre><h4 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2.校验中文"></a>2.校验中文</h4><p>字符串仅能是中文</p>
-<pre><code>^[\\u4e00-\\u9fa5]{0,}$
-</code></pre><h4 id="3-由数字、26个英文字母或下划线组成的字符串"><a href="#3-由数字、26个英文字母或下划线组成的字符串" class="headerlink" title="3.由数字、26个英文字母或下划线组成的字符串"></a>3.由数字、26个英文字母或下划线组成的字符串</h4><pre><code>^\\w+$
-</code></pre><h4 id="4-校验E-Mail-地址"><a href="#4-校验E-Mail-地址" class="headerlink" title="4.校验E-Mail 地址"></a>4.校验E-Mail 地址</h4><pre><code>[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?
-</code></pre><h4 id="5-校验身份证号码"><a href="#5-校验身份证号码" class="headerlink" title="5.校验身份证号码"></a>5.校验身份证号码</h4><p>15位</p>
-<pre><code>^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$
-</code></pre><p>18位</p>
-<pre><code>^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$
-</code></pre><h4 id="6-校验日期"><a href="#6-校验日期" class="headerlink" title="6.校验日期"></a>6.校验日期</h4><p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
-<pre><code>^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$
-</code></pre><h4 id="7-校验金额"><a href="#7-校验金额" class="headerlink" title="7.校验金额"></a>7.校验金额</h4><p>金额校验，精确到2位小数。</p>
-<pre><code>^[0-9]+(.[0-9]{2})?$
-</code></pre><h4 id="8-校验手机号"><a href="#8-校验手机号" class="headerlink" title="8.校验手机号"></a>8.校验手机号</h4><p>下面是国内 13、15、18开头的手机号正则表达式。（可根据目前国内收集号扩展前两位开头号码）</p>
-<pre><code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$
-</code></pre><h4 id="9-判断IE的版本"><a href="#9-判断IE的版本" class="headerlink" title="9.判断IE的版本"></a>9.判断IE的版本</h4><p>IE目前还没被完全取代，很多页面还是需要做版本兼容，下面是IE版本检查的表达式。</p>
-<pre><code>^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$
-</code></pre><h4 id="10-校验IP-v4地址"><a href="#10-校验IP-v4地址" class="headerlink" title="10. 校验IP-v4地址"></a>10. 校验IP-v4地址</h4><pre><code>\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b
-</code></pre><h4 id="11-校验IP-v6地址"><a href="#11-校验IP-v6地址" class="headerlink" title="11. 校验IP-v6地址"></a>11. 校验IP-v6地址</h4><pre><code>(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
-</code></pre><h4 id="12-检查URL的前缀"><a href="#12-检查URL的前缀" class="headerlink" title="12. 检查URL的前缀"></a>12. 检查URL的前缀</h4><p>应用开发中很多时候需要区分请求是HTTPS还是HTTP，通过下面的表达式可以取出一个url的前缀然后再逻辑判断。</p>
-<pre><code>if (!s.match(/^[a-zA-Z]+:\\/\\//))
-{
-    s = &apos;http://&apos; + s;
-}
-</code></pre><h4 id="13-提取URL链接"><a href="#13-提取URL链接" class="headerlink" title="13.提取URL链接"></a>13.提取URL链接</h4><pre><code>^(f|ht){1}(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?
-</code></pre><h4 id="14-文件路径及扩展名校验"><a href="#14-文件路径及扩展名校验" class="headerlink" title="14.文件路径及扩展名校验"></a>14.文件路径及扩展名校验</h4><p>验证windows下文件路径和扩展名（下面的例子中为.txt文件）</p>
-<pre><code>^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$
-</code></pre><h4 id="15-提取Color-Hex-Codes"><a href="#15-提取Color-Hex-Codes" class="headerlink" title="15.提取Color Hex Codes"></a>15.提取Color Hex Codes</h4><p>有时需要抽取网页中的颜色代码，可以使用下面的表达式</p>
-<pre><code>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
-</code></pre><h4 id="16-提取网页图片"><a href="#16-提取网页图片" class="headerlink" title="16.提取网页图片"></a>16.提取网页图片</h4><p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
-<pre><code>\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]{0,1}([^\\&quot;\\&apos;\\ &gt;]*)
-</code></pre><h4 id="17-提取页面超链接"><a href="#17-提取页面超链接" class="headerlink" title="17. 提取页面超链接"></a>17. 提取页面超链接</h4><pre><code>(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;
-</code></pre><h4 id="18-查找CSS属性"><a href="#18-查找CSS属性" class="headerlink" title="18. 查找CSS属性"></a>18. 查找CSS属性</h4><p>通过下面的表达式，可以搜索到相匹配的CSS属性。</p>
-<pre><code>^\\s*[a-zA-Z\\-]+\\s*[:]{1}\\s[a-zA-Z0-9\\s.#]+[;]{1}
-</code></pre><h4 id="19-抽取注释"><a href="#19-抽取注释" class="headerlink" title="19.抽取注释"></a>19.抽取注释</h4><p>如果你需要移除HMTL中的注释，可以使用如下的表达式。</p>
-<pre><code>&lt;!--(.*?)--&gt;
-</code></pre><h4 id="20-匹配HTML标签"><a href="#20-匹配HTML标签" class="headerlink" title="20.匹配HTML标签"></a>20.匹配HTML标签</h4><p>通过下面的表达式可以匹配出HTML中的标签属性。</p>
-<pre><code>&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;
-</code></pre><h5 id="不错的Cheat-Sheet"><a href="#不错的Cheat-Sheet" class="headerlink" title="不错的Cheat Sheet"></a>不错的Cheat Sheet</h5><p><img src="http://upload-images.jianshu.io/upload_images/1399853-1b08244a4d375624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/1399853-1b08244a4d375624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2" class="imagebubble-image" style="opacity: 1;"></p>
-<h5 id="正则表达式在线测试工具"><a href="#正则表达式在线测试工具" class="headerlink" title="正则表达式在线测试工具"></a>正则表达式在线测试工具</h5><p><a href="https://regex101.com" target="_blank" rel="external">regex101</a>是一个非常不错的正则表达式在线测试工具，你可以直接在线测试你的正则表达式哦。</p>
-<p>转载自简书 <a href="http://www.jianshu.com/p/e7bb97218946" target="_blank" rel="external">查看原文</a></p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/05/28/pattern/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/正则表达式/">正则表达式</a>
   </div>
 
         <!-- partial('post/share') -->
@@ -1151,6 +1175,92 @@ $ git diff --stat master...erlang
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/pattern/">2016-05-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/05/28/pattern/">常用的正则表达式匹配</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="知道这些正则表达式能让你少些1000行代码"><a href="#知道这些正则表达式能让你少些1000行代码" class="headerlink" title="知道这些正则表达式能让你少些1000行代码"></a>知道这些正则表达式能让你少些1000行代码</h2><h4 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1.校验密码强度"></a>1.校验密码强度</h4><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。</p>
+<pre><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
+</code></pre><h4 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2.校验中文"></a>2.校验中文</h4><p>字符串仅能是中文</p>
+<pre><code>^[\\u4e00-\\u9fa5]{0,}$
+</code></pre><h4 id="3-由数字、26个英文字母或下划线组成的字符串"><a href="#3-由数字、26个英文字母或下划线组成的字符串" class="headerlink" title="3.由数字、26个英文字母或下划线组成的字符串"></a>3.由数字、26个英文字母或下划线组成的字符串</h4><pre><code>^\\w+$
+</code></pre><h4 id="4-校验E-Mail-地址"><a href="#4-校验E-Mail-地址" class="headerlink" title="4.校验E-Mail 地址"></a>4.校验E-Mail 地址</h4><pre><code>[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?
+</code></pre><h4 id="5-校验身份证号码"><a href="#5-校验身份证号码" class="headerlink" title="5.校验身份证号码"></a>5.校验身份证号码</h4><p>15位</p>
+<pre><code>^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$
+</code></pre><p>18位</p>
+<pre><code>^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$
+</code></pre><h4 id="6-校验日期"><a href="#6-校验日期" class="headerlink" title="6.校验日期"></a>6.校验日期</h4><p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<pre><code>^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$
+</code></pre><h4 id="7-校验金额"><a href="#7-校验金额" class="headerlink" title="7.校验金额"></a>7.校验金额</h4><p>金额校验，精确到2位小数。</p>
+<pre><code>^[0-9]+(.[0-9]{2})?$
+</code></pre><h4 id="8-校验手机号"><a href="#8-校验手机号" class="headerlink" title="8.校验手机号"></a>8.校验手机号</h4><p>下面是国内 13、15、18开头的手机号正则表达式。（可根据目前国内收集号扩展前两位开头号码）</p>
+<pre><code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$
+</code></pre><h4 id="9-判断IE的版本"><a href="#9-判断IE的版本" class="headerlink" title="9.判断IE的版本"></a>9.判断IE的版本</h4><p>IE目前还没被完全取代，很多页面还是需要做版本兼容，下面是IE版本检查的表达式。</p>
+<pre><code>^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$
+</code></pre><h4 id="10-校验IP-v4地址"><a href="#10-校验IP-v4地址" class="headerlink" title="10. 校验IP-v4地址"></a>10. 校验IP-v4地址</h4><pre><code>\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b
+</code></pre><h4 id="11-校验IP-v6地址"><a href="#11-校验IP-v6地址" class="headerlink" title="11. 校验IP-v6地址"></a>11. 校验IP-v6地址</h4><pre><code>(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+</code></pre><h4 id="12-检查URL的前缀"><a href="#12-检查URL的前缀" class="headerlink" title="12. 检查URL的前缀"></a>12. 检查URL的前缀</h4><p>应用开发中很多时候需要区分请求是HTTPS还是HTTP，通过下面的表达式可以取出一个url的前缀然后再逻辑判断。</p>
+<pre><code>if (!s.match(/^[a-zA-Z]+:\\/\\//))
+{
+    s = &apos;http://&apos; + s;
+}
+</code></pre><h4 id="13-提取URL链接"><a href="#13-提取URL链接" class="headerlink" title="13.提取URL链接"></a>13.提取URL链接</h4><pre><code>^(f|ht){1}(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?
+</code></pre><h4 id="14-文件路径及扩展名校验"><a href="#14-文件路径及扩展名校验" class="headerlink" title="14.文件路径及扩展名校验"></a>14.文件路径及扩展名校验</h4><p>验证windows下文件路径和扩展名（下面的例子中为.txt文件）</p>
+<pre><code>^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$
+</code></pre><h4 id="15-提取Color-Hex-Codes"><a href="#15-提取Color-Hex-Codes" class="headerlink" title="15.提取Color Hex Codes"></a>15.提取Color Hex Codes</h4><p>有时需要抽取网页中的颜色代码，可以使用下面的表达式</p>
+<pre><code>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+</code></pre><h4 id="16-提取网页图片"><a href="#16-提取网页图片" class="headerlink" title="16.提取网页图片"></a>16.提取网页图片</h4><p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<pre><code>\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]{0,1}([^\\&quot;\\&apos;\\ &gt;]*)
+</code></pre><h4 id="17-提取页面超链接"><a href="#17-提取页面超链接" class="headerlink" title="17. 提取页面超链接"></a>17. 提取页面超链接</h4><pre><code>(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;
+</code></pre><h4 id="18-查找CSS属性"><a href="#18-查找CSS属性" class="headerlink" title="18. 查找CSS属性"></a>18. 查找CSS属性</h4><p>通过下面的表达式，可以搜索到相匹配的CSS属性。</p>
+<pre><code>^\\s*[a-zA-Z\\-]+\\s*[:]{1}\\s[a-zA-Z0-9\\s.#]+[;]{1}
+</code></pre><h4 id="19-抽取注释"><a href="#19-抽取注释" class="headerlink" title="19.抽取注释"></a>19.抽取注释</h4><p>如果你需要移除HMTL中的注释，可以使用如下的表达式。</p>
+<pre><code>&lt;!--(.*?)--&gt;
+</code></pre><h4 id="20-匹配HTML标签"><a href="#20-匹配HTML标签" class="headerlink" title="20.匹配HTML标签"></a>20.匹配HTML标签</h4><p>通过下面的表达式可以匹配出HTML中的标签属性。</p>
+<pre><code>&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;
+</code></pre><h5 id="不错的Cheat-Sheet"><a href="#不错的Cheat-Sheet" class="headerlink" title="不错的Cheat Sheet"></a>不错的Cheat Sheet</h5><p><img src="http://upload-images.jianshu.io/upload_images/1399853-1b08244a4d375624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/1399853-1b08244a4d375624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2" class="imagebubble-image" style="opacity: 1;"></p>
+<h5 id="正则表达式在线测试工具"><a href="#正则表达式在线测试工具" class="headerlink" title="正则表达式在线测试工具"></a>正则表达式在线测试工具</h5><p><a href="https://regex101.com" target="_blank" rel="external">regex101</a>是一个非常不错的正则表达式在线测试工具，你可以直接在线测试你的正则表达式哦。</p>
+<p>转载自简书 <a href="http://www.jianshu.com/p/e7bb97218946" target="_blank" rel="external">查看原文</a></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/05/28/pattern/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/正则表达式/">正则表达式</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
 
 <nav id="pagination">
   
@@ -1177,7 +1287,7 @@ $ git diff --stat master...erlang
 <div class="widget tagcloud">
   <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
-    <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
   </div>
 </div>
 
@@ -1188,15 +1298,19 @@ $ git diff --stat master...erlang
   <ul class="entry">
     
       <li>
+        <a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
       </li>
     
       <li>
-        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
+        <a href="/2016/05/28/git/">Git的使用方法</a>
       </li>
     
       <li>
-        <a href="/2016/05/28/git/">Git的使用方法</a>
+        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
       </li>
     
   </ul>

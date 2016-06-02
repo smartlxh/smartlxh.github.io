@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>爬取知乎话题 | 八阿哥</title>
+  <meta name="author" content="smartlxh" />
+
+  
+  <meta name="description" content="作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题
+一、分析首先我找到知乎的话题广场
+在这个页面我们可以看到有话题分类，点击每个话题分类后，下面有子话题，如果直接用传统的方式直接去爬取，爬取到的只是当前页面的话题，而知乎的话题远远不止这些。通过观察发现，点击更多按钮，会自动加载更多的子话题" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="爬取知乎话题" />
+  <meta property="og:site_name" content="八阿哥" />
+
+  <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w" />
+  
+  
+  
+  
+
+  
+    <meta property="og:image" content="undefined" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="八阿哥" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">八阿哥</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="https://github.com/smartlxh">watch me on github</a></li>
+    
+      <li><a href="/archives">archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-06-02T03:02:30.000Z"><a href="/2016/06/02/爬取知乎话题/">2016-06-02</a></time>
+      
+      
+  
+    <h1 class="title">爬取知乎话题</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题</p>
+<h3 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a>一、分析</h3><p>首先我找到知乎的<a href="http://www.zhihu.com/topics" target="_blank" rel="external">话题广场</a></p>
+<p>在这个页面我们可以看到有话题分类，点击每个话题分类后，下面有子话题，如果直接用传统的方式直接去爬取，爬取到的只是当前页面的话题，而知乎的话题远远不止这些。通过观察发现，点击<strong>更多按钮</strong>，会自动加载更多的子话题。所以这时通过chrome的开发者工具分析浏览器的请求方式<br>发现接口地址为<a href="http://www.zhihu.com/node/TopicsPlazzaListV2" target="_blank" rel="external">http://www.zhihu.com/node/TopicsPlazzaListV2</a></p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/52808842.jpg" alt=""></p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/68469688.jpg" alt=""><br>发送的数据 topic_id 是话题分类id，offset是偏移量，就是每次next方法加载的子话题数量。hash_id为空，不予考虑。每次请求offset偏移20，切换父话题要切换topic_id</p>
+<h5 id="如何找到topicid"><a href="#如何找到topicid" class="headerlink" title="如何找到topicid"></a>如何找到topicid</h5><p>分析话题广场页面源代码<br>&gt;</p>
+<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-2/62830113.jpg" alt=""><br>得知 每个父话题有个data-id属性，这个就是我们需要的用来模拟请求的topic_id</p>
+<h3 id="二、实施"><a href="#二、实施" class="headerlink" title="二、实施"></a>二、实施</h3><p>既然已经分析完啦，那就开始动手吧</p>
+<p> &gt;<br>  首先使用requests和BeautifulSoup库获取所有父话题。</p>
+<pre><code>def getTopics():
+    topics = dict()
+    r = requests.get(&apos;https://www.zhihu.com/topics&apos;)
+    soup = BeautifulSoup(r.content)
+    for topic in soup.findAll(&apos;li&apos;, &apos;zm-topic-cat-item&apos;):
+        topics[topic.a.string] = topic[&apos;data-id&apos;]
+
+    return dict
+</code></pre><p>&gt;<br> 接着要获取每个父话题下的子话题，大体思路是，首先用request模拟浏览器请求，然后解析返回的json数据。过滤json使用正则表达式开快速获取。</p>
+<pre><code>def getSubTopic():
+    url = &apos;https://www.zhihu.com/node/TopicsPlazzaListV2&apos;
+
+    header = {
+    &apos;Cookie&apos;: &apos;_za=94e30e7b-73ef-454f-bb98-b0dad1393a9a; d_c0=&quot;AJBA0rDj9gmPTmnW-te075L2Tp0D5_djyLY=|1463967290&quot;; _zap=deb6a19c-510d-459e-826f-5379e75705e4; q_c1=d207fd0f608a4f32952362a1d26d0508|1464684476000|1464684476000; _xsrf=7eb4c102345a6fcb4103301e0069021b; login=&quot;NThmYTQ0ODBlMDUwNDQzZjkyYmJmYmVlMTg0NTEwMDQ=|1464754518|e028dfafc2c0d717c688236f3ae6fbfe15b7cca9&quot;; l_cap_id=&quot;ZGRhYWM4MmQ3NzFiNGM1NmE3NTdkMDNkYTg5MDAwMzI=|1464756742|6e1f0712d01593a5c57da2649cba5e7665afd914&quot;; cap_id=&quot;MThiNzU4MTdlNGViNDg2OWI4NWU1ODczYjk4MTlhYTA=|1464756742|84327a50b99c53486fc3eddb3c2d0b7cb1a3a7f5&quot;; __utmt=1; l_n_c=1; __utma=51854390.834842497.1464756821.1464756821.1464756864.2; __utmb=51854390.2.10.1464756864; __utmc=51854390; __utmz=51854390.1464756864.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmv=51854390.000--|3=entry_date=20160531=1; n_c=1&apos;,
+    &apos;Origin&apos;: &apos;https://www.zhihu.com&apos;,
+    &apos;Referer&apos;: &apos;https://www.zhihu.com/topics&apos;,
+    &apos;X-Requested-With&apos;: &apos;XMLHttpRequest&apos;,
+    &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded; charset=UTF-8&apos;,
+    &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36&apos;
+}
+    top = 0
+    zitop = 0
+    for to, id in getTopics().items():
+        file = &quot;./&quot; + to + &quot;.txt&quot;
+        top += 1
+        zitopic = dict()
+        offset = -20
+        isGet = True
+        while isGet:
+            offset += 20
+            values = {&apos;method&apos;: &apos;next&apos;,
+                  &apos;params&apos;: &apos;{&quot;topic_id&quot;: &apos; + id + &apos;, &quot;offset&quot;: &apos; + str(offset) + &apos;, &quot;hash_id&quot;: &quot;&quot;}&apos;}
+            data = urllib.urlencode(values)
+            try:
+                request = urllib2.Request(url, data, header)
+                response = urllib2.urlopen(request)
+                json_str = json.loads(response.read().decode(&apos;utf-8&apos;))
+                   topicMsg = &apos;.&apos;.join(json_str[&apos;msg&apos;])
+                pattern = re.compile(&apos;&lt;strong&gt;(.*?)&lt;/strong&gt;.*?&lt;p&gt;(.*?)&lt;/p&gt;&apos;, re.S)
+                results = re.findall(pattern, topicMsg)
+                if len(results) == 0:
+                    isGet = False
+                for item in results:
+                    zitop += 1
+
+                with open(file, &apos;a+&apos;) as f:
+                    f.write(item[0].encode(&apos;utf-8&apos;))
+                    f.write(&quot;-----&gt;   &quot;)
+                    f.write(item[1].encode(&apos;utf-8&apos;))
+                    f.write(&quot;\n&quot;)
+
+            except Exception,e:
+                print &quot;错误原因&quot;
+                print e
+                isGet = False
+</code></pre><p>####注意<br>构造request请求时，为了防止知乎的反爬，我最开始构造了header数据，<br>最后抱着务实的学习态度，我试了一下，依然可以请求到数据，但个人觉得还是写上比较放心。</p>
+<p>###三结果</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/06/02/爬取知乎话题/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/python/">python</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-爬取知乎话题" data-title="爬取知乎话题" data-url="http://yoursite.com/2016/06/02/爬取知乎话题/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'fl-it-ebooks'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="widget tag">
+    <h3 class="title">关于我</h3>
+    <div class="entry">
+      <p>学校：南京邮电大学</p>
+      <p>邮箱：smartlxh@gmail.com</p>
+    </div>
+</div>
+
+
+  <div class="widget tag">
+    <h3 class="title">赞助我</h3>
+    <div class="entry">
+      <img src='/css/images/qr_alipay.png' style='width:100%;background:rgba(255,255,255,0.6)' />
+    </div>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag-Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a>
+      </li>
+    
+      <li>
+        <a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
+      </li>
+    
+      <li>
+        <a href="/2016/05/28/git/">Git的使用方法</a>
+      </li>
+    
+      <li>
+        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <h3 class="title">友情链接</h3>
+  <div class="entry">
+    <ul>
+<!-- link start -->
+<li><a href='http://top.jobbole.com/'>伯乐头条</a></li>
+<li><a href='http://gold.xitu.io'>稀土掘金</a></li>
+<!-- link  end -->
+    </ul>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+    <h3 class="title">统计</h3>
+    <div class="entry">
+      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254912396'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254912396%26online%3D1' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2016 smartlxh
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<script>
+    //Kill XP and IE8
+    (function(){
+        var ua = navigator.userAgent;
+        var res = /Windows NT (\d+\.\d+)/.exec(ua);
+        var xpOrLower = res && JSON.parse(res[1]) < 6;
+        res = /MSIE (\d+\.\d+)/.exec(ua);
+        var ie8OrLower = res && JSON.parse(res[1]) < 9;
+        if(xpOrLower || ie8OrLower)
+        {
+            alert('请不要用XP及之前的Windows系统，和IE8及之前的IE浏览器访问本站！');
+            location.href = "about:blank";
+        }
+        var fromBaiduSE = /^https?:\/\/www.baidu.com/.test(document.referrer);
+        if(fromBaiduSE)
+        {
+            alert('检测到你还在使用百度搜索，作为一个程序员，这是一种自暴自弃！\n\n做不作恶的程序员，从不用百度开始！')
+            location.href = "about:blank";
+        }
+    })();
+</script>
+
+<div id='bg'></div>
+</body>
+</html>
