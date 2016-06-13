@@ -3,21 +3,20 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Selenimu 实现截图 | 八阿哥</title>
+  <title>Curl常用命令的总结 | 八阿哥</title>
   <meta name="author" content="smartlxh" />
 
   
-  <meta name="description" content="Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
-from selenium import webdriver
-
-browser = webdriver.PhantomJS(executable_p" />
+  <meta name="description" content="1抓取页面到一个文件中curl -o test.html http://www.baidu.com
+2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则curl -O http://www.baidu.com/img/bd_logo1.png
+3 模拟表单信息，模拟登录，保存c" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="Selenimu 实现截图" />
+  <meta property="og:title" content="Curl常用命令的总结" />
   <meta property="og:site_name" content="八阿哥" />
 
   <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w" />
@@ -69,67 +68,32 @@ browser = webdriver.PhantomJS(executable_p" />
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-05-31T12:49:31.000Z"><a href="/2016/05/31/Selenimu/">2016-05-31</a></time>
+        <time datetime="2016-06-11T15:40:24.000Z"><a href="/2016/06/11/curl/">2016-06-11</a></time>
       
       
   
-    <h1 class="title">Selenimu 实现截图</h1>
+    <h1 class="title">Curl常用命令的总结</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。</p>
-<pre><code>from selenium import webdriver
-
-browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/bin/phantomjs&quot;
-url = &quot;http://codingpy.com&quot;
-browser.set_window_size(1200, 900)
-browser.get(url)
-
-browser.save_screenshot(&quot;codingpy.png&quot;)
-browser.close()
-</code></pre><p>现在就目录下就有啦codingpy.png了。<br>但是有的网站采用按需加载技术，所以我们要使Selenium注入js脚本，<br>即 页面的滚动条拖到底部，然后在拖到顶部，从而进行截图</p>
-<pre><code>from selenium import webdriver
-import time
-
-def take_screenshot(url, save_fn=&quot;capture.png&quot;):
-    browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/bin/phantomjs&quot;) 
-    browser.set_window_size(1200, 900)
-    browser.get(url) # Load page
-    browser.execute_script(&quot;&quot;&quot;
-        (function () {
-            var y = 0;
-            var step = 100;
-            window.scroll(0, 0);
-
-            unction f() {
-                if (y &lt; document.body.scrollHeight) {
-                    y += step;
-                        window.scroll(0, y);
-                    setTimeout(f, 100);
-                } else {
-                        window.scroll(0, 0);
-                    document.title += &quot;scroll-done&quot;;
-                }
-            }
-
-            setTimeout(f, 1000);
-        })();
-    &quot;&quot;&quot;)
-
-    for i in xrange(30):
-        if &quot;scroll-done&quot; in browser.title:
-            break
-        time.sleep(10)
-
-    browser.save_screenshot(save_fn)
-    browser.close()
-
-
-if __name__ == &quot;__main__&quot;:
-
-take_screenshot(&quot;http://codingpy.com&quot;)
+        <h5 id="1抓取页面到一个文件中"><a href="#1抓取页面到一个文件中" class="headerlink" title="1抓取页面到一个文件中"></a>1抓取页面到一个文件中</h5><pre><code>curl -o test.html http://www.baidu.com
+</code></pre><h5 id="2-用-－O-，后面的url要具体到某个文件，不然抓不下来，同时可以用正则"><a href="#2-用-－O-，后面的url要具体到某个文件，不然抓不下来，同时可以用正则" class="headerlink" title="2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则"></a>2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则</h5><pre><code>curl -O http://www.baidu.com/img/bd_logo1.png
+</code></pre><h5 id="3-模拟表单信息，模拟登录，保存cookie信息"><a href="#3-模拟表单信息，模拟登录，保存cookie信息" class="headerlink" title="3 模拟表单信息，模拟登录，保存cookie信息"></a>3 模拟表单信息，模拟登录，保存cookie信息</h5><pre><code>curl －c ./cookie_c.txt -F log=name -F pwd=passwd yousite.com
+</code></pre><h5 id="4-模拟表单信息，模拟登录，保存cookie和头信息"><a href="#4-模拟表单信息，模拟登录，保存cookie和头信息" class="headerlink" title="4 模拟表单信息，模拟登录，保存cookie和头信息"></a>4 模拟表单信息，模拟登录，保存cookie和头信息</h5><pre><code>curl －D ./cookie_D.txt -F log=name -F pwd=passwd yousite.com
+</code></pre><h6 id="注意此处的cookie和3中的不同"><a href="#注意此处的cookie和3中的不同" class="headerlink" title="注意此处的cookie和3中的不同"></a>注意此处的cookie和3中的不同</h6><h5 id="5-使用cookie文件"><a href="#5-使用cookie文件" class="headerlink" title="5 使用cookie文件"></a>5 使用cookie文件</h5><pre><code>curl -b ./cookie_c.txt http://www.yousite.com
+</code></pre><h5 id="6-断点续传-－C"><a href="#6-断点续传-－C" class="headerlink" title="6 断点续传 －C"></a>6 断点续传 －C</h5><pre><code>curl -C -O http://yoursite.com/file
+</code></pre><h5 id="7-传送数据-curl回抓数据"><a href="#7-传送数据-curl回抓数据" class="headerlink" title="7 传送数据 curl回抓数据"></a>7 传送数据 curl回抓数据</h5><pre><code>curl -d log=aaa http://yoursite.com
+</code></pre><h5 id="8-显示抓取错误"><a href="#8-显示抓取错误" class="headerlink" title="8 显示抓取错误"></a>8 显示抓取错误</h5><pre><code>curl -f http://yoursite.com
+</code></pre><h5 id="9-伪造来源地址"><a href="#9-伪造来源地址" class="headerlink" title="9 伪造来源地址"></a>9 伪造来源地址</h5><pre><code>curl －e http://fromsite.com http://tosite.com
+</code></pre><h5 id="10-不显示下载进度信息"><a href="#10-不显示下载进度信息" class="headerlink" title="10  不显示下载进度信息"></a>10  不显示下载进度信息</h5><pre><code>curl -s -o xxx.jpg http://yoursite.com
+</code></pre><h5 id="11-显示下载进度"><a href="#11-显示下载进度" class="headerlink" title="11 显示下载进度"></a>11 显示下载进度</h5><pre><code>curl －# -O http://file
+</code></pre><h5 id="12-通过ftp-下载文件"><a href="#12-通过ftp-下载文件" class="headerlink" title="12 通过ftp 下载文件"></a>12 通过ftp 下载文件</h5><pre><code>curl －u username:passwd -O http://file
+</code></pre><p>或者</p>
+<pre><code>curl －O ftp://username:passwd@ip:port/file
+</code></pre><h5 id="13-通过ftp上传"><a href="#13-通过ftp上传" class="headerlink" title="13 通过ftp上传"></a>13 通过ftp上传</h5><pre><code>curl -T file ftp://username:passwd@ip:port/file
+</code></pre><h5 id="14-设置代理"><a href="#14-设置代理" class="headerlink" title="14 设置代理"></a>14 设置代理</h5><pre><code>curl -x ip:port -o index.html http://yoursite.com
 </code></pre>
       
     </div>
@@ -137,7 +101,7 @@ take_screenshot(&quot;http://codingpy.com&quot;)
     <footer>
         <div class="alignright">
           
-          <a href="/2016/05/31/Selenimu/#comment" class="comment-link">评论</a>
+          <a href="/2016/06/11/curl/#comment" class="comment-link">评论</a>
           
           <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
@@ -145,7 +109,7 @@ take_screenshot(&quot;http://codingpy.com&quot;)
         
   
   <div class="tags">
-    <a href="/tags/python/">python</a>
+    <a href="/tags/Linux/">Linux</a>
   </div>
 
         <!-- partial('post/share') -->
@@ -159,7 +123,7 @@ take_screenshot(&quot;http://codingpy.com&quot;)
   <h1 class="title">Kommentare</h1>
 
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="post-Selenimu" data-title="Selenimu 实现截图" data-url="http://yoursite.com/2016/05/31/Selenimu/"></div>
+  <div class="ds-thread" data-thread-key="post-curl" data-title="Curl常用命令的总结" data-url="http://yoursite.com/2016/06/11/curl/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
