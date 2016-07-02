@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Selenimu 实现截图 | 八阿哥</title>
+  <title>Archiv: 2016/7 | 八阿哥</title>
   <meta name="author" content="smartlxh" />
 
-  
-  <meta name="description" content="Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
-from selenium import webdriver
-
-browser = webdriver.PhantomJS(executable_p" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="Selenimu 实现截图" />
+  
   <meta property="og:site_name" content="八阿哥" />
 
   <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w" />
@@ -63,121 +58,25 @@ browser = webdriver.PhantomJS(executable_p" />
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-31T12:49:31.000Z"><a href="/2016/05/31/Selenimu/">2016-05-31</a></time>
-      
-      
-  
-    <h1 class="title">Selenimu 实现截图</h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。</p>
-<pre><code>from selenium import webdriver
-
-browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/bin/phantomjs&quot;
-url = &quot;http://codingpy.com&quot;
-browser.set_window_size(1200, 900)
-browser.get(url)
-
-browser.save_screenshot(&quot;codingpy.png&quot;)
-browser.close()
-</code></pre><p>现在就目录下就有啦codingpy.png了。<br>但是有的网站采用按需加载技术，所以我们要使Selenium注入js脚本，<br>即 页面的滚动条拖到底部，然后在拖到顶部，从而进行截图</p>
-<pre><code>from selenium import webdriver
-import time
-
-def take_screenshot(url, save_fn=&quot;capture.png&quot;):
-    browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/bin/phantomjs&quot;) 
-    browser.set_window_size(1200, 900)
-    browser.get(url) # Load page
-    browser.execute_script(&quot;&quot;&quot;
-        (function () {
-            var y = 0;
-            var step = 100;
-            window.scroll(0, 0);
-
-            unction f() {
-                if (y &lt; document.body.scrollHeight) {
-                    y += step;
-                        window.scroll(0, y);
-                    setTimeout(f, 100);
-                } else {
-                        window.scroll(0, 0);
-                    document.title += &quot;scroll-done&quot;;
-                }
-            }
-
-            setTimeout(f, 1000);
-        })();
-    &quot;&quot;&quot;)
-
-    for i in xrange(30):
-        if &quot;scroll-done&quot; in browser.title:
-            break
-        time.sleep(10)
-
-    browser.save_screenshot(save_fn)
-    browser.close()
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title">2016/7</h2>
 
 
-if __name__ == &quot;__main__&quot;:
-
-take_screenshot(&quot;http://codingpy.com&quot;)
-</code></pre>
-      
-    </div>
+  <div class="archive">
     
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/05/31/Selenimu/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2016-07-02T17:19:24.000Z"><a href="/2016/07/03/numpy/">2016-07-03</a></time>
+            
+              <h1 class="title"><a href="/2016/07/03/numpy/">numpy</a></h1>
+            
+          </header>
         </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/python/">python</a>
+      </article>
+    
   </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-<section id="comment">
-  <h1 class="title">Kommentare</h1>
-
-  <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="post-Selenimu" data-title="Selenimu 实现截图" data-url="http://yoursite.com/2016/05/31/Selenimu/"></div>
-  <!-- 多说评论框 end -->
-  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript">
-  var duoshuoQuery = {short_name:'fl-it-ebooks'};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-       || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-  <!-- 多说公共JS代码 end -->
-
-</section>
-
-
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="widget tag">
