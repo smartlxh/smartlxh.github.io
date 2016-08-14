@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Archives | 八阿哥</title>
+  <title>mongodb | 八阿哥</title>
   <meta name="author" content="smartlxh" />
 
+  
+  <meta name="description" content="今天服务器上的mongodb数据库突然间崩了，同学告诉我，数据插不上去。于是我便ssh到服务器上去查看，起初我查看了一下端口的监听情况，
+netstat -nlp | grep 40020
+（我建的数据库在40020端口），发现确实数据库确实工作在40020端口。然后我又本地连接来测试一下    
+" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="mongodb" />
   <meta property="og:site_name" content="八阿哥" />
 
   <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w" />
@@ -58,97 +63,80 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">Archives</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-08-14T06:56:19.000Z"><a href="/2016/08/14/mongodb/">2016-08-14</a></time>
+      
+      
+  
+    <h1 class="title">mongodb</h1>
+  
 
-
-  <div class="archive">
+    </header>
+    <div class="entry">
+      
+        <p>今天服务器上的mongodb数据库突然间崩了，同学告诉我，数据插不上去。于是我便ssh到服务器上去查看，起初我查看了一下端口的监听情况，</p>
+<pre><code>netstat -nlp | grep 40020
+</code></pre><p>（我建的数据库在40020端口），发现确实数据库确实工作在40020端口。然后我又本地连接来测试一下    </p>
+<pre><code>mongo --port 40020
+</code></pre><p>发现本地连接一点问题都没有，增删改查都是可以操作的。这下我一脸懵逼，究竟是什么问题呢。本地可以连接，但是远程却不可以。<br>经过一顿谷歌后终于解决啦问题</p>
+<p>只需要几行命令,就OK</p>
+<pre><code>sudo iptables -I INPUT -p tcp  --dport 27017 --syn -j ACCEPT
+sudo service iptables save
+</code></pre><p>那么这时我就好奇了，这几行命令到底是什么意思。iptables命令到底干了什么。<br>接着又是一顿科普</p>
+<h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><p>Iptabels是与Linux内核集成的包过滤防火墙系统，几乎所有的linux发行版本都会包含Iptables的功能。如果 Linux 系统连接到因特网或 LAN、服务器或连接 LAN 和因特网的代理服务器， 则Iptables有利于在 Linux 系统上更好地控制 IP 信息包过滤和防火墙配置。</p>
+<p>  netfilter/iptables过滤防火墙系统是一种功能强大的工具，可用于添加、编辑和除去规则，这些规则是在做信息包过滤决定时，防火墙所遵循和组成的规则。这些规则存储在专用的信 息包过滤表中，而这些表集成在 Linux 内核中。在信息包过滤表中，规则被分组放在我们所谓的链（chain）中。</p>
+<p>  虽然netfilter/iptables包过滤系统被称为单个实体，但它实际上由两个组件netfilter 和 iptables 组成。</p>
+<p>  netfilter 组件也称为内核空间（kernelspace），是内核的一部分，由一些信息包过滤表组成，这些表包含内核用来控制信息包过滤处理的规则集。</p>
+<p>  iptables 组件是一种工具，也称为用户空间（userspace），它使插入、修改和除去信息包过滤表中的规则变得容易。</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>所以上面的两行命令意思就是<br>在联INPUT上添加一组规则，允许到端口40020的流量</p>
+<h6 id="想要详细了解iptables-请参考这篇博客"><a href="#想要详细了解iptables-请参考这篇博客" class="headerlink" title="想要详细了解iptables 请参考这篇博客"></a>想要详细了解iptables 请参考这篇<a href="http://blog.csdn.net/reyleon/article/details/12976341" target="_blank" rel="external">博客</a></h6>
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-08-14T06:56:19.000Z"><a href="/2016/08/14/mongodb/">2016-08-14</a></time>
-            
-              <h1 class="title"><a href="/2016/08/14/mongodb/">mongodb</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/08/14/mongodb/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-07-02T17:19:24.000Z"><a href="/2016/07/03/numpy/">2016-07-03</a></time>
-            
-              <h1 class="title"><a href="/2016/07/03/numpy/">numpy</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-06-11T15:40:24.000Z"><a href="/2016/06/11/curl/">2016-06-11</a></time>
-            
-              <h1 class="title"><a href="/2016/06/11/curl/">Curl常用命令的总结</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-06-02T03:02:30.000Z"><a href="/2016/06/02/爬取知乎话题/">2016-06-02</a></time>
-            
-              <h1 class="title"><a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-05-31T12:49:31.000Z"><a href="/2016/05/31/Selenimu/">2016-05-31</a></time>
-            
-              <h1 class="title"><a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/pattern/">2016-05-28</a></time>
-            
-              <h1 class="title"><a href="/2016/05/28/pattern/">常用的正则表达式匹配</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/git/">2016-05-28</a></time>
-            
-              <h1 class="title"><a href="/2016/05/28/git/">Git的使用方法</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-mongodb" data-title="mongodb" data-url="http://yoursite.com/2016/08/14/mongodb/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'fl-it-ebooks'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+</section>
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="widget tag">
