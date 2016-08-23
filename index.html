@@ -1,79 +1,220 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <title>八阿哥</title>
-  <meta name="author" content="smartlxh" />
-
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
   
-
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-  
-  <meta property="og:site_name" content="八阿哥" />
-
-  <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w" />
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
+    <link rel="icon" href="/favicon.png">
   
   
-
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-    <meta property="og:image" content="undefined" />
+  <link rel="stylesheet" href="/css/style.css">
   
-
-  
-  <link href="/css/images/favicon.ico" rel="icon" />
-  
-
-  <link rel="alternate" href="/atom.xml" title="八阿哥" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  
-
-
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
 
 </head>
 
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">八阿哥</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="https://github.com/smartlxh">watch me on github</a></li>
-    
-      <li><a href="/archives">archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-08-14T06:56:19.000Z"><a href="/2016/08/14/mongodb/">2016-08-14</a></time>
-      
-      
+    <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/23/docker/" class="article-date">
+  <time datetime="2016-08-23T10:06:19.000Z" itemprop="datePublished">2016-08-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/08/14/mongodb/">mongodb</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/23/docker/">docker</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学习了一下dockr的相关技术，在此作一个总结</p>
+<p>一. Docker Engine组成</p>
+<pre><code>它由三部分组成，分别是
+ 1.  server－－一个运行在主机上的守护进程
+ 2.  REST API －－－提供客户端和server共同的接口
+ 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
+</code></pre><p><img src="https://docs.docker.com/engine/article-img/engine-components-flow.png" alt=""></p>
+<p>二. 基本名词概念</p>
+<pre><code>1. Docker images 
+ 在我理解 images就相当于装系统时的的操作系统镜像。被用来创建Container
+
+2. Docker Containers
+    跟目录很相似。包含了一个程序运行所需要的所有组件。
+3. Docker registries
+
+    简单理解就是Docker Hub（但是不只是Docker Hub）
+</code></pre><p>三.  基本命令</p>
+<pre><code>1.docker images（查看host上已有的images）
+2.docker rmi 删除images
+3.docker ps -a(查看所有container)
+如果想要看正在运行的container用命令docker ps
+4.docker run cotainerName（创建container） 命令 参数
+运行container
+5.docker run subcommand 解释
+
+        -t 分配一个container内部的termianl
+        －i 和容器交互，通常和－t一起使用
+        －d 在后台运行该container
+        -P＝－p 5000 映射container端口和host主机端口
+        －p 80:5000指定contianer的5000端口映射到host的80端口
+6.当在后台运行时，docker logs命令可以看到程序输出
+7.docker start，docker stop docker rm
+8.docker pull  从Docker Hub上clone images
+9.docker push 上传images到Docker Hub上
+  首先得docker login登录
+  然后使用命令docker tag imageid username／name：tag
+</code></pre><p>四.创建images</p>
+<p>两种方法</p>
+<pre><code>1.docker －t －i 进入命令行，进行你要的修改
+然后通过docker commit命令 －m “reason” －a “author”
+
+2.通过Dockerfile（建议）
+    创建一个Dockerfile如
+
+    FROM ubuntu:14.04
+    MAINTAINER Kate Smith &lt;ksmith@example.com&gt;
+    RUN apt-get update &amp;&amp; apt-get install -y ruby ruby-dev
+    RUN gem install sinatra
+
+然后使用命令docker build －t username／name：tag
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/23/docker/" data-id="cis7ins4z0000p65vvnvfxxi6" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日计月累" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/15/日计月累/" class="article-date">
+  <time datetime="2016-08-15T07:32:39.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/15/日计月累/">日计月累</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>memset函数的使用</li>
+</ol>
+<p>memset(start,value,size)<br>start参数为起始地址，value为初始化的值，size为数组大小，一般用sizeof函数确定</p>
+<ol>
+<li>string.substr(start，length)函数的使用</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/15/日计月累/" data-id="cis7ins5c0003p65vggmjlt7z" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mongodb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/14/mongodb/" class="article-date">
+  <time datetime="2016-08-14T06:56:19.000Z" itemprop="datePublished">2016-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/14/mongodb/">mongodb</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <p>今天服务器上的mongodb数据库突然间崩了，同学告诉我，数据插不上去。于是我便ssh到服务器上去查看，起初我查看了一下端口的监听情况，</p>
 <pre><code>netstat -nlp | grep 40020
@@ -93,41 +234,40 @@ sudo service iptables save
 <h6 id="想要详细了解iptables-请参考这篇博客"><a href="#想要详细了解iptables-请参考这篇博客" class="headerlink" title="想要详细了解iptables 请参考这篇博客"></a>想要详细了解iptables 请参考这篇<a href="http://blog.csdn.net/reyleon/article/details/12976341" target="_blank" rel="external">博客</a></h6>
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/08/14/mongodb/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/14/mongodb/" data-id="cis7ins550001p65vls3cbymb" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDb/">MongoDb</a></li></ul>
+
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-07-02T17:19:24.000Z"><a href="/2016/07/03/numpy/">2016-07-03</a></time>
-      
-      
+    <article id="post-numpy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/03/numpy/" class="article-date">
+  <time datetime="2016-07-02T17:19:24.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/07/03/numpy/">numpy</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/numpy/">numpy</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <p>今天总结一下，numpy的基本用法</p>
 <h3 id="1-生成numpy-array数组的方式"><a href="#1-生成numpy-array数组的方式" class="headerlink" title="1 生成numpy.array数组的方式"></a>1 生成numpy.array数组的方式</h3><pre><code>1. numpy.zeros((3,2))  #生成初始化为0的矩阵
@@ -229,46 +369,40 @@ print np.dot(x,y)
 
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/07/03/numpy/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/python/">python</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/03/numpy/" data-id="cis7in7j90004os5vuvc587xb" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-06-11T15:40:24.000Z"><a href="/2016/06/11/curl/">2016-06-11</a></time>
-      
-      
+    <article id="post-curl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/11/curl/" class="article-date">
+  <time datetime="2016-06-11T15:40:24.000Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/06/11/curl/">Curl常用命令的总结</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/11/curl/">Curl常用命令的总结</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <h5 id="1抓取页面到一个文件中"><a href="#1抓取页面到一个文件中" class="headerlink" title="1抓取页面到一个文件中"></a>1抓取页面到一个文件中</h5><pre><code>curl -o test.html http://www.baidu.com
 </code></pre><h5 id="2-用-－O-，后面的url要具体到某个文件，不然抓不下来，同时可以用正则"><a href="#2-用-－O-，后面的url要具体到某个文件，不然抓不下来，同时可以用正则" class="headerlink" title="2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则"></a>2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则</h5><pre><code>curl -O http://www.baidu.com/img/bd_logo1.png
@@ -289,46 +423,40 @@ print np.dot(x,y)
 </code></pre>
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/06/11/curl/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/Linux/">Linux</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/11/curl/" data-id="cis7in7j00001os5v17j9p6a2" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-06-02T03:02:30.000Z"><a href="/2016/06/02/爬取知乎话题/">2016-06-02</a></time>
-      
-      
+    <article id="post-爬取知乎话题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/02/爬取知乎话题/" class="article-date">
+  <time datetime="2016-06-02T03:02:30.000Z" itemprop="datePublished">2016-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <p>作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题</p>
 <h3 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a>一、分析</h3><p>首先我找到知乎的<a href="http://www.zhihu.com/topics" target="_blank" rel="external">话题广场</a></p>
@@ -400,46 +528,40 @@ print np.dot(x,y)
 
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/06/02/爬取知乎话题/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/python/">python</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/02/爬取知乎话题/" data-id="cis7in7jf0008os5vdp5qugh6" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-爬虫/">python+爬虫</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-31T12:49:31.000Z"><a href="/2016/05/31/Selenimu/">2016-05-31</a></time>
-      
-      
+    <article id="post-Selenimu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/Selenimu/" class="article-date">
+  <time datetime="2016-05-31T12:49:31.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <p>Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。</p>
 <pre><code>from selenium import webdriver
@@ -495,46 +617,40 @@ take_screenshot(&quot;http://codingpy.com&quot;)
 </code></pre>
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/05/31/Selenimu/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/python/">python</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/31/Selenimu/" data-id="cis7in7is0000os5vs0gfm4am" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/pattern/">2016-05-28</a></time>
-      
-      
+    <article id="post-pattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/28/pattern/" class="article-date">
+  <time datetime="2016-05-28T05:46:46.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/05/28/pattern/">常用的正则表达式匹配</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <h2 id="知道这些正则表达式能让你少些1000行代码"><a href="#知道这些正则表达式能让你少些1000行代码" class="headerlink" title="知道这些正则表达式能让你少些1000行代码"></a>知道这些正则表达式能让你少些1000行代码</h2><h4 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1.校验密码强度"></a>1.校验密码强度</h4><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。</p>
 <pre><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
@@ -581,46 +697,40 @@ take_screenshot(&quot;http://codingpy.com&quot;)
 
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/05/28/pattern/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/正则表达式/">正则表达式</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/28/pattern/" data-id="cis7in7j70003os5vf5hwy6ne" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-28T05:46:46.000Z"><a href="/2016/05/28/git/">2016-05-28</a></time>
-      
-      
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/28/git/" class="article-date">
+  <time datetime="2016-05-28T05:46:46.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2016/05/28/git/">Git的使用方法</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/git/">Git的使用方法</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <h3 id="git-init-将一个目录初始化为-Git-仓库"><a href="#git-init-将一个目录初始化为-Git-仓库" class="headerlink" title="git init 将一个目录初始化为 Git 仓库"></a>git init 将一个目录初始化为 Git 仓库</h3><p>在目录中执行 git init，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：</p>
 <pre><code>$ cd konnichiwa
@@ -1492,160 +1602,118 @@ $ git diff --stat master...erlang
 </code></pre>
       
     </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/05/28/git/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/Git/">Git</a>
-  </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/28/git/" data-id="cis7in7jb0006os5v8w6fabs1" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
 
 
-<nav id="pagination">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/23/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/日计月累/">日计月累</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/14/mongodb/">mongodb</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/03/numpy/">numpy</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/11/curl/">Curl常用命令的总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="widget tag">
-    <h3 class="title">关于我</h3>
-    <div class="entry">
-      <p>学校：南京邮电大学</p>
-      <p>邮箱：smartlxh@gmail.com</p>
-    </div>
-</div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <div class="widget tag">
-    <h3 class="title">赞助我</h3>
-    <div class="entry">
-      <img src='/css/images/qr_alipay.png' style='width:100%;background:rgba(255,255,255,0.6)' />
-    </div>
-</div>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-  
-<div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
-  <div class="entry">
-    <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+
+<script src="/js/script.js"></script>
+
   </div>
-</div>
-
-
-  
-<div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
-  <ul class="entry">
-    
-      <li>
-        <a href="/2016/08/14/mongodb/">mongodb</a>
-      </li>
-    
-      <li>
-        <a href="/2016/07/03/numpy/">numpy</a>
-      </li>
-    
-      <li>
-        <a href="/2016/06/11/curl/">Curl常用命令的总结</a>
-      </li>
-    
-      <li>
-        <a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a>
-      </li>
-    
-      <li>
-        <a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
-      </li>
-    
-  </ul>
-</div>
-
-
-  <div class="widget tag">
-  <h3 class="title">友情链接</h3>
-  <div class="entry">
-    <ul>
-<!-- link start -->
-<li><a href='http://top.jobbole.com/'>伯乐头条</a></li>
-<li><a href='http://gold.xitu.io'>稀土掘金</a></li>
-<!-- link  end -->
-    </ul>
-  </div>
-</div>
-
-
-  <div class="widget tag">
-    <h3 class="title">统计</h3>
-    <div class="entry">
-      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254912396'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254912396%26online%3D1' type='text/javascript'%3E%3C/script%3E"));</script>
-    </div>
-</div>
-
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  <p>
-  
-  &copy; 2016 smartlxh
-  
-  All rights reserved.</p>
-  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</div>
-<div class="clearfix"></div>
-
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
-  <script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-<script>
-    //Kill XP and IE8
-    (function(){
-        var ua = navigator.userAgent;
-        var res = /Windows NT (\d+\.\d+)/.exec(ua);
-        var xpOrLower = res && JSON.parse(res[1]) < 6;
-        res = /MSIE (\d+\.\d+)/.exec(ua);
-        var ie8OrLower = res && JSON.parse(res[1]) < 9;
-        if(xpOrLower || ie8OrLower)
-        {
-            alert('请不要用XP及之前的Windows系统，和IE8及之前的IE浏览器访问本站！');
-            location.href = "about:blank";
-        }
-        var fromBaiduSE = /^https?:\/\/www.baidu.com/.test(document.referrer);
-        if(fromBaiduSE)
-        {
-            alert('检测到你还在使用百度搜索，作为一个程序员，这是一种自暴自弃！\n\n做不作恶的程序员，从不用百度开始！')
-            location.href = "about:blank";
-        }
-    })();
-</script>
-
-<div id='bg'></div>
 </body>
 </html>

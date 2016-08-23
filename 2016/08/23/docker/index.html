@@ -3,14 +3,44 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mot-clé: Linux | Hexo</title>
+  <title>docker | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Linux/index.html">
+  <meta name="description" content="最近学习了一下dockr的相关技术，在此作一个总结
+一. Docker Engine组成
+它由三部分组成，分别是
+ 1.  server－－一个运行在主机上的守护进程
+ 2.  REST API －－－提供客户端和server共同的接口
+ 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
+
+二. 基本名词概念
+1. Docker i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker">
+<meta property="og:url" content="http://yoursite.com/2016/08/23/docker/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近学习了一下dockr的相关技术，在此作一个总结
+一. Docker Engine组成
+它由三部分组成，分别是
+ 1.  server－－一个运行在主机上的守护进程
+ 2.  REST API －－－提供客户端和server共同的接口
+ 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
+
+二. 基本名词概念
+1. Docker i">
+<meta property="og:image" content="https://docs.docker.com/engine/article-img/engine-components-flow.png">
+<meta property="og:updated_time" content="2016-08-23T13:37:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="docker">
+<meta name="twitter:description" content="最近学习了一下dockr的相关技术，在此作一个总结
+一. Docker Engine组成
+它由三部分组成，分别是
+ 1.  server－－一个运行在主机上的守护进程
+ 2.  REST API －－－提供客户端和server共同的接口
+ 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
+
+二. 基本名词概念
+1. Docker i">
+<meta name="twitter:image" content="https://docs.docker.com/engine/article-img/engine-components-flow.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,39 +89,103 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/06/11/curl/" class="archive-article-date">
-  <time datetime="2016-06-11T15:40:24.000Z" itemprop="datePublished">Jun 11</time>
+        <section id="main"><article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/23/docker/" class="article-date">
+  <time datetime="2016-08-23T10:06:19.000Z" itemprop="datePublished">2016-08-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/11/curl/">Curl常用命令的总结</a>
+    <h1 class="article-title" itemprop="name">
+      docker
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学习了一下dockr的相关技术，在此作一个总结</p>
+<p>一. Docker Engine组成</p>
+<pre><code>它由三部分组成，分别是
+ 1.  server－－一个运行在主机上的守护进程
+ 2.  REST API －－－提供客户端和server共同的接口
+ 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
+</code></pre><p><img src="https://docs.docker.com/engine/article-img/engine-components-flow.png" alt=""></p>
+<p>二. 基本名词概念</p>
+<pre><code>1. Docker images 
+ 在我理解 images就相当于装系统时的的操作系统镜像。被用来创建Container
+
+2. Docker Containers
+    跟目录很相似。包含了一个程序运行所需要的所有组件。
+3. Docker registries
+
+    简单理解就是Docker Hub（但是不只是Docker Hub）
+</code></pre><p>三.  基本命令</p>
+<pre><code>1.docker images（查看host上已有的images）
+2.docker rmi 删除images
+3.docker ps -a(查看所有container)
+如果想要看正在运行的container用命令docker ps
+4.docker run cotainerName（创建container） 命令 参数
+运行container
+5.docker run subcommand 解释
+
+        -t 分配一个container内部的termianl
+        －i 和容器交互，通常和－t一起使用
+        －d 在后台运行该container
+        -P＝－p 5000 映射container端口和host主机端口
+        －p 80:5000指定contianer的5000端口映射到host的80端口
+6.当在后台运行时，docker logs命令可以看到程序输出
+7.docker start，docker stop docker rm
+8.docker pull  从Docker Hub上clone images
+9.docker push 上传images到Docker Hub上
+  首先得docker login登录
+  然后使用命令docker tag imageid username／name：tag
+</code></pre><p>四.创建images</p>
+<p>两种方法</p>
+<pre><code>1.docker －t －i 进入命令行，进行你要的修改
+然后通过docker commit命令 －m “reason” －a “author”
+
+2.通过Dockerfile（建议）
+    创建一个Dockerfile如
+
+    FROM ubuntu:14.04
+    MAINTAINER Kate Smith &lt;ksmith@example.com&gt;
+    RUN apt-get update &amp;&amp; apt-get install -y ruby ruby-dev
+    RUN gem install sinatra
+
+然后使用命令docker build －t username／name：tag
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/23/docker/" data-id="cis7ins4z0000p65vvnvfxxi6" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/15/日计月累/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">日计月累</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
