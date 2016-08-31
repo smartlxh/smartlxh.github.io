@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Arxiu: 2016/5 | Hexo</title>
+    <title>Archive: 2016/5 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta property="og:type" content="website">
@@ -54,13 +54,13 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Inici</a>
+                                    <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         
                                     
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
                         </ul>
@@ -68,7 +68,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -89,8 +89,8 @@
         TRANSLATION: {
             POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'categories',
-            TAGS: 'etiquetes',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -116,7 +116,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Arxiu: 2016/5
+    <i class="icon fa fa-archive"></i>Archive: 2016/5
     </h1>
 </div>
                         <div class="main-body-content">
@@ -142,7 +142,7 @@
         <a href="/2016/05/31/Selenimu/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/38b74df68565a63d.jpg)" alt="Selenimu 实现截图" class="thumbnail-image"></span>
     
     
         
@@ -171,10 +171,10 @@
     
 
         <p class="article-excerpt">
-            Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
+            )Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
 from selenium import webdriver
 
-browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx/
+browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx
         </p>
     </div>
 </article>
@@ -190,7 +190,7 @@ browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2
         <a href="/2016/05/28/pattern/" class="thumbnail">
     
     
-        <span style="background-image:url(http://upload-images.jianshu.io/upload_images/1399853-1b08244a4d375624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)" alt="常用的正则表达式匹配" class="thumbnail-image"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/cbebb865715367fe.jpg)" alt="常用的正则表达式匹配" class="thumbnail-image"></span>
     
     
         
@@ -219,12 +219,13 @@ browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2
     
 
         <p class="article-excerpt">
-            知道这些正则表达式能让你少些1000行代码1.校验密码强度密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。
+            知道这些正则表达式能让你少些1000行代码
+1.校验密码强度密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。
 ^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
 2.校验中文字符串仅能是中文
 ^[\\u4e00-\\u9fa5]{0,}$
 3.由数字、26个英文字母或下划线组成的字符串^\\w+$
-4.校验E-Mail 地址[\\w!#
+4.校验E-Mail 地址[\\w!
         </p>
     </div>
 </article>
@@ -244,7 +245,7 @@ browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2
         <a href="/2016/05/28/git/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/3f866322c2b1d6d5.png)" alt="Git的使用方法" class="thumbnail-image"></span>
     
     
         
@@ -273,11 +274,12 @@ browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2
     
 
         <p class="article-excerpt">
-            git init 将一个目录初始化为 Git 仓库在目录中执行 git init，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：
+            
+git init 将一个目录初始化为 Git 仓库在目录中执行 git init，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：
 $ cd konnichiwa
 $ ls
 README   hello.rb
- &gt; 在这个项目里头，我们会用各种编程语言写 “Hello World” 实例。 到目前为止，我们只有 Ruby 的，不过，这才刚上路嘛。为了开始用 Gi
+ &gt; 在这个项目里头，我们会用各种编程语言写 “Hello World” 实例。 到目前为止，我们只有 Ruby 的，不过，这才刚上路嘛。为了开始用 G
         </p>
     </div>
 </article>
@@ -295,7 +297,7 @@ README   hello.rb
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>seguir:</p>
+        <p>follow:</p>
         <ul class="social-links">
             
                 
@@ -364,7 +366,7 @@ README   hello.rb
                             <a href="/2016/08/30/Store/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/e963008cdb5e0c06.jpg)" alt="无法登录到apple Store" class="thumbnail-image"></span>
     
     
 </a>
@@ -404,7 +406,7 @@ README   hello.rb
                             <a href="/2016/08/15/日计月累/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ww2.sinaimg.cn/large/74311666jw1f7d82svyedj20a1064q32.jpg)" alt="日计月累" class="thumbnail-image"></span>
     
     
 </a>
@@ -424,7 +426,7 @@ README   hello.rb
                             <a href="/2016/08/14/mongodb/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/69e2326d397483d0.jpg)" alt="mongodb" class="thumbnail-image"></span>
     
     
 </a>
@@ -444,7 +446,7 @@ README   hello.rb
                             <a href="/2016/07/03/numpy/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://i4.buimg.com/567571/7ec1b9144683bf99.jpg)" alt="numpy" class="thumbnail-image"></span>
     
     
 </a>
@@ -468,7 +470,7 @@ README   hello.rb
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">arxius</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
         </div>
@@ -478,7 +480,7 @@ README   hello.rb
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">etiquetes</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -488,7 +490,7 @@ README   hello.rb
             
                 
     <div class="widget-wrap widget-float">
-        <h3 class="widget-title">etiqueta cloud</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
             <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
         </div>
