@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: python | 八阿哥</title>
+    <title>Maven入门 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/tags/python/index.html">
+        <meta name="keywords" content="Maven" />
+    
+    <meta name="description" content="Maven简单介绍它是一个跨平台的异常强大的构建工具，能 够帮我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。我们不需要也不应该一遍又一遍地输入命令，一次又一次地点击鼠标，我们要做的是 使用Maven配置好项目，然后输入简单的命令(如mvn clean install)，Maven会帮我们处理那些烦琐的任务。
+简单使用   1.编写POM
+   Maven项目的核心是pom.xm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven入门">
+<meta property="og:url" content="http://yoursite.com/2016/09/21/Maven入门/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="Maven简单介绍它是一个跨平台的异常强大的构建工具，能 够帮我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。我们不需要也不应该一遍又一遍地输入命令，一次又一次地点击鼠标，我们要做的是 使用Maven配置好项目，然后输入简单的命令(如mvn clean install)，Maven会帮我们处理那些烦琐的任务。
+简单使用   1.编写POM
+   Maven项目的核心是pom.xm">
+<meta property="og:image" content="http://i1.piimg.com/567571/f6d6250a1b16ad32.jpg">
+<meta property="og:updated_time" content="2016-09-21T08:54:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="Maven入门">
+<meta name="twitter:description" content="Maven简单介绍它是一个跨平台的异常强大的构建工具，能 够帮我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。我们不需要也不应该一遍又一遍地输入命令，一次又一次地点击鼠标，我们要做的是 使用Maven配置好项目，然后输入简单的命令(如mvn clean install)，Maven会帮我们处理那些烦琐的任务。
+简单使用   1.编写POM
+   Maven项目的核心是pom.xm">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/f6d6250a1b16ad32.jpg">
     
 
     
@@ -125,126 +139,267 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>python</em>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-Maven入门" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Maven入门
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/09/21/Maven入门/" class="article-date">
+    <time datetime="2016-09-21T08:24:33.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/07/03/numpy/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/7ec1b9144683bf99.jpg)" alt="numpy" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/07/03/numpy/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="Maven简单介绍"><a href="#Maven简单介绍" class="headerlink" title="Maven简单介绍"></a>Maven简单介绍</h3><p>它是一个跨平台的异常强大的构建工具，能 够帮我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。我们不需要也不应该一遍又一遍地输入命令，一次又一次地点击鼠标，我们要做的是 使用Maven配置好项目，然后输入简单的命令(如mvn clean install)，Maven会帮我们处理那些烦琐的任务。</p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><p>   1.编写POM</p>
+<p>   Maven项目的核心是pom.xml。POM（Project Object Model，项目对象模型）定义了项目的基本信息，用于描述项目如何构建，声明项目依赖，等等。现在我们先为Hello World项目编写一个最简单的pom.xml。</p>
+<pre><code>   &lt;span style=&quot;font-size: small;&quot;&gt;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;  
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-    instance&quot;  
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0  
+http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;  
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  
+  &lt;groupId&gt;com.example.smartlxh&lt;/groupId&gt;  
+  &lt;artifactId&gt;hello-world&lt;/artifactId&gt;  
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;  
+  &lt;name&gt;Maven Hello World Project&lt;/name&gt;  
+&lt;/project&gt;   
+&lt;/span&gt;  
+</code></pre><p>  2.编写主代码</p>
+<pre><code>  package com.example.smartlxh
 
-    
-</a>
+  public class HelloWorld  
+{  
+   public String sayHello()  
+   {  
+     return &quot;Hello Maven&quot;;  
+   }  
 
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-07-02T17:19:24.000Z" itemprop="datePublished">2016-07-03</time></p>
+  public static void main(String[] args)  
+   {  
+     System.out.print( new HelloWorld().sayHello() );  
+    }  
+</code></pre><p> 3.编译代码</p>
+<p>   在项目根目录下，运行mvn clean compile命令</p>
+<p>   得到输出</p>
+<pre><code>   [INFO] --------------------------------------------------------------    ----------  
+[INFO] Building Maven Hello World Project  
+[INFO]    task-segment: [clean, compile]  
+[INFO]         ----------------------------------------------------------    --------------  
+[INFO] [clean:clean {execution: default-clean}]  
+[INFO] Deleting directory D:\code\hello-world\target  
+[INFO] [resources:resources {execution: default-    resources}]  
+[INFO] skip non existing resourceDirectory D: \code\hello-    world\src\main\resources  
+[INFO] [compiler:compile {execution: default-compile}]  
+[INFO] Compiling 1 source file to D: \code\hello-world    \target\classes  
+[INFO]     ----------------------------------------------------------    --------------  
+[INFO] BUILD SUCCESSFUL  
+[INFO]     ----------------------------------------------------------    --------------  
+[INFO] Total time: 1 second  
+[INFO] Finished at: Fri Oct 09 02:08:09 CST 2009  
+[INFO] Final Memory: 9M/16M  
+[INFO]     ----------------------------------------------------------    --------------  
+</code></pre><p>4.编写测试代码</p>
+<p>新建目录src/test/java,maven的默认测试代码目录</p>
+<p>java中，Junit 是单元测试标准<br>在POM中引入依赖项</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;  
+     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;  
+     xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0  
+http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;  
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  
+  &lt;groupId&gt;com.juvenxu.mvnbook&lt;/groupId&gt;  
+  &lt;artifactId&gt;hello-world&lt;/artifactId&gt;  
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;  
+  &lt;name&gt;Maven Hello World Project&lt;/name&gt;  
+  &lt;dependencies&gt;  
+    &lt;dependency&gt;  
+   &lt;groupId&gt;junit&lt;/groupId&gt;  
+   &lt;artifactId&gt;junit&lt;/artifactId&gt;  
+   &lt;version&gt;4.7&lt;/version&gt;  
+   &lt;scope&gt;test&lt;/scope&gt;  
+&lt;/dependency&gt;  
+ &lt;/dependencies&gt;  
+&lt;/project&gt;    
+</code></pre><p>测试代码为</p>
+<pre><code>package com.example.smartlxh
+
+helloworld;  
+import static org.junit.Assert.assertEquals;  
+import org.junit.Test;  
+
+public class HelloWorldTest  
+{  
+@Test  
+    public void testSayHello()  
+    {  
+        HelloWorld helloWorld = new HelloWorld();  
+
+        String result = helloWorld.sayHello();  
+
+        assertEquals( &quot;Hello Maven&quot;, result );  
+    }  
+}   
+</code></pre><p>然后运行mvn clean test</p>
+<p>控制台输出</p>
+<pre><code>[INFO] [compiler:testCompile {execution: default-    testCompile}]  
+[INFO] Compiling 1 source file to D: \code\hello-world    \target\test-classes  
+[INFO] [surefire:test {execution: default-test}]  
+[INFO] Surefire report directory: D:\code\hello-world    \target\surefire-reports  
+-------------------------------------------------------  
+ T E S T S  
+-------------------------------------------------------  
+Running com.juvenxu.mvnbook.helloworld.HelloWorldTest  
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time     elapsed: 0.055 sec  
+Results :  
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0  
+[INFO]     ----------------------------------------------------------    --------------  
+[INFO] BUILD SUCCESSFUL  
+[INFO]     ----------------------------------------------------------    --------------  
+…  
+</code></pre><p>5.打包和运行</p>
+<p>  执行命令 mvn clean package</p>
+<pre><code>  …  
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0  
+
+[INFO] [jar:jar {execution: default-jar}]  
+[INFO] Building jar: D:\code\hello-world\target\hello-    world-1.0-SNAPSHOT.jar  
+[INFO]   
+----------------------------------------------------------    ----------  
+[INFO] BUILD SUCCESSFUL  
+</code></pre>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/07/03/numpy/">numpy</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            每天一个好心情今天总结一下，numpy的基本用法
-1 生成numpy.array数组的方式1. numpy.zeros((3,2))  #生成初始化为0的矩阵
-2. numpy.ones((3,2))  #生成初始化为1的矩阵
-3. numpy.fulls((3,2),10) #生成初始化为10的矩阵
-4. numpy.random.random((3,2)) #初始化为 随机数
-5. numpy
-        </p>
+
+
+    <a data-url="http://yoursite.com/2016/09/21/Maven入门/" data-id="citcoc7sj0001utdqo9zz16rg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/05/31/Selenimu/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/38b74df68565a63d.jpg)" alt="Selenimu 实现截图" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/05/31/Selenimu/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2016/09/21/Maven入门/" data-title="Maven入门" data-url="http://yoursite.com/2016/09/21/Maven入门/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-05-31T12:49:31.000Z" itemprop="datePublished">2016-05-31</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            )Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
-from selenium import webdriver
-
-browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -296,6 +451,19 @@ browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/08/30/Store/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">无法登录到apple Store</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
