@@ -3,15 +3,32 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/6 | 八阿哥</title>
+    <title>java反射和代理 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/archives/2016/06/index.html">
+        <meta name="keywords" content="Java" />
+    
+    <meta name="description" content="今天就来谈一谈java的反射和代理
+###一. 反射
+在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java反射和代理">
+<meta property="og:url" content="http://yoursite.com/2016/10/10/java反射和代理/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="今天就来谈一谈java的反射和代理
+###一. 反射
+在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+<meta property="og:image" content="http://i1.piimg.com/567571/07a33b03c77fa8a6.png">
+<meta property="og:updated_time" content="2016-10-10T13:40:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="java反射和代理">
+<meta name="twitter:description" content="今天就来谈一谈java的反射和代理
+###一. 反射
+在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/07a33b03c77fa8a6.png">
     
 
     
@@ -125,124 +142,260 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/6
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-java反射和代理" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        java反射和代理
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/10/10/java反射和代理/" class="article-date">
+    <time datetime="2016-10-10T13:01:50.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/06/11/curl/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/1a3d932991cb086d.jpg)" alt="Curl常用命令的总结" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/06/11/curl/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>今天就来谈一谈java的反射和代理</p>
+<p>###一. 反射</p>
+<p>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
+<p>反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Class的结构信息：如构造函数，属性和方法等。我们可以通过这个元信息对象间接调用Class对象的功能。</p>
+<p>下面提供一个例子</p>
+<pre><code>public class User {
 
-    
-</a>
 
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-06-11T15:40:24.000Z" itemprop="datePublished">2016-06-11</time></p>
+public  String userName;
+private String passWord;
+private int id;
+public void setUserName(String userName){
+    this.userName=userName;
+}
+
+public String getUserName(){
+        return userName;
+}
+
+
+//使用反射创建User类实例
+   public static void main(String[] args) {
+
+    User u=new User();//正常创建User类对象
+    u.setUserName(&quot;lxh&quot;);
+    System.out.println(u.getUserName());
+    try {
+
+        //第一种通过实例对象获取构造函数方法
+        Constructor con1 = u.getClass().getConstructor();
+        User user = (User)con1.newInstance();
+
+        System.out.println(u.getClass().getMethod(&quot;getUserName&quot;).invoke(u,new Object[]{}));
+        //u.getClass().getMethod(&quot;setUserName&quot;).invoke(u,&quot;bb&quot;);
+                    System.out.println(u.getUserName());
+
+        //第二种通过类加载器加载获取构造函数方法
+
+        ClassLoader load=Thread.currentThread().getContextClassLoader();
+        Constructor con2=load.loadClass(&quot;User&quot;).getConstructor();
+
+        Constructor con3=Class.forName(&quot;User&quot;).getConstructor();
+        //第三种通过Class类的静态获取构造函数方法
+        User user=Class.forName(&quot;User&quot;).getConstror().newInstance();
+
+
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+
+}
+}
+</code></pre><p>###二.代理</p>
+<p> 某些情况下，我们无法或者不希望直接对一个对象进行访问时，我们就会用到设计模式中的代理模式(如图)，通常情况下，为了保持行为的一致性，代理类和委托类拥有相同的实现接口,在使用委托类的地方都是可以用代理类来替换；代理类负责预处理消息，并转发消息给委托类、以及对委托类执行完后返回消息的处理；可以这样理解委托类负责过程的具体实现，代理类负责过程实现前后的处理.这样能有效的控制对委托类的直接访问，在设计上获得了更大的灵活性. 可以根据程序运行时，代理类是否存在将代理分为静态代理和动态代理<br> <img src="http://i1.piimg.com/567571/07a33b03c77fa8a6.png" alt=""></p>
+<p>####静态代理</p>
+<p>我们直接来看一个例子，我们先定义一个接口service。它的一个实现类Waiter输出“I’ll serve you”，为了让waiter更有礼貌，我们想让他在服务之前先跟客人打招呼“Hello”。</p>
+<pre><code>interface service {
+
+    public void doService();
+}
+
+class Waiter implements  service{
+
+    public void doService(){
+        System.out.println(&quot;I&apos;ll serve you\n&quot;);
+    }
+}
+public class proxyWaiter implements service{
+
+    private Waiter waiter = new Waiter();
+    public void doService(){
+        System.out.println(&quot;Hello&quot;);
+        waiter.doService();
+    }
+       public static void main(String argsp[]){
+           proxyWaiter waiter = new proxyWaiter();
+           waiter.doService();
+       }
+
+}
+</code></pre><p>那么我们现在来看看如果用动态代理该如何呢</p>
+<p>####动态代理</p>
+<pre><code>import java.lang.reflect.Method;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class proxyHandler implements InvocationHandler{
+
+    private Object object;
+    public dymaticProxy(Object object){
+        this.object=object;
+    }
+
+       public Object invoke(Object proxy,Method     method,Object[]args) throws Throwable{
+            System.out.println(&quot;Hello\n&quot;);
+                Object obj=method.invoke(object,args);
+            return obj;
+    }
+
+    public static void main(String []args){
+        service waiter= new Waiter();
+
+        proxyHandler handler=new proxyHandler(waiter);
+
+        service newWaiter=         (service)Proxy.newProxyInstance(waiter.getClass().getClassLoader(),waiter.getClass().getInterfaces(),proxy);
+        newWaiter.doService();
+}
+</code></pre><p>}</p>
+<p>首先我们实现InvocationHandler，复写invoke方法，然后调用Proxy.newInstance方法返回一个代理对象</p>
+<p>###三.总结<br> 动态代理只能支持接口的代理，这也是因为java的继承性本质所限制的，因为所有的动态代理类都继承了Proxy类，所以再也无法同时继承其他类.然而，我们不可否认动态代理设计的伟大之处，世上所有的事物都不可能完美.<br> 但是如果要实现类的动态代理，可以使用CGlib，它使用动态改变Class字节码文件来实现的，有兴趣的话自己可以查阅相关资料。<br><a href="https://github.com/cglib/cglib" target="_blank" rel="external">相关链接</a></p>
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/06/11/curl/">Curl常用命令的总结</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
+        <footer class="article-footer">
             
-1抓取页面到一个文件中curl -o test.html http://www.baidu.com
-2 用 －O ，后面的url要具体到某个文件，不然抓不下来，同时可以用正则curl -O http://www.baidu.com/img/bd_logo1.png
-3 模拟表单信息，模拟登录，保存cookie信息curl －c ./cookie_c.txt -F log=name -F pwd=
-        </p>
+
+
+
+    <a data-url="http://yoursite.com/2016/10/10/java反射和代理/" data-id="ciu43wpsg0004qn5va22h6vmo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/06/02/爬取知乎话题/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/da52a91d0d36b0c6.jpg)" alt="爬取知乎话题" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/06/02/爬取知乎话题/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2016/10/10/java反射和代理/" data-title="java反射和代理" data-url="http://yoursite.com/2016/10/10/java反射和代理/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-06-02T03:02:30.000Z" itemprop="datePublished">2016-06-02</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/06/02/爬取知乎话题/">爬取知乎话题</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            作为程序猿因为经常上知乎，所以突发奇想知道知乎到底有多少话题
-
-一、分析首先我找到知乎的话题广场
-在这个页面我们可以看到有话题分类，点击每个话题分类后，下面有子话题，如果直接用传统的方式直接去爬取，爬取到的只是当前页面的话题，而知乎的话题远远不止这些。通过观察发现，点击更多按钮，会自动加载更多的子话题。所以这时通过chrome的开发者工具分析浏览器的请求方式发现接口地址为http://www.zh
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -294,6 +447,19 @@ ga('send', 'pageview');
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/09/21/Maven入门/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Maven入门</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
