@@ -9,25 +9,22 @@
         <meta name="keywords" content="Java" />
     
     <meta name="description" content="今天就来谈一谈java的反射和代理
-###一. 反射
-在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
-反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+一. 反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Cl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java反射和代理">
 <meta property="og:url" content="http://yoursite.com/2016/10/10/java反射和代理/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta property="og:description" content="今天就来谈一谈java的反射和代理
-###一. 反射
-在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
-反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+一. 反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Cl">
 <meta property="og:image" content="http://i1.piimg.com/567571/07a33b03c77fa8a6.png">
-<meta property="og:updated_time" content="2016-10-10T13:40:36.000Z">
+<meta property="og:updated_time" content="2016-10-11T05:19:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java反射和代理">
 <meta name="twitter:description" content="今天就来谈一谈java的反射和代理
-###一. 反射
-在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
-反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以">
+一. 反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Cl">
 <meta name="twitter:image" content="http://i1.piimg.com/567571/07a33b03c77fa8a6.png">
     
 
@@ -172,8 +169,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>今天就来谈一谈java的反射和代理</p>
-<p>###一. 反射</p>
-<p>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
+<h3 id="一-反射"><a href="#一-反射" class="headerlink" title="一. 反射"></a>一. 反射</h3><p>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
 <p>反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Class的结构信息：如构造函数，属性和方法等。我们可以通过这个元信息对象间接调用Class对象的功能。</p>
 <p>下面提供一个例子</p>
 <pre><code>public class User {
@@ -223,10 +219,8 @@ public String getUserName(){
 
 }
 }
-</code></pre><p>###二.代理</p>
-<p> 某些情况下，我们无法或者不希望直接对一个对象进行访问时，我们就会用到设计模式中的代理模式(如图)，通常情况下，为了保持行为的一致性，代理类和委托类拥有相同的实现接口,在使用委托类的地方都是可以用代理类来替换；代理类负责预处理消息，并转发消息给委托类、以及对委托类执行完后返回消息的处理；可以这样理解委托类负责过程的具体实现，代理类负责过程实现前后的处理.这样能有效的控制对委托类的直接访问，在设计上获得了更大的灵活性. 可以根据程序运行时，代理类是否存在将代理分为静态代理和动态代理<br> <img src="http://i1.piimg.com/567571/07a33b03c77fa8a6.png" alt=""></p>
-<p>####静态代理</p>
-<p>我们直接来看一个例子，我们先定义一个接口service。它的一个实现类Waiter输出“I’ll serve you”，为了让waiter更有礼貌，我们想让他在服务之前先跟客人打招呼“Hello”。</p>
+</code></pre><h3 id="二-代理"><a href="#二-代理" class="headerlink" title="二.代理"></a>二.代理</h3><p> 某些情况下，我们无法或者不希望直接对一个对象进行访问时，我们就会用到设计模式中的代理模式(如图)，通常情况下，为了保持行为的一致性，代理类和委托类拥有相同的实现接口,在使用委托类的地方都是可以用代理类来替换；代理类负责预处理消息，并转发消息给委托类、以及对委托类执行完后返回消息的处理；可以这样理解委托类负责过程的具体实现，代理类负责过程实现前后的处理.这样能有效的控制对委托类的直接访问，在设计上获得了更大的灵活性. 可以根据程序运行时，代理类是否存在将代理分为静态代理和动态代理<br> <img src="http://i1.piimg.com/567571/07a33b03c77fa8a6.png" alt=""></p>
+<h4 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h4><p>我们直接来看一个例子，我们先定义一个接口service。它的一个实现类Waiter输出“I’ll serve you”，为了让waiter更有礼貌，我们想让他在服务之前先跟客人打招呼“Hello”。</p>
 <pre><code>interface service {
 
     public void doService();
@@ -252,8 +246,7 @@ public class proxyWaiter implements service{
 
 }
 </code></pre><p>那么我们现在来看看如果用动态代理该如何呢</p>
-<p>####动态代理</p>
-<pre><code>import java.lang.reflect.Method;
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><pre><code>import java.lang.reflect.Method;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
@@ -280,7 +273,7 @@ public class proxyHandler implements InvocationHandler{
 }
 </code></pre><p>}</p>
 <p>首先我们实现InvocationHandler，复写invoke方法，然后调用Proxy.newInstance方法返回一个代理对象</p>
-<p>###三.总结<br> 动态代理只能支持接口的代理，这也是因为java的继承性本质所限制的，因为所有的动态代理类都继承了Proxy类，所以再也无法同时继承其他类.然而，我们不可否认动态代理设计的伟大之处，世上所有的事物都不可能完美.<br> 但是如果要实现类的动态代理，可以使用CGlib，它使用动态改变Class字节码文件来实现的，有兴趣的话自己可以查阅相关资料。<br><a href="https://github.com/cglib/cglib" target="_blank" rel="external">相关链接</a></p>
+<h3 id="三-总结"><a href="#三-总结" class="headerlink" title="三.总结"></a>三.总结</h3><p> 动态代理只能支持接口的代理，这也是因为java的继承性本质所限制的，因为所有的动态代理类都继承了Proxy类，所以再也无法同时继承其他类.然而，我们不可否认动态代理设计的伟大之处，世上所有的事物都不可能完美.<br> 但是如果要实现类的动态代理，可以使用CGlib，它使用动态改变Class字节码文件来实现的，有兴趣的话自己可以查阅相关资料。<br><a href="https://github.com/cglib/cglib" target="_blank" rel="external">相关链接</a></p>
 
         </div>
         <footer class="article-footer">
@@ -288,7 +281,7 @@ public class proxyHandler implements InvocationHandler{
 
 
 
-    <a data-url="http://yoursite.com/2016/10/10/java反射和代理/" data-id="ciu43wpsg0004qn5va22h6vmo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2016/10/10/java反射和代理/" data-id="ciu51gyhh0009ppdqj9pdzs3v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
