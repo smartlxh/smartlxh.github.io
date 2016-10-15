@@ -3,15 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: Docker | 八阿哥</title>
+    <title>docker-compose编排应用 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/tags/Docker/index.html">
+        <meta name="keywords" content="Docker" />
+    
+    <meta name="description" content="YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
+其它大部分指令都跟 docker run 中的类似。
+如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker-compose编排应用">
+<meta property="og:url" content="http://yoursite.com/2016/10/15/docker-compose编排应用/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
+其它大部分指令都跟 docker run 中的类似。
+如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在">
+<meta property="og:updated_time" content="2016-10-15T07:50:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="docker-compose编排应用">
+<meta name="twitter:description" content="YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
+其它大部分指令都跟 docker run 中的类似。
+如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在">
     
 
     
@@ -125,178 +137,254 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Docker</em>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-docker-compose编排应用" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        docker-compose编排应用
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/10/15/docker-compose编排应用/" class="article-date">
+    <time datetime="2016-10-15T07:44:19.000Z" itemprop="datePublished">2016-10-15</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/10/15/docker-compose编排应用/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/15/docker-compose编排应用/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="YAML-模板文件"><a href="#YAML-模板文件" class="headerlink" title="YAML 模板文件"></a>YAML 模板文件</h3><p>默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。</p>
+<p>其它大部分指令都跟 docker run 中的类似。</p>
+<p>如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在 docker-compose.yml 中再次设置。</p>
+<p>image</p>
+<p>指定为镜像名称或镜像 ID。如果镜像在本地不存在，Compose 将会尝试拉去这个镜像。</p>
+<p>例如：</p>
+<pre><code>image: ubuntu
+image: orchardup/postgresql
+image: a4bc65fd
+build
+</code></pre><p>指定 Dockerfile 所在文件夹的路径。 Compose 将会利用它自动构建这个镜像，然后使用这个镜像。</p>
+<pre><code>build: /path/to/build/dir
+command
+</code></pre><p>覆盖容器启动后默认执行的命令。</p>
+<pre><code>command: bundle exec thin -p 3000
+links
+</code></pre><p>链接到其它服务中的容器。使用服务名称（同时作为别名）或服务名称：服务别名 （SERVICE:ALIAS） 格式都可以。</p>
+<pre><code>links:
+- db
+- db:database
+- redis
+</code></pre><p>使用的别名将会自动在服务容器中的 /etc/hosts 里创建。例如：</p>
+<pre><code>172.17.2.186  db
+172.17.2.186  database
+172.17.2.187  redis
+</code></pre><p>相应的环境变量也将被创建。</p>
+<p>external_links</p>
+<p>链接到 docker-compose.yml 外部的容器，甚至 并非 Compose 管理的容器。参数格式跟 links 类似。</p>
+<pre><code>external_links:
+- redis_1
+- project_db_1:mysql
+- project_db_1:postgresql
+</code></pre><p>ports</p>
+<p>暴露端口信息。</p>
+<p>使用宿主：容器 （HOST:CONTAINER）格式或者仅仅指定容器的端口（宿主将会随机选择端口）都可以。</p>
+<pre><code>ports:
+- &quot;3000&quot;
+- &quot;8000:8000&quot;
+- &quot;49100:22&quot;
+- &quot;127.0.0.1:8001:8001&quot;
+</code></pre><p>注：当使用 HOST:CONTAINER 格式来映射端口时，如果你使用的容器端口小于 60 你可能会得到错误得结果，因为 YAML 将会解析 xx:yy 这种数字格式为 60 进制。所以建议采用字符串格式。</p>
+<p>expose</p>
+<p>暴露端口，但不映射到宿主机，只被连接的服务访问。</p>
+<p>仅可以指定内部端口为参数</p>
+<pre><code>expose:
+- &quot;3000&quot;
+- &quot;8000&quot;
+volumes
+</code></pre><p>卷挂载路径设置。可以设置宿主机路径 （HOST:CONTAINER） 或加上访问模式 （HOST:CONTAINER:ro）。</p>
+<pre><code>volumes:
+- /var/lib/mysql
+- cache/:/tmp/cache
+- ~/configs:/etc/configs/:ro
+</code></pre><p>volumes_from</p>
+<p>从另一个服务或容器挂载它的所有卷。</p>
+<pre><code>volumes_from:
+- service_name
+- container_name
+environment
+</code></pre><p>设置环境变量。你可以使用数组或字典两种格式。</p>
+<p>只给定名称的变量会自动获取它在 Compose 主机上的值，可以用来防止泄露不必要的数据。</p>
+<pre><code>environment:
+RACK_ENV: development
+SESSION_SECRET:
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-15T07:44:19.000Z" itemprop="datePublished">2016-10-15</time></p>
+environment:
+- RACK_ENV=development
+- SESSION_SECRET
+env_file
+</code></pre><p>从文件中获取环境变量，可以为单独的文件路径或列表。</p>
+<p>如果通过 docker-compose -f FILE 指定了模板文件，则 env_file 中路径会基于模板文件路径。</p>
+<p>如果有变量名称与 environment 指令冲突，则以后者为准。</p>
+<p>env_file: .env</p>
+<pre><code>env_file:
+- ./common.env
+- ./apps/web.env
+- /opt/secrets.env
+</code></pre><p>环境变量文件中每一行必须符合格式，支持 # 开头的注释行。</p>
+<h4 id="common-env-Set-Rails-Rack-environment"><a href="#common-env-Set-Rails-Rack-environment" class="headerlink" title="common.env: Set Rails/Rack environment"></a>common.env: Set Rails/Rack environment</h4><pre><code>RACK_ENV=development
+extends
+</code></pre><p>基于已有的服务进行扩展。例如我们已经有了一个 webapp 服务，模板文件为 common.yml。</p>
+<h4 id="common-yml"><a href="#common-yml" class="headerlink" title="common.yml"></a>common.yml</h4><pre><code>webapp:
+build: ./webapp
+environment:
+  - DEBUG=false
+  - SEND_EMAILS=false
+</code></pre><p>编写一个新的 development.yml 文件，使用 common.yml 中的 webapp 服务进行扩展。</p>
+<h4 id="development-yml"><a href="#development-yml" class="headerlink" title="development.yml"></a>development.yml</h4><p>  web:<br>    extends:<br>      file: common.yml<br>      service: webapp<br>      ports:</p>
+<pre><code>- &quot;8000:8000&quot;
+links:
+- db
+environment:
+- DEBUG=true
+</code></pre><p>  db:<br>      image: postgres<br>后者会自动继承 common.yml 中的 webapp 服务及相关环节变量。</p>
+<p>net</p>
+<p>设置网络模式。使用和 docker client 的 –net 参数一样的值。</p>
+<pre><code>net: &quot;bridge&quot;
+net: &quot;none&quot;
+net: &quot;container:[name or id]&quot;
+net: &quot;host&quot;
+pid
+</code></pre><p>跟主机系统共享进程命名空间。打开该选项的容器可以相互通过进程 ID 来访问和操作。</p>
+<pre><code>pid: &quot;host&quot;
+dns
+</code></pre>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/15/docker-compose编排应用/">docker-compose编排应用</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
-其它大部分指令都跟 docker run 中的类似。
-如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在 
-        </p>
+
+
+    <a data-url="http://yoursite.com/2016/10/15/docker-compose编排应用/" data-id="ciuawlu6x00037f5vezsvmf8v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/15/Dockfile构建镜像/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bqimg.com/567571/2856a10da5275a89.jpg)" alt="Dockfile构建镜像" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/15/Dockfile构建镜像/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2016/10/15/docker-compose编排应用/" data-title="docker-compose编排应用" data-url="http://yoursite.com/2016/10/15/docker-compose编排应用/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-15T06:36:42.000Z" itemprop="datePublished">2016-10-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/15/Dockfile构建镜像/">Dockfile构建镜像</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            原文链接
-Dockfile是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的image
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/08/23/docker/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://docs.docker.com/engine/article-img/engine-components-flow.png)" alt="docker" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/23/docker/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-23T10:06:19.000Z" itemprop="datePublished">2016-08-23</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/23/docker/">docker</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            最近学习了一下dockr的相关技术，在此作一个总结
-一. Docker Engine组成
-它由三部分组成，分别是
- 1.  server－－一个运行在主机上的守护进程
- 2.  REST API －－－提供客户端和server共同的接口
- 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
-
-二. 基本名词概念
-1. Docker i
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -348,6 +436,19 @@ Dockfile是一种被Docker程序解释的脚本，Dockerfile由一条一条的�
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/15/Dockfile构建镜像/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Dockfile构建镜像</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
