@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/8 | 八阿哥</title>
+    <title>java序列化多个对象 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/archives/2016/08/index.html">
+        <meta name="keywords" content="Java" />
+    
+    <meta name="description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
+
+继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java序列化多个对象">
+<meta property="og:url" content="http://yoursite.com/2016/10/22/java序列化多个对象/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
+
+继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
+<meta property="og:image" content="http://p1.bqimg.com/567571/f48e43ea77e811b3.png">
+<meta property="og:updated_time" content="2016-10-22T13:11:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="java序列化多个对象">
+<meta name="twitter:description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
+
+继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
+<meta name="twitter:image" content="http://p1.bqimg.com/567571/f48e43ea77e811b3.png">
     
 
     
@@ -125,238 +139,186 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/8
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-java序列化多个对象" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        java序列化多个对象
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/10/22/java序列化多个对象/" class="article-date">
+    <time datetime="2016-10-22T11:41:05.000Z" itemprop="datePublished">2016-10-22</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/08/30/Store/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/e963008cdb5e0c06.jpg)" alt="无法登录到apple Store" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/30/Store/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种</p>
+<ol>
+<li><p>继承ObjectOututStream，复写writeStreamHeader()方法<br>然后在写程序的时候，要判断文件是否存在，若不存，则使用ObjectOutputstream类进行读写，若已经存在，则无需在添加header，所以采用ObjectOutputStream的子类</p>
+<pre><code>public class NewObjectOutputStream extends ObjectOurputStream{
+    public void writeStreamHeader(){
+    //制空
+}
+</code></pre></li>
+<li><p>在写文件是，使用FileChannel类截断header的4个字节</p>
+<pre><code>public boolean writeToFile(Items items){
+    try{
+        File file = new File(&quot;./data.ser&quot;);
+        if(file.exists()){
+        boolean isexist=true;
+        FileOutputStream fo=new     FileOutputStream(file,true);
+        ObjectOutputStream oos = new ObjectOutputStream(fo);
+    long pos=0;
+        if(isexist){
+            System.out.println(fo.getChannel().position());
+        pos=fo.getChannel().position()-4;
 
-    
-</a>
+            System.out.println(pos+&quot; &quot;+fo.getChannel().size());
+        fo.getChannel().truncate(pos);
 
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-30T09:02:47.000Z" itemprop="datePublished">2016-08-30</time></p>
+    }
+    oos.writeObject(items);//进行序列化
+    return true;
+}else{//文件不存在
+    file.createNewFile();
+    FileOutputStream fo=new FileOutputStream(file);
+    ObjectOutputStream oos = new ObjectOutputStream(fo);
+    oos.writeObject(items);//进行序列
+    return true;
+}
+</code></pre></li>
+</ol>
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/30/Store/">无法登录到apple Store</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            这两天不知道为什么无法登录到Itune Store 和Apple Store，一直抱 action can not conplete .google 了一番。几个命令就解决啦。
-sudo mkdir -p /Users/Shared
-sudo chown root:wheel /Users/Shared
-sudo chmod -R 1777 /Users/Shared
 
-        </p>
+
+    <a data-url="http://yoursite.com/2016/10/22/java序列化多个对象/" data-id="ciul859hm000ejk5v6e4pk16k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/08/23/docker/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://docs.docker.com/engine/article-img/engine-components-flow.png)" alt="docker" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/23/docker/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2016/10/22/java序列化多个对象/" data-title="java序列化多个对象" data-url="http://yoursite.com/2016/10/22/java序列化多个对象/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-23T10:06:19.000Z" itemprop="datePublished">2016-08-23</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/23/docker/">docker</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            最近学习了一下dockr的相关技术，在此作一个总结
-一. Docker Engine组成
-它由三部分组成，分别是
- 1.  server－－一个运行在主机上的守护进程
- 2.  REST API －－－提供客户端和server共同的接口
- 3. CLI(command line interface)－－－客户端，可以接受用户的指令然后和server通信
-
-二. 基本名词概念
-1. Docker i
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/08/15/日计月累/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww2.sinaimg.cn/large/74311666jw1f7d82svyedj20a1064q32.jpg)" alt="日计月累" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/15/日计月累/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-15T07:32:39.000Z" itemprop="datePublished">2016-08-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/15/日计月累/">日计月累</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-memset函数的使用
-
-memset(start,value,size)start参数为起始地址，value为初始化的值，size为数组大小，一般用sizeof函数确定
-
-string.substr(start，length)函数的使用
-
-矩形相交面积的计算
- 将矩形用一对点表示（minx，maxx）（maxy，miny） 那么两个矩形rect1{(minx1,miny1)(maxx1, m
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/08/14/mongodb/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/69e2326d397483d0.jpg)" alt="mongodb" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/14/mongodb/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-14T06:56:19.000Z" itemprop="datePublished">2016-08-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/14/mongodb/">mongodb</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-今天服务器上的mongodb数据库突然间崩了，同学告诉我，数据插不上去。于是我便ssh到服务器上去查看，起初我查看了一下端口的监听情况，
-netstat -nlp | grep 40020
-（我建的数据库在40020端口），发现确实数据库确实工作在40020端口。然后我又本地连接来测试一下    
-mongo --port 40020
-发现本地连接一点问题都没有，增删改查都是可以操作的。这下我一
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -408,6 +370,19 @@ mongo --port 40020
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/21/Flume学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Flume学习笔记</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
