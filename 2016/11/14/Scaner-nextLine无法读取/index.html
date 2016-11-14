@@ -3,29 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>java序列化多个对象 | 八阿哥</title>
+    <title>Scaner.nextLine无法读取 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Java" />
     
-    <meta name="description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
-
-继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
+    <meta name="description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
+nextInt()方法在扫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java序列化多个对象">
-<meta property="og:url" content="http://yoursite.com/2016/10/22/java序列化多个对象/index.html">
+<meta property="og:title" content="Scaner.nextLine无法读取">
+<meta property="og:url" content="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/index.html">
 <meta property="og:site_name" content="八阿哥">
-<meta property="og:description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
-
-继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
-<meta property="og:image" content="http://p1.bqimg.com/567571/f48e43ea77e811b3.png">
-<meta property="og:updated_time" content="2016-10-22T13:11:17.000Z">
+<meta property="og:description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
+nextInt()方法在扫">
+<meta property="og:image" content="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg">
+<meta property="og:updated_time" content="2016-11-14T11:31:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java序列化多个对象">
-<meta name="twitter:description" content="今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
-
-继承ObjectOututStream，复写writeStreamHeader()方法然后在写程">
-<meta name="twitter:image" content="http://p1.bqimg.com/567571/f48e43ea77e811b3.png">
+<meta name="twitter:title" content="Scaner.nextLine无法读取">
+<meta name="twitter:description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
+nextInt()方法在扫">
+<meta name="twitter:image" content="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg">
     
 
     
@@ -143,14 +143,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-java序列化多个对象" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Scaner-nextLine无法读取" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        java序列化多个对象
+        Scaner.nextLine无法读取
         </h1>
     
 
@@ -158,8 +158,8 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2016/10/22/java序列化多个对象/" class="article-date">
-    <time datetime="2016-10-22T11:41:05.000Z" itemprop="datePublished">2016-10-22</time>
+                <a href="/2016/11/14/Scaner-nextLine无法读取/" class="article-date">
+    <time datetime="2016-11-14T11:26:45.000Z" itemprop="datePublished">2016-11-14</time>
 </a>
                 
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -168,42 +168,11 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种</p>
-<ol>
-<li><p>继承ObjectOututStream，复写writeStreamHeader()方法<br>然后在写程序的时候，要判断文件是否存在，若不存，则使用ObjectOutputstream类进行读写，若已经存在，则无需在添加header，所以采用ObjectOutputStream的子类</p>
-<pre><code>public class NewObjectOutputStream extends ObjectOurputStream{
-    public void writeStreamHeader(){
-    //制空
-}
-</code></pre></li>
-<li><p>在写文件是，使用FileChannel类截断header的4个字节</p>
-<pre><code>public boolean writeToFile(Items items){
-    try{
-        File file = new File(&quot;./data.ser&quot;);
-        if(file.exists()){
-        boolean isexist=true;
-        FileOutputStream fo=new     FileOutputStream(file,true);
-        ObjectOutputStream oos = new ObjectOutputStream(fo);
-    long pos=0;
-        if(isexist){
-            System.out.println(fo.getChannel().position());
-        pos=fo.getChannel().position()-4;
-
-            System.out.println(pos+&quot; &quot;+fo.getChannel().size());
-        fo.getChannel().truncate(pos);
-
-    }
-    oos.writeObject(items);//进行序列化
-    return true;
-}else{//文件不存在
-    file.createNewFile();
-    FileOutputStream fo=new FileOutputStream(file);
-    ObjectOutputStream oos = new ObjectOutputStream(fo);
-    oos.writeObject(items);//进行序列
-    return true;
-}
-</code></pre></li>
-</ol>
+            <p>今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。<br><img src="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg" alt=""></p>
+<p>首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。</p>
+<p>nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。</p>
+<p>了解了这两个方法特性和区别，就知道了上边的代码究竟是怎么回事，以及知道了解决的方法。像是上边的代码nextInt()方法之后在缓冲区中留下了“\r”，然后nextLine()方法再去缓冲区找数据的时候首先看到了“\r”，然后就把这个“\r”扫描接收进来，并在缓冲区内清除掉。其实，nextLine()方法是执行过的，并没有不执行。</p>
+<p>所以可以在nextInt()方法后面多加一句nextLine()方法专门用来取出缓冲区中留下的空白符</p>
 
         </div>
         <footer class="article-footer">
@@ -211,7 +180,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://yoursite.com/2016/10/22/java序列化多个对象/" data-id="civhzpahc000kj05vagst3ofy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/" data-id="civhzpage0000j05vnewkex1g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -278,7 +247,7 @@ ga('send', 'pageview');
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/10/22/java序列化多个对象/" data-title="java序列化多个对象" data-url="http://yoursite.com/2016/10/22/java序列化多个对象/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/14/Scaner-nextLine无法读取/" data-title="Scaner.nextLine无法读取" data-url="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -374,20 +343,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2016/11/14/java不区分大小写替换/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            java不区分大小写替换
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2016/10/21/Flume学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/11/14/java不区分大小写替换/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Flume学习笔记</p>
+        <p class="article-nav-title">java不区分大小写替换</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
