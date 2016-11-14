@@ -9,22 +9,25 @@
         <meta name="keywords" content="Java" />
     
     <meta name="description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+
 首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
-nextInt()方法在扫">
+nextInt()方法在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scaner.nextLine无法读取">
 <meta property="og:url" content="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta property="og:description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+
 首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
-nextInt()方法在扫">
+nextInt()方法在">
 <meta property="og:image" content="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg">
-<meta property="og:updated_time" content="2016-11-14T11:31:20.000Z">
+<meta property="og:updated_time" content="2016-11-14T11:32:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scaner.nextLine无法读取">
 <meta name="twitter:description" content="今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
+
 首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
-nextInt()方法在扫">
+nextInt()方法在">
 <meta name="twitter:image" content="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg">
     
 
@@ -168,7 +171,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。<br><img src="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg" alt=""></p>
+            <p>今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。</p>
+<p><img src="http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg" alt=""></p>
 <p>首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。</p>
 <p>nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。</p>
 <p>了解了这两个方法特性和区别，就知道了上边的代码究竟是怎么回事，以及知道了解决的方法。像是上边的代码nextInt()方法之后在缓冲区中留下了“\r”，然后nextLine()方法再去缓冲区找数据的时候首先看到了“\r”，然后就把这个“\r”扫描接收进来，并在缓冲区内清除掉。其实，nextLine()方法是执行过的，并没有不执行。</p>
@@ -180,7 +184,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/" data-id="civhzpage0000j05vnewkex1g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/" data-id="civhzraq20001k65vtsom5zc9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
