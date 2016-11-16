@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016 | 八阿哥</title>
+    <title>二分查找 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+        <meta name="keywords" content="Algorithm" />
+    
+    <meta name="description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
+若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
+若Ka[Mid]，则更新区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="http://yoursite.com/2016/11/16/非有序数组的二分查找/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
+若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
+若Ka[Mid]，则更新区">
+<meta property="og:image" content="http://p1.bpimg.com/567571/c7c86ee77d303aa4.jpg">
+<meta property="og:updated_time" content="2016-11-16T14:42:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="二分查找">
+<meta name="twitter:description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
+若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
+若Ka[Mid]，则更新区">
+<meta name="twitter:image" content="http://p1.bpimg.com/567571/c7c86ee77d303aa4.jpg">
     
 
     
@@ -125,530 +139,224 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-非有序数组的二分查找" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        二分查找
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/11/16/非有序数组的二分查找/" class="article-date">
+    <time datetime="2016-11-16T14:28:18.000Z" itemprop="datePublished">2016-11-16</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/11/16/非有序数组的二分查找/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bpimg.com/567571/c7c86ee77d303aa4.jpg)" alt="二分查找" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/16/非有序数组的二分查找/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="有序数组的二分查找"><a href="#有序数组的二分查找" class="headerlink" title="有序数组的二分查找"></a>有序数组的二分查找</h3><p>有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。<br>我们随机从数组中选取一个数a[i]，对于需要查找的数K：</p>
+<p>若K<a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)； 若k="a[i]，则i就是我们要找的答案；">a[i]，则K的下标一定不小于等于K。<br>利用上面这个性质，我们可以得到这样一个算法：<br>假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。</a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)；></p>
+<p>若K<a[mid]，则更新区间为 r="Mid-1" 若k="a[Mid]，则Mid为所查询值">a[Mid]，则更新区间为 L=Mid+1</a[mid]，则更新区间为></p>
+<p>在任意时刻出现L&gt;R时判定K不存在于该数组。<br>这便是最简单，最基本的二分查找。时间复杂度为O(logN)</p>
+<h3 id="无序数组的二分查找"><a href="#无序数组的二分查找" class="headerlink" title="无序数组的二分查找"></a>无序数组的二分查找</h3><p>数组长度为N，保证没有重复的数。<br>一个简单有效的方法是对数组进行排序后使用有序数组的二分查找，时间复杂度为O(NlogN)。</p>
+<p>观察我们第一个算法，对于选定的Mid。如果数组满足a[L..Mid-1]&lt;a[Mid]且a[Mid]&lt;a[Mid+1..R]，即可进行区间的分割，从而使得区间范围减半。<br>既然如此，那么我们可以通过一次遍历交换将比a[Mid]小的数放到a[Mid]左边，比a[Mid]大的数放到a[Mid]右边。(这里使用了快速排序的思想)<br>其他部分仍然同有序数组的二分查找相同，但由于每一次都遍历了整个数组，所以时间复杂度变为：O(N/2^0+N/2^1+N/2^2+1)=O(2N)</p>
+<h3 id="以hihocoder-1128为例"><a href="#以hihocoder-1128为例" class="headerlink" title="以hihocoder 1128为例"></a>以hihocoder 1128为例</h3><p>Nettle最近在玩《艦これ》，因此Nettle收集了很多很多的船(这里我们假设Nettle氪了很多金，开了无数个船位)。去除掉重复的船之后，还剩下N(1≤N≤1,000,000)种不同的船。每一艘船有一个稀有值，任意两艘船的稀有值都不相同，稀有值越小的船越稀有，价值也就越高。<br>Nettle现在通过大建又造出了一艘船，他想知道这艘船是不是重复的。如果是重复的，那么这艘船在Nettle所有的船里面稀有值排多少位。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>第1行：2个整数N,K。N表示数组长度，K表示需要查找的数；<br>第2行：N个整数，表示a[1..N]，保证不会出现重复的数，1≤a[i]≤2,000,000,000。</p>
+<h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>第1行：一个整数t，表示K在数组中是第t小的数，若K不在数组中，输出-1。</p>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;    
+#define MAX 10000
+int n,k;
+int a[MAX];
+int mark=0;
+void swap(int left,int right){
+  int temp = a[left];
+  a[left] = a[right];
+  a[right] = temp;
+}
 
-    
-</a>
+int parti(int left,int right){
+  int l = left;
+  int r = right+1;
+  do{
+do l++; while(a[l] &lt; a[left]);
+do r--; while(a[r] &gt; a[left]);
+if(l&lt;r){
+  swap(l,r);
+}
+  }while(l&lt;r);
 
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-11-16T14:28:18.000Z" itemprop="datePublished">2016-11-16</time></p>
+  swap(left,r);
+  return r;
+}
+
+int find(int left,int right){
+  if(left &lt; right){
+    int middle = parti(left,right);
+
+if(a[middle] == k) {mark=1;return middle-left+1;}
+else{
+  if(k &gt; a[middle]) {return find(middle+1,right)+middle-left+1;}
+  else {return find(left,middle-1);}
+}
+  }
+  else if(left == right){
+
+if(a[left]== k){
+  mark =1;
+  return 1;
+}
+else return 0;
+
+  }
+  else return 0;
+}
+
+
+int main(){
+
+
+  cin&gt;&gt;n&gt;&gt;k;
+  for(int i=1;i&lt;=n;i++){
+    cin&gt;&gt;a[i];
+  }
+  // cout&lt;&lt;k;
+
+  int ans = find(1,n);
+  if(mark ==0 ) ans=-1;
+  cout&lt;&lt;ans&lt;&lt;endl;
+
+  return 0;
+}
+</code></pre>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/16/非有序数组的二分查找/">二分查找</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            有序数组的二分查找有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
-若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
-若Ka[Mid]，则更新区
-        </p>
+
+
+    <a data-url="http://yoursite.com/2016/11/16/非有序数组的二分查找/" data-id="civl1eyap000vrfdqybvfg01m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/11/14/Scaner-nextLine无法读取/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bpimg.com/567571/f2be3ec27b99b4c0.jpg)" alt="Scaner.nextLine无法读取" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/14/Scaner-nextLine无法读取/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2016/11/16/非有序数组的二分查找/" data-title="二分查找" data-url="http://yoursite.com/2016/11/16/非有序数组的二分查找/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-11-14T11:26:45.000Z" itemprop="datePublished">2016-11-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/14/Scaner-nextLine无法读取/">Scaner.nextLine无法读取</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
-
-首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
-nextInt()方法在
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/11/14/java不区分大小写替换/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i1.piimg.com/567571/8f68ddef804f1b8a.jpg)" alt="java不区分大小写替换" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/14/java不区分大小写替换/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-11-14T07:23:46.000Z" itemprop="datePublished">2016-11-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/14/java不区分大小写替换/">java不区分大小写替换</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-public class ReplaceS {
-
-public static void main(String[] args) {
-
-//如果区分大小写，就是把AabcAaB中的a替换成G
-
-//如果不去分大小写，就是把AabcAaB中的a和A都替换成G
-
-replaceString(&quot;AabcAaB&quot;,&quot;a&quot;,&quot;G&quot;);
-
-repla
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/22/java序列化多个对象/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bqimg.com/567571/f48e43ea77e811b3.png)" alt="java序列化多个对象" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/22/java序列化多个对象/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-22T11:41:05.000Z" itemprop="datePublished">2016-10-22</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/22/java序列化多个对象/">java序列化多个对象</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
-
-继承ObjectOututStream，复写writeStreamHeader()方法然后在写程
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/21/Flume学习笔记/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i1.piimg.com/567571/5a8d60c806eb0151.png)" alt="Flume学习笔记" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/21/Flume学习笔记/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-21T12:50:57.000Z" itemprop="datePublished">2016-10-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/21/Flume学习笔记/">Flume学习笔记</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            最近要写一个日志手机系统，打算采用flume+kafka+storm的技术栈所以先学习了一下Flume
-Flume是apache下的一款开源的日志收集系统。它支持分布式，和高吞吐率。但是Flume不仅仅可以用来收集日志，它也常被用来传输消息，比如媒体流，email消息等等。
-基本概念| Agent 使用JVM运行Flume，每台机器一个agnet || Source | 从服务器上监测和收集日志信
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/15/docker-compose编排应用/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bqimg.com/567571/ad8b2c8a5c469d46.png)" alt="docker-compose编排应用" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/15/docker-compose编排应用/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-15T07:44:19.000Z" itemprop="datePublished">2016-10-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/15/docker-compose编排应用/">docker-compose编排应用</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
-其它大部分指令都跟 docker run 中的类似。
-如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/15/Dockfile构建镜像/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://p1.bqimg.com/567571/2856a10da5275a89.jpg)" alt="Dockfile构建镜像" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/15/Dockfile构建镜像/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-15T06:36:42.000Z" itemprop="datePublished">2016-10-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/15/Dockfile构建镜像/">Dockfile构建镜像</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            原文链接
-Dockfile是一种被Docker程序解释的脚本，Dockerfile由一条一条的指令组成，每条指令对应Linux下面的一条命令。Docker程序将这些Dockerfile指令翻译真正的Linux命令。Dockerfile有自己书写格式和支持的命令，Docker程序解决这些命令间的依赖关系，类似于Makefile。Docker程序将读取Dockerfile，根据指令生成定制的image
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/10/java反射和代理/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i1.piimg.com/567571/07a33b03c77fa8a6.png)" alt="java反射和代理" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/10/java反射和代理/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-10T13:01:50.000Z" itemprop="datePublished">2016-10-10</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/10/java反射和代理/">java反射和代理</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天就来谈一谈java的反射和代理
-一. 反射在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
-反射是通过程序化的方式间接对Class进行操作，Class文件有类装载器装载后，在JVM中将形成一份描述Class结构的元信息对象，通过该元信息对象就可以获知Cl
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/09/21/Maven入门/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i1.piimg.com/567571/f6d6250a1b16ad32.jpg)" alt="Maven入门" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/09/21/Maven入门/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-09-21T08:24:33.000Z" itemprop="datePublished">2016-09-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/21/Maven入门/">Maven入门</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Maven简单介绍它是一个跨平台的异常强大的构建工具，能 够帮我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。我们不需要也不应该一遍又一遍地输入命令，一次又一次地点击鼠标，我们要做的是 使用Maven配置好项目，然后输入简单的命令(如mvn clean install)，Maven会帮我们处理那些烦琐的任务。
-简单使用   1.编写POM
-   Maven项目的核心是pom.xm
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/08/30/Store/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/e963008cdb5e0c06.jpg)" alt="无法登录到apple Store" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/08/30/Store/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-08-30T09:02:47.000Z" itemprop="datePublished">2016-08-30</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/30/Store/">无法登录到apple Store</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            这两天不知道为什么无法登录到Itune Store 和Apple Store，一直抱 action can not conplete .google 了一番。几个命令就解决啦。
-sudo mkdir -p /Users/Shared
-sudo chown root:wheel /Users/Shared
-sudo chmod -R 1777 /Users/Shared
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 2</span>
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/">&raquo;</a>
-    </nav>
-
+    </section>
 
                         </div>
                     </section>
@@ -700,6 +408,19 @@ sudo chmod -R 1777 /Users/Shared
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/11/14/Scaner-nextLine无法读取/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Scaner.nextLine无法读取</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
