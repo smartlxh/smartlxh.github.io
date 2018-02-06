@@ -3,50 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>迭代器模式 | 八阿哥</title>
+    <title>level traversal | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Design Pattern" />
+        <meta name="keywords" content="Algorithm" />
     
-    <meta name="description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
+    <meta name="description" content="A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.Input
+Each input file contains one test case. Each case starts with a line conta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迭代器模式">
-<meta property="og:url" content="http://yoursite.com/2017/01/30/迭代器模式/index.html">
+<meta property="og:title" content="level traversal">
+<meta property="og:url" content="http://yoursite.com/2018/01/21/level-traversal/index.html">
 <meta property="og:site_name" content="八阿哥">
-<meta property="og:description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
-<meta property="og:image" content="http://otraqunhe.bkt.clouddn.com/145c62NFA8.png">
-<meta property="og:updated_time" content="2017-07-27T16:18:37.000Z">
+<meta property="og:description" content="A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.Input
+Each input file contains one test case. Each case starts with a line conta">
+<meta property="og:updated_time" content="2018-02-06T14:10:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="迭代器模式">
-<meta name="twitter:description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
-<meta name="twitter:image" content="http://otraqunhe.bkt.clouddn.com/145c62NFA8.png">
+<meta name="twitter:title" content="level traversal">
+<meta name="twitter:description" content="A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.Input
+Each input file contains one test case. Each case starts with a line conta">
     
 
     
@@ -164,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-迭代器模式" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-level-traversal" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        迭代器模式
+        level traversal
         </h1>
     
 
@@ -179,74 +153,94 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/30/迭代器模式/" class="article-date">
-    <time datetime="2017-01-30T05:51:54.000Z" itemprop="datePublished">2017-01-30</time>
+                <a href="/2018/01/21/level-traversal/" class="article-date">
+    <time datetime="2018-01-21T01:33:00.000Z" itemprop="datePublished">2018-01-21</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示</p>
-<h3 id="层次结构-以数组为例"><a href="#层次结构-以数组为例" class="headerlink" title="层次结构(以数组为例)"></a>层次结构(以数组为例)</h3><pre><code>public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
+            <p>A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.<br>Input</p>
+<p>Each input file contains one test case. Each case starts with a line containing 0 &lt; N &lt; 100, the number of nodes in a tree, and M (&lt; N), the number of non-leaf nodes. Then M lines follow, each in the format:</p>
+<p>ID K ID[1] ID[2] … ID[K]<br>where ID is a two-digit number representing a given non-leaf node, K is the number of its children, followed by a sequence of two-digit ID’s of its children. For the sake of simplicity, let us fix the root ID to be 01.<br>Output</p>
+<p>For each test case, you are supposed to count those family members who have no child for every seniority level starting from the root. The numbers must be printed in a line, separated by a space, and there must be no extra space at the end of each line.</p>
+<p>The sample case represents a tree with only 2 nodes, where 01 is the root and 02 is its only child. Hence on the root 01 level, there is 0 leaf node; and on the next level, there is 1 leaf node. Then we should output “0 1” in a line.</p>
+<pre><code>Sample Input
+2 1
+01 1 02
+Sample Output
+0 1
 
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public itertorDemo(int data[]){
-        this.data =data;
-    }
-    public boolean hasNext(){
-        if(position &gt;= data.length||items[position] == null){
-            return false;
-        else{
-            return true;
-        }
-    }
 
-    public Object next( ){
-        return data[position];
-        position = position + 1;
-    }
 
-public class DataClass{
-        private int data[100];
-        public Iterator createIterator(
-            return new itertorDemo(data);
-        }
-    }
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+using namespace std;
+#define INF 100000
+int levels[100];
+vector&lt;int&gt; child[100];
 
-public class testIterator{
-    public statci void main(String []args){
+int main(int argc, const char * argv[]){
 
-        DataClass data = new Dataclass();
-        Iterator iterator = data.createIterator();
-        while(iterator.hasNext()){
-            System.out.pritnln(iterator.next());
-        }
+int n,m;
+cin&gt;&gt;n&gt;&gt;m;
+
+for(int i  = 0;i &lt; m;i++){
+    int id,k;
+    cin&gt;&gt;id&gt;&gt;k;
+    for(int j=0;j&lt;k;j++){
+        int childId;
+        cin&gt;&gt;childId;
+        child[id].push_back(childId);
+
     }
 }
-</code></pre><h5 id="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"><a href="#注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中" class="headerlink" title="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"></a>注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中</h5><p>遵循单一责任编码原则，即一个类中最好只有一个可能变的地方</p>
-<h4 id="JAVA语法糖"><a href="#JAVA语法糖" class="headerlink" title="JAVA语法糖"></a>JAVA语法糖</h4><pre><code>for（Object obj: collectioon){
-        ...    
-}
-这是java 1.5以后提供的java语法糖，如果你反编译一下会发现就是使用的Iterator
-</code></pre><h3 id="Composite-Pattern"><a href="#Composite-Pattern" class="headerlink" title="Composite Pattern"></a>Composite Pattern</h3><p>定义：<br>允许你将对象组合成树形结构来表现“整体／部分”层次结构，组合能让客户以一致的方式处理个别对象以及对象组合</p>
-<h4 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h4><p>Componet：有两种，composites 和leaf elements<br>Composite：Composite 包含companents，包含一些孩子的集合，这些孩子可能是其他Composite也可能是叶子节点<br>Trees：以这种数据结构组织程序，就组成了一棵树</p>
-<p>截图演示结构</p>
 
+queue&lt;int&gt; q;
+
+int lastNode=1;
+int newLastNode = 1;
+int level = 0;
+q.push(1);
+while(!q.empty()){
+    int temp = q.front();
+    q.pop();
+    int count = child[temp].size();
+    if(count == 0) levels[level]++;
+
+    for(int i = 0;i &lt; count;i++){
+        q.push(child[temp][i]);
+        newLastNode = child[temp][i];
+    }
+
+    if(temp == lastNode) {
+        lastNode = newLastNode;
+        level ++;
+    }
+
+
+}
+
+for(int i = 0;i&lt;level;i++){
+    cout&lt;&lt;levels[i];
+    if(i != level-1) cout&lt;&lt;&quot; &quot;;
+}
+
+
+return 0;
+}
+</code></pre>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2017/01/30/迭代器模式/" data-id="cjdbq37ke001b6l5vda6xlpnu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/01/21/level-traversal/" data-id="cjdbq37jp000l6l5vy3rsolt6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -313,7 +307,7 @@ public class testIterator{
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2017/01/30/迭代器模式/" data-title="迭代器模式" data-url="http://yoursite.com/2017/01/30/迭代器模式/"></div>
+    <div class="ds-thread" data-thread-key="2018/01/21/level-traversal/" data-title="level traversal" data-url="http://yoursite.com/2018/01/21/level-traversal/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -409,20 +403,10 @@ public class testIterator{
         
 <nav id="article-nav">
     
-        <a href="/2017/01/31/状态模式/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            状态模式
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/29/模版方法模式/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/01/18/Dijkstra/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">模版方法模式</p>
+        <p class="article-nav-title">Dijkstra</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     

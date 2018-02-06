@@ -3,50 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>迭代器模式 | 八阿哥</title>
+    <title>Dijkstra | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Design Pattern" />
+        <meta name="keywords" content="Algorithm" />
     
-    <meta name="description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
+    <meta name="description" content="pat 1003
+As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迭代器模式">
-<meta property="og:url" content="http://yoursite.com/2017/01/30/迭代器模式/index.html">
+<meta property="og:title" content="Dijkstra">
+<meta property="og:url" content="http://yoursite.com/2018/01/18/Dijkstra/index.html">
 <meta property="og:site_name" content="八阿哥">
-<meta property="og:description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
-<meta property="og:image" content="http://otraqunhe.bkt.clouddn.com/145c62NFA8.png">
-<meta property="og:updated_time" content="2017-07-27T16:18:37.000Z">
+<meta property="og:description" content="pat 1003
+As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city">
+<meta property="og:updated_time" content="2018-01-18T06:23:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="迭代器模式">
-<meta name="twitter:description" content="定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
-}
-
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public ite">
-<meta name="twitter:image" content="http://otraqunhe.bkt.clouddn.com/145c62NFA8.png">
+<meta name="twitter:title" content="Dijkstra">
+<meta name="twitter:description" content="pat 1003
+As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city">
     
 
     
@@ -164,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-迭代器模式" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Dijkstra" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        迭代器模式
+        Dijkstra
         </h1>
     
 
@@ -179,66 +153,137 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/30/迭代器模式/" class="article-date">
-    <time datetime="2017-01-30T05:51:54.000Z" itemprop="datePublished">2017-01-30</time>
+                <a href="/2018/01/18/Dijkstra/" class="article-date">
+    <time datetime="2018-01-18T06:00:22.000Z" itemprop="datePublished">2018-01-18</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示</p>
-<h3 id="层次结构-以数组为例"><a href="#层次结构-以数组为例" class="headerlink" title="层次结构(以数组为例)"></a>层次结构(以数组为例)</h3><pre><code>public interface Iterator {
-    boolean hasnext（）； 
-    Object next（）；
+            <p>pat 1003</p>
+<p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<p>Input</p>
+<p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (&lt;= 500) - the number of cities (and the cities are numbered from 0 to N-1), M - the number of roads, C1 and C2 - the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c1, c2 and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C1 to C2.</p>
+<p>Output</p>
+<p>For each test case, print in one line two numbers: the number of different shortest paths between C1 and C2, and the maximum amount of rescue teams you can possibly gather.<br>All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<pre><code>Sample Input
+5 6 0 2
+1 2 1 5 3
+0 1 1
+0 2 2
+0 3 1
+1 2 1
+2 4 1
+3 4 1
+Sample Output
+2 4
+</code></pre><p>代码实现</p>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+#define INF 100000
+
+int Graphy[500][500];
+int dist[500];
+bool visit[500];
+int num[500];
+
+int ans=0;
+int maxSum;
+void Dijkstra(int s,int num_nodes){
+
+
+//init
+for(int i =0 ;i &lt; num_nodes;i++){
+    if(Graphy[s][i] &gt; 0) dist[i] = Graphy[s][i];
+    else dist[i] = false;
 }
 
-public class iteratorDemo{
-   int data[];
-   int pisistion = 0;
-    public itertorDemo(int data[]){
-        this.data =data;
-    }
-    public boolean hasNext(){
-        if(position &gt;= data.length||items[position] == null){
-            return false;
-        else{
-            return true;
+visit[s] = true;
+dist[s] = 0;
+
+// circulate number
+
+for(int i = 1;i &lt; num_nodes;i++){
+
+    int min = INF;
+    int u;
+
+    for(int i = 0;i&lt;num_nodes;i++){
+        if(!visit[i] &amp;&amp; dist[i] &gt; min){
+            min = dist[i];
+            u = i;
         }
     }
 
-    public Object next( ){
-        return data[position];
-        position = position + 1;
-    }
+    visit[u] = true;
 
-public class DataClass{
-        private int data[100];
-        public Iterator createIterator(
-            return new itertorDemo(data);
+    //update the dist array
+
+    for(int i = 0;i&lt;num_nodes;i++){
+        int newDist = dist[u] + Graphy[u][i];
+        if(!visit[true] &amp;&amp; Graphy[s][i] &gt;0 &amp;&amp; newDist &lt; dist[i]) dist[i] = newDist;// cautious Graphy[s][i] &gt; 0 condition ,because Graphy[s][i] = 0 means that there is a road between city s and i
+    }
+}
+
+}
+
+
+void dfs(int num_nodes,int src,int dest,int     curdist,int maxnum){
+
+    visit[src] = true;
+    if(src == dest){
+        if(curdist == dist[dest]){
+            ans++;
+            if(maxnum &gt; maxSum) maxSum = maxnum;
+            return ;
         }
     }
 
-public class testIterator{
-    public statci void main(String []args){
+    if(curdist &gt; dist[dest]) return; //剪枝
 
-        DataClass data = new Dataclass();
-        Iterator iterator = data.createIterator();
-        while(iterator.hasNext()){
-            System.out.pritnln(iterator.next());
-        }
+    for(int i = 0;i&lt;num_nodes;i++){
+        if(!visit[i] &amp;&amp; Graphy[src][i] &gt; 0) {
+            dfs(num_nodes,i,dest,Graphy[src][i]+curdist,maxnum+num[i]);
+                visit[i] = false;
     }
+    }
+   }
+
+
+int main(int argc, const char * argv[]){
+
+int n,m,c1,c2;
+cin&gt;&gt;n&gt;&gt;m&gt;&gt;c1&gt;&gt;c2;
+for( int i = 0;i&lt;n;i++){
+    cin&gt;&gt;num[i];
 }
-</code></pre><h5 id="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"><a href="#注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中" class="headerlink" title="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"></a>注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中</h5><p>遵循单一责任编码原则，即一个类中最好只有一个可能变的地方</p>
-<h4 id="JAVA语法糖"><a href="#JAVA语法糖" class="headerlink" title="JAVA语法糖"></a>JAVA语法糖</h4><pre><code>for（Object obj: collectioon){
-        ...    
+
+for(int i = 0;i &lt; m;i++){
+    int L,R,D;
+    cin&gt;&gt;L&gt;&gt;R&gt;&gt;D;
+    Graphy[L][R] = D;
+    Graphy[R][L] = D;
 }
-这是java 1.5以后提供的java语法糖，如果你反编译一下会发现就是使用的Iterator
-</code></pre><h3 id="Composite-Pattern"><a href="#Composite-Pattern" class="headerlink" title="Composite Pattern"></a>Composite Pattern</h3><p>定义：<br>允许你将对象组合成树形结构来表现“整体／部分”层次结构，组合能让客户以一致的方式处理个别对象以及对象组合</p>
-<h4 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h4><p>Componet：有两种，composites 和leaf elements<br>Composite：Composite 包含companents，包含一些孩子的集合，这些孩子可能是其他Composite也可能是叶子节点<br>Trees：以这种数据结构组织程序，就组成了一棵树</p>
-<p>截图演示结构</p>
+Graphy[c1][c1] = 0;
+
+Dijkstra(c1, n);
+
+memset(visit,0,sizeof(visit));
+dfs(n,c1,c2,0,num[c1]);
+
+cout&lt;&lt;ans&lt;&lt;&quot; &quot;&lt;&lt;maxSum;
+
+
+return 0;
+
+
+
+}
+</code></pre><p>注意:Graphy数组 为零表示不连通</p>
 
         </div>
         <footer class="article-footer">
@@ -246,7 +291,7 @@ public class testIterator{
 
 
 
-    <a data-url="http://yoursite.com/2017/01/30/迭代器模式/" data-id="cjdbq37ke001b6l5vda6xlpnu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/01/18/Dijkstra/" data-id="cjdbq37iq00006l5vm4e9icu8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -313,7 +358,7 @@ public class testIterator{
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2017/01/30/迭代器模式/" data-title="迭代器模式" data-url="http://yoursite.com/2017/01/30/迭代器模式/"></div>
+    <div class="ds-thread" data-thread-key="2018/01/18/Dijkstra/" data-title="Dijkstra" data-url="http://yoursite.com/2018/01/18/Dijkstra/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -409,20 +454,20 @@ public class testIterator{
         
 <nav id="article-nav">
     
-        <a href="/2017/01/31/状态模式/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/01/21/level-traversal/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            状态模式
+            level traversal
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/01/29/模版方法模式/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/31/观察者模式/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">模版方法模式</p>
+        <p class="article-nav-title">观察者模式</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
