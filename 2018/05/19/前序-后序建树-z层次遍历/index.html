@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/5 | 八阿哥</title>
+    <title>前序-后序建树+z层次遍历 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="八阿哥">
-<meta property="og:url" content="http://yoursite.com/archives/2016/05/index.html">
+        <meta name="keywords" content="Algorithm" />
+    
+    <meta name="description" content="PAT 1127. ZigZagging on a Tree (30)-甲级Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder travers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前序-后序建树+z层次遍历">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/前序-后序建树-z层次遍历/index.html">
 <meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="PAT 1127. ZigZagging on a Tree (30)-甲级Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder travers">
+<meta property="og:updated_time" content="2018-05-19T13:46:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八阿哥">
+<meta name="twitter:title" content="前序-后序建树+z层次遍历">
+<meta name="twitter:description" content="PAT 1127. ZigZagging on a Tree (30)-甲级Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder travers">
     
 
     
@@ -125,181 +131,157 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/5
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-前序-后序建树-z层次遍历" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        前序-后序建树+z层次遍历
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="article-date">
+    <time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/05/31/Selenimu/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/38b74df68565a63d.jpg)" alt="Selenimu 实现截图" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/05/31/Selenimu/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>PAT 1127. ZigZagging on a Tree (30)-甲级<br>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple standard routine to print the numbers in level-order. However, if you think the problem is too simple, then you are too naive. This time you are supposed to print the numbers in “zigzagging order” — that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left. For example, for the following tree you must output: 1 11 5 8 17 12 20 15.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line gives a positive integer N (&lt;= 30), the total number of nodes in the binary tree. The second line gives the inorder sequence and the third line gives the postorder sequence. All the numbers in a line are separated by a space.</p>
+<p>Output Specification:</p>
+<p>For each test case, print the zigzagging sequence of the tree in a line. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.</p>
+<p>##注意<br>Z层次遍历使用两个栈，注意的是一个装入栈的时候先填右孩子然后填左孩子，另一个则相反，先填左孩子然后是右孩子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Sample Input:</div><div class="line">8</div><div class="line">12 11 20 17 1 15 8 5</div><div class="line">12 20 17 11 15 8 5 1</div><div class="line">Sample Output:</div><div class="line">1 11 5 8 17 12 20 15</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;stack&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int lef[1000];</div><div class="line">int righ[1000];</div><div class="line">int post[1000];</div><div class="line">int in[1000];</div><div class="line">int n;</div><div class="line">struct node &#123;</div><div class="line">    int val;</div><div class="line">    struct node *left,*right;</div><div class="line">    node()&#123;val=0;left=NULL;right=NULL;&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">typedef  struct node node;</div><div class="line"></div><div class="line">int createTree(int start1,int end1,int start2,int end2)&#123;</div><div class="line">    if(end1-start1==0) return in[start1];</div><div class="line">    int root = post[end2];</div><div class="line"></div><div class="line">    int temp=start1;</div><div class="line">    for(temp;temp&lt;=end1;temp++)&#123;</div><div class="line">        if(in[temp]==root)</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">    //cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">    int left = temp-start1;</div><div class="line">    int right = end1-temp;</div><div class="line">  //  cout&lt;&lt;left&lt;&lt;&quot; &quot;&lt;&lt;right&lt;&lt;endl;</div><div class="line">    if(left&gt;=1)&#123;</div><div class="line">      //  cout&lt;&lt;&quot;d&quot;&lt;&lt;start1&lt;&lt;&quot; &quot;&lt;&lt;temp-1&lt;&lt;&quot; &quot;&lt;&lt;start2&lt;&lt;&quot; &quot;&lt;&lt;start2+left-1&lt;&lt;endl;</div><div class="line">        lef[root]=createTree(start1,temp-1,start2,start2+left-1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(right&gt;=1)&#123;</div><div class="line">       // cout&lt;&lt;&quot;d&quot;&lt;&lt;temp+1&lt;&lt;&quot; &quot;&lt;&lt;end1&lt;&lt;&quot; &quot;&lt;&lt;end2-right&lt;&lt;&quot; &quot;&lt;&lt;end2-1&lt;&lt;endl;</div><div class="line"></div><div class="line">        righ[root]=createTree(temp+1,end1,end2-right,end2-1);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return root;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void preTravel(int x)&#123;</div><div class="line">    cout&lt;&lt;x&lt;&lt;&quot; &quot;;</div><div class="line">    if(x!=0)&#123;</div><div class="line"></div><div class="line">        if(lef[x]!=0) preTravel(lef[x]);</div><div class="line">        if(righ[x]!=0) preTravel(righ[x]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void levelTravel()&#123;</div><div class="line">    int flag=0;</div><div class="line">    stack&lt;int&gt; q;</div><div class="line">    stack&lt;int&gt; s;</div><div class="line">    s.push(post[n-1]);</div><div class="line"></div><div class="line">    while(!(s.empty()&amp;&amp;q.empty()))&#123;</div><div class="line"></div><div class="line">        if(!q.empty())&#123;</div><div class="line">            while(!q.empty())&#123;</div><div class="line">                int temp = q.top();</div><div class="line">                cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">                q.pop();</div><div class="line"></div><div class="line">                if(righ[temp]!=0)&#123;</div><div class="line">                    s.push(righ[temp]);</div><div class="line">                &#125;</div><div class="line">                if(lef[temp]!=0)&#123;</div><div class="line">                    s.push(lef[temp]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            while(!s.empty())&#123;</div><div class="line"></div><div class="line">                int temp = s.top();</div><div class="line">                cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">                s.pop();</div><div class="line">                //cout&lt;&lt;lef[temp]&lt;&lt;&quot; &quot;&lt;&lt;righ[temp]&lt;&lt;endl;</div><div class="line">                if(lef[temp]!=0)&#123;</div><div class="line">                    q.push(lef[temp]);</div><div class="line">                &#125;</div><div class="line">                if(righ[temp]!=0)&#123;</div><div class="line">                    q.push(righ[temp]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()&#123;</div><div class="line"></div><div class="line">    cin&gt;&gt;n;</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        cin&gt;&gt;in[i];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line"></div><div class="line">        cin&gt;&gt;post[i];</div><div class="line">    &#125;</div><div class="line">    createTree(0, n-1, 0, n-1);</div><div class="line">    levelTravel();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-05-31T12:49:31.000Z" itemprop="datePublished">2016-05-31</time></p>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/31/Selenimu/">Selenimu 实现截图</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            )Selenium 是一个可以让浏览器自动化地执行任务的工具，常用于自动化测试。今天学习啦一下果然很强大,和PhantomJS组合居然可以用于网页截图。
-from selenium import webdriver
 
-browser = webdriver.PhantomJS(executable_path=&quot;/usr/local/share/phantomjs-2.1.1-macosx
-        </p>
+
+    <a data-url="http://yoursite.com/2018/05/19/前序-后序建树-z层次遍历/" data-id="cjhdg62g0001lxo5vy3e4lyn6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/05/28/pattern/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/cbebb865715367fe.jpg)" alt="常用的正则表达式匹配" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/05/28/pattern/">0</span>
-    
-</span>
+    <div class="ds-thread" data-thread-key="2018/05/19/前序-后序建树-z层次遍历/" data-title="前序-后序建树+z层次遍历" data-url="http://yoursite.com/2018/05/19/前序-后序建树-z层次遍历/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-05-28T05:46:46.000Z" itemprop="datePublished">2016-05-28</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/28/pattern/">常用的正则表达式匹配</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            知道这些正则表达式能让你少些1000行代码
-1.校验密码强度密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。
-^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
-2.校验中文字符串仅能是中文
-^[\\u4e00-\\u9fa5]{0,}$
-3.由数字、26个英文字母或下划线组成的字符串^\\w+$
-4.校验E-Mail 地址[\\w!
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/05/28/git/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i4.buimg.com/567571/3f866322c2b1d6d5.png)" alt="Git的使用方法" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/05/28/git/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-05-28T05:46:46.000Z" itemprop="datePublished">2016-05-28</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/05/28/git/">Git的使用方法</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-git init 将一个目录初始化为 Git 仓库在目录中执行 git init，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：
-$ cd konnichiwa
-$ ls
-README   hello.rb
- &gt; 在这个项目里头，我们会用各种编程语言写 “Hello World” 实例。 到目前为止，我们只有 Ruby 的，不过，这才刚上路嘛。为了开始用 G
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -351,6 +333,19 @@ README   hello.rb
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/05/18/AVL/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">AVL</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
