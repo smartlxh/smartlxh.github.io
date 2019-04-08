@@ -10,22 +10,22 @@
     
     <meta name="description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
 若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
-若Ka[Mid]，则更新区">
+若Ka[Mid]，则更新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分查找">
 <meta property="og:url" content="http://yoursite.com/2016/11/16/非有序数组的二分查找/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta property="og:description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
 若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
-若Ka[Mid]，则更新区">
-<meta property="og:image" content="http://p1.bpimg.com/567571/c7c86ee77d303aa4.jpg">
-<meta property="og:updated_time" content="2016-11-16T14:42:36.000Z">
+若Ka[Mid]，则更新">
+<meta property="og:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/e06fdf4ea5c24ecd1027c0179c8df19c.jpeg">
+<meta property="og:updated_time" content="2019-04-08T09:27:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分查找">
 <meta name="twitter:description" content="有序数组的二分查找有序数组长度为N，且满足a[1]&amp;lt;a[2]&amp;lt;…&amp;lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
 若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
-若Ka[Mid]，则更新区">
-<meta name="twitter:image" content="http://p1.bpimg.com/567571/c7c86ee77d303aa4.jpg">
+若Ka[Mid]，则更新">
+<meta name="twitter:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/e06fdf4ea5c24ecd1027c0179c8df19c.jpeg">
     
 
     
@@ -168,7 +168,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="有序数组的二分查找"><a href="#有序数组的二分查找" class="headerlink" title="有序数组的二分查找"></a>有序数组的二分查找</h3><p>有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。<br>我们随机从数组中选取一个数a[i]，对于需要查找的数K：</p>
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/e06fdf4ea5c24ecd1027c0179c8df19c.jpeg" alt="pexels-photo-2002571.jpeg"></p>
+<h3 id="有序数组的二分查找"><a href="#有序数组的二分查找" class="headerlink" title="有序数组的二分查找"></a>有序数组的二分查找</h3><p>有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。<br>我们随机从数组中选取一个数a[i]，对于需要查找的数K：</p>
 <p>若K<a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)； 若k="a[i]，则i就是我们要找的答案；">a[i]，则K的下标一定不小于等于K。<br>利用上面这个性质，我们可以得到这样一个算法：<br>假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。</a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)；></p>
 <p>若K<a[mid]，则更新区间为 r="Mid-1" 若k="a[Mid]，则Mid为所查询值">a[Mid]，则更新区间为 L=Mid+1</a[mid]，则更新区间为></p>
 <p>在任意时刻出现L&gt;R时判定K不存在于该数组。<br>这便是最简单，最基本的二分查找。时间复杂度为O(logN)</p>
@@ -178,7 +179,7 @@ ga('send', 'pageview');
 <h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>第1行：2个整数N,K。N表示数组长度，K表示需要查找的数；<br>第2行：N个整数，表示a[1..N]，保证不会出现重复的数，1≤a[i]≤2,000,000,000。</p>
 <h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>第1行：一个整数t，表示K在数组中是第t小的数，若K不在数组中，输出-1。</p>
 <pre><code>#include&lt;iostream&gt;
-using namespace std;    
+using namespace std;
 #define MAX 10000
 int n,k;
 int a[MAX];
@@ -249,7 +250,7 @@ int main(){
 
 
 
-    <a data-url="http://yoursite.com/2016/11/16/非有序数组的二分查找/" data-id="cjhdg62gv002lxo5v7xtog2mz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2016/11/16/非有序数组的二分查找/" data-id="cju85n3o5002lxd5v2wcxvbb7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -444,10 +445,30 @@ int main(){
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
+                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
     
     
 </a>
@@ -467,7 +488,7 @@ int main(){
                             <a href="/2018/05/18/AVL/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg)" alt="AVL" class="thumbnail-image"></span>
     
     
 </a>
@@ -487,7 +508,7 @@ int main(){
                             <a href="/2018/04/23/Dfs枚举剪枝/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9461c26080e4c58ffe013b24e8c09eaf.jpeg)" alt="1103.cpp" class="thumbnail-image"></span>
     
     
 </a>
@@ -507,7 +528,7 @@ int main(){
                             <a href="/2018/04/22/qucksort/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b9e4a6d9b757a83ea5e8e842d8d2274a.jpeg)" alt="qucksort" class="thumbnail-image"></span>
     
     
 </a>
@@ -518,26 +539,6 @@ int main(){
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/22/qucksort/" class="title">qucksort</a></p>
                             <p class="item-date"><time datetime="2018-04-22T13:05:18.000Z" itemprop="datePublished">2018-04-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/21/sscanf与sprintf/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/21/sscanf与sprintf/" class="title">sscanf与sprintf</a></p>
-                            <p class="item-date"><time datetime="2018-04-21T13:16:08.000Z" itemprop="datePublished">2018-04-21</time></p>
                         </div>
                     </li>
                 
@@ -553,7 +554,7 @@ int main(){
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -563,7 +564,7 @@ int main(){
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -609,7 +610,7 @@ int main(){
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 八阿哥</p>
+                <p>&copy; 2019 八阿哥</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

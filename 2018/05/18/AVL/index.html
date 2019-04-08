@@ -8,16 +8,18 @@
     
         <meta name="keywords" content="Algorithm" />
     
-    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;lt">
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AVL">
 <meta property="og:url" content="http://yoursite.com/2018/05/18/AVL/index.html">
 <meta property="og:site_name" content="八阿哥">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;lt">
-<meta property="og:updated_time" content="2018-05-18T12:45:27.000Z">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;l">
+<meta property="og:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg">
+<meta property="og:updated_time" content="2019-04-08T09:29:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AVL">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;lt">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&amp;lt;iostream&amp;gt;#include&amp;l">
+<meta name="twitter:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg">
     
 
     
@@ -160,7 +162,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">struct node &#123;</div><div class="line">    int val;</div><div class="line">    struct node *left,*right;</div><div class="line">    node()&#123;val=0;left=NULL;right=NULL;&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">typedef  struct node node;</div><div class="line"></div><div class="line">node* leftRotate(node* tree)&#123;</div><div class="line">    node *temp = tree-&gt;right;</div><div class="line">    tree-&gt;right = temp-&gt;left;</div><div class="line">    temp-&gt;left = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightRotate(node* tree)&#123;</div><div class="line">    node* temp = tree-&gt;left;</div><div class="line">    tree-&gt;left= temp-&gt;right;</div><div class="line">    temp-&gt;right = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* leftRightRotate(node* tree)&#123;</div><div class="line">    tree-&gt;left = leftRotate(tree-&gt;left);</div><div class="line">    return rightRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightLeftRotate(node* tree)&#123;</div><div class="line">    tree-&gt;right = rightRotate(tree-&gt;right);</div><div class="line">    return leftRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int getHeight(node* tree)&#123;</div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        int l = getHeight(tree-&gt;left);</div><div class="line">        int r = getHeight(tree-&gt;right);</div><div class="line">        return max(l,r)+1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* insert(node* tree,int val)&#123;</div><div class="line"></div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        tree = new node();</div><div class="line">        tree-&gt;val = val;</div><div class="line">        return tree;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        if(val &lt; tree-&gt;left-&gt;val)&#123;</div><div class="line">            tree-&gt;left = insert(tree-&gt;left, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(l-r &gt;=2)&#123;</div><div class="line">                if(val&lt;tree-&gt;left-&gt;val)&#123;</div><div class="line">                    tree = rightRotate(tree);</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree=leftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            tree-&gt;right = insert(tree-&gt;right, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(r-l&gt;=2)&#123;</div><div class="line">                if(val&gt;tree-&gt;right-&gt;val)&#123;</div><div class="line">                    tree = leftRotate(tree);</div><div class="line"></div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree = rightLeftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return tree;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg" alt="pexels-photo-2007191.jpeg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">struct node &#123;</div><div class="line">    int val;</div><div class="line">    struct node *left,*right;</div><div class="line">    node()&#123;val=0;left=NULL;right=NULL;&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">typedef  struct node node;</div><div class="line"></div><div class="line">node* leftRotate(node* tree)&#123;</div><div class="line">    node *temp = tree-&gt;right;</div><div class="line">    tree-&gt;right = temp-&gt;left;</div><div class="line">    temp-&gt;left = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightRotate(node* tree)&#123;</div><div class="line">    node* temp = tree-&gt;left;</div><div class="line">    tree-&gt;left= temp-&gt;right;</div><div class="line">    temp-&gt;right = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* leftRightRotate(node* tree)&#123;</div><div class="line">    tree-&gt;left = leftRotate(tree-&gt;left);</div><div class="line">    return rightRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightLeftRotate(node* tree)&#123;</div><div class="line">    tree-&gt;right = rightRotate(tree-&gt;right);</div><div class="line">    return leftRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int getHeight(node* tree)&#123;</div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        int l = getHeight(tree-&gt;left);</div><div class="line">        int r = getHeight(tree-&gt;right);</div><div class="line">        return max(l,r)+1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* insert(node* tree,int val)&#123;</div><div class="line"></div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        tree = new node();</div><div class="line">        tree-&gt;val = val;</div><div class="line">        return tree;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        if(val &lt; tree-&gt;left-&gt;val)&#123;</div><div class="line">            tree-&gt;left = insert(tree-&gt;left, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(l-r &gt;=2)&#123;</div><div class="line">                if(val&lt;tree-&gt;left-&gt;val)&#123;</div><div class="line">                    tree = rightRotate(tree);</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree=leftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            tree-&gt;right = insert(tree-&gt;right, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(r-l&gt;=2)&#123;</div><div class="line">                if(val&gt;tree-&gt;right-&gt;val)&#123;</div><div class="line">                    tree = leftRotate(tree);</div><div class="line"></div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree = rightLeftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return tree;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -168,7 +171,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://yoursite.com/2018/05/18/AVL/" data-id="cjhdg62ed0000xo5vgw3ztlwy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/05/18/AVL/" data-id="cju85n3l80000xd5vb2lvb3zz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -363,10 +366,30 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
+                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
     
     
 </a>
@@ -386,7 +409,7 @@ ga('send', 'pageview');
                             <a href="/2018/05/18/AVL/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg)" alt="AVL" class="thumbnail-image"></span>
     
     
 </a>
@@ -406,7 +429,7 @@ ga('send', 'pageview');
                             <a href="/2018/04/23/Dfs枚举剪枝/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9461c26080e4c58ffe013b24e8c09eaf.jpeg)" alt="1103.cpp" class="thumbnail-image"></span>
     
     
 </a>
@@ -426,7 +449,7 @@ ga('send', 'pageview');
                             <a href="/2018/04/22/qucksort/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b9e4a6d9b757a83ea5e8e842d8d2274a.jpeg)" alt="qucksort" class="thumbnail-image"></span>
     
     
 </a>
@@ -437,26 +460,6 @@ ga('send', 'pageview');
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/22/qucksort/" class="title">qucksort</a></p>
                             <p class="item-date"><time datetime="2018-04-22T13:05:18.000Z" itemprop="datePublished">2018-04-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/21/sscanf与sprintf/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/21/sscanf与sprintf/" class="title">sscanf与sprintf</a></p>
-                            <p class="item-date"><time datetime="2018-04-21T13:16:08.000Z" itemprop="datePublished">2018-04-21</time></p>
                         </div>
                     </li>
                 
@@ -472,7 +475,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -482,7 +485,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -528,7 +531,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 八阿哥</p>
+                <p>&copy; 2019 八阿哥</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

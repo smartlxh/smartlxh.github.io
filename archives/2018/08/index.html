@@ -3,41 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>工厂模式 | 八阿哥</title>
+    <title>Archive: 2018/8 | 八阿哥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Design Pattern" />
-    
-    <meta name="description" content="设想一个Pizza 店，可以销售各种Pizza。如下设计
-class PizzaStore    {
-    Pizza orderPizza (String type) {
-        Pizza pizza;
-        if (type.equals.(&amp;quot;cheese&amp;quot;)){
-
-            pizza = new CheesePizza();">
-<meta property="og:type" content="article">
-<meta property="og:title" content="工厂模式">
-<meta property="og:url" content="http://yoursite.com/2017/01/19/工厂模式/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="八阿哥">
+<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
 <meta property="og:site_name" content="八阿哥">
-<meta property="og:description" content="设想一个Pizza 店，可以销售各种Pizza。如下设计
-class PizzaStore    {
-    Pizza orderPizza (String type) {
-        Pizza pizza;
-        if (type.equals.(&amp;quot;cheese&amp;quot;)){
-
-            pizza = new CheesePizza();">
-<meta property="og:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/22dbecf77437465e775cec030896e2b7.jpeg">
-<meta property="og:updated_time" content="2019-04-08T09:27:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工厂模式">
-<meta name="twitter:description" content="设想一个Pizza 店，可以销售各种Pizza。如下设计
-class PizzaStore    {
-    Pizza orderPizza (String type) {
-        Pizza pizza;
-        if (type.equals.(&amp;quot;cheese&amp;quot;)){
-
-            pizza = new CheesePizza();">
-<meta name="twitter:image" content="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/22dbecf77437465e775cec030896e2b7.jpeg">
+<meta name="twitter:title" content="八阿哥">
     
 
     
@@ -151,265 +125,74 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <i class="icon fa fa-archive"></i>Archive: 2018/8
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-工厂模式" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="ds-thread-count" data-thread-key="2018/08/27/中序-层序建树/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <p class="category">
+            
+            </p>
+            <p class="date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        工厂模式
+        <a href="/2018/08/27/中序-层序建树/">中序+层序建树</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-subtitle">
-                <a href="/2017/01/19/工厂模式/" class="article-date">
-    <time datetime="2017-01-19T13:24:07.000Z" itemprop="datePublished">2017-01-19</time>
-</a>
-                
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li></ul>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/22dbecf77437465e775cec030896e2b7.jpeg" alt="pexels-photo-1524620.jpeg"></p>
-<p>设想一个Pizza 店，可以销售各种Pizza。如下设计</p>
-<pre><code>class PizzaStore    {
-    Pizza orderPizza (String type) {
-        Pizza pizza;
-        if (type.equals.(&quot;cheese&quot;)){
-
-            pizza = new CheesePizza();
-
-        } else if (type.equals(&quot;greek&quot;)){
-
-            pizza = new GreekPizza();
-
-        } else if (type.equals(&quot;pepperoni&quot;) {
-
-            pizza = new PepperoniPizza();
-        }
-
-        pizza.prepare();
-        pizza.bake();
-        pizza.cut()
-        pizza.box();
-        return pizza;
-     }
-}
-</code></pre><p>如果这么设计方法的话，当Pizza店增加Pizza种类时，必须得改变这个Pizza的代码</p>
-<h3 id="一-简单工厂方法"><a href="#一-简单工厂方法" class="headerlink" title="一 简单工厂方法"></a>一 简单工厂方法</h3><p>简单工厂并不是一种设计模式，而是一种常用的设计风格。它为了程序的可扩展性，将将来可能变化的部分提出来(经常设计为static)。</p>
-<pre><code>public class SimplePizzaFactory {
-
-   public static Pizza createPizza (String type) {
-
-   Pizza pizza = null;
-
-   if (type.equals.(&quot;cheese&quot;)){
-
-       pizza = new CheesePizza();
-
-   } else if (type.equals(&quot;greek&quot;)){
-
-       pizza = new GreekPizza();
-
-   } else if (type.equals(&quot;pepperoni&quot;) {
-
-       pizza = new PepperoniPizza();
-   }
-
-   pizza.prepare();
-   pizza.bake();
-   pizza.cut()
-   pizza.box();
-   return pizza;
-
-       }
-}
-
-
-
-Pizza orderPizza (String type) {
-    Pizza pizza;
-    pizza = SimplePizzaFactory.createPizza(type);
-    pizza.prepare();
-    pizza.bake();
-    pizza.cut()
-    pizza.box();
-    return pizza;
-}
-
-这里读者可能会产生一个问题，就是这样看起来问题并没有得到解决，之不过是把问题代码换到另一个对象里而已。其实这样做的好处在于，这里虽然只有orderPizza()这个方法里引用里这段代码，但是仔细想一下，可能其他对象或方法也会应用到这段代码，比如Pizza菜单。这样我们只需修改这一处代码就好了
-</code></pre><h3 id="二-工厂设计模式"><a href="#二-工厂设计模式" class="headerlink" title="二 工厂设计模式"></a>二 工厂设计模式</h3><p>定义：通过让子类来决定创建什么对象从而达到将对象创建的过程封装</p>
-<p>看完这个官方定义肯定也是一头雾水，下面继续以上面的例子来说明什么是设计模式</p>
-<pre><code>abstract class PizzaStore {
-    public Pizza orderPizza (String type) {
-        Pizza pizza;
-        pizza = createPizza(type);
-        pizza.prepare();
-        pizza.bake();
-        pizza.cut();
-           pizza.box();
-
-        return pizza;
-}
-
-abstract Pizza createPizza (String type);
-</code></pre><p>}</p>
-<pre><code>class ExamplePizzaStore extends PizzaStore {
-@Override
-Pizza createPizza(String type) {
-
-    Pizza pizza = null;
-    if (type.equals.(&quot;cheese&quot;)){
-
-        pizza = new CheesePizza();
-
-    } else if (type.equals(&quot;greek&quot;)){
-
-        pizza = new GreekPizza();
-
-    } else if (type.equals(&quot;pepperoni&quot;) {
-
-        pizza = new PepperoniPizza();
-    }
-    else return null;
-
-    return pizza;
-
-}
-</code></pre><p>}</p>
-<p>简单工厂和工厂设计模式的区别：两者很像，但是仔细想想，简单工厂在一个地方做了全部的事，而工厂模式则更类似于一种框架，让子类决定采用哪一个实现，比如，orderPizza方法定义了一个框架通过依赖工厂方法产生的具体的类对象来创造Pizza实例。和简单工厂相比，更灵活一些，因为简单工厂不能够改变Pizza产品</p>
-<p>注意到orderPizza 方法并不是参数安全的，这是通过传递一个String类型的参数，最后使用Enum类型</p>
-<h3 id="三-抽象工厂模式"><a href="#三-抽象工厂模式" class="headerlink" title="三 抽象工厂模式"></a>三 抽象工厂模式</h3><p> 定义：提供相关或依赖对象的家族接口，无需指定具体的实现类。</p>
-<p> 抽象工厂模式和工厂模式的差别：</p>
-<ol>
-<li>工厂模式提供的是一个抽象类，而抽象工厂提供的是一个接口</li>
-<li>工厂模式提供一个抽象工厂方法，而抽象工厂提供的是一系列的相关对象的抽象方法</li>
-</ol>
-
-        </div>
-        <footer class="article-footer">
+        <p class="article-excerpt">
             
-
-
-
-    <a data-url="http://yoursite.com/2017/01/19/工厂模式/" data-id="cju85n3ni001wxd5vvkkgt1wz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#include&lt;iostream&gt;#i
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div class="ds-thread" data-thread-key="2017/01/19/工厂模式/" data-title="工厂模式" data-url="http://yoursite.com/2017/01/19/工厂模式/"></div>
-    <style>
-        #ds-thread #ds-reset .ds-textarea-wrapper {
-            background: none;
-        }
-        #ds-reset .ds-avatar img {
-            box-shadow: none;
-        }
-        #ds-reset .ds-gradient-bg {
-            background: #f7f7f7;
-        }
-        #ds-thread #ds-reset li.ds-tab a {
-            border-radius: 3px;
-        }
-        #ds-thread #ds-reset .ds-post-button {
-            color: white;
-            border: none;
-            box-shadow: none;
-            background: #d32;
-            text-shadow: none;
-            font-weight: normal;
-            font-family: 'Microsoft Yahei';
-        }
-        #ds-thread #ds-reset .ds-post-button:hover {
-            color: white;
-            background: #DE594C;
-        }
-        #ds-thread #ds-reset .ds-post-button:active {
-            background: #d32;
-        }
-        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
-            color: white;
-            background: #d32;
-            box-shadow: none;
-            text-shadow: none;
-            font-weight: normal;
-        }
-    </style>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
+
 
                         </div>
                     </section>
@@ -461,29 +244,6 @@ Pizza createPizza(String type) {
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/01/25/单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            单例模式
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2016/11/16/非有序数组的二分查找/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">二分查找</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
