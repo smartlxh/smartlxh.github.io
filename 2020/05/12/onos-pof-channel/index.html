@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Pof交换机和ONOS控制器建立连接 | 八阿哥</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="onos" />
+    
+    <meta name="description" content="Pof交换机和ONOS控制器建立连接的过程1、PofControllerImpl类开始。这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务
+protected ConcurrentMap&amp;lt;Dpid, PofSwitch&amp;gt; co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pof交换机和ONOS控制器建立连接">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/onos-pof-channel/index.html">
+<meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="Pof交换机和ONOS控制器建立连接的过程1、PofControllerImpl类开始。这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务
+protected ConcurrentMap&amp;lt;Dpid, PofSwitch&amp;gt; co">
+<meta property="og:updated_time" content="2020-05-12T14:11:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pof交换机和ONOS控制器建立连接">
+<meta name="twitter:description" content="Pof交换机和ONOS控制器建立连接的过程1、PofControllerImpl类开始。这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务
+protected ConcurrentMap&amp;lt;Dpid, PofSwitch&amp;gt; co">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84078415-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">八阿哥</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-onos-pof-channel" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Pof交换机和ONOS控制器建立连接
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2020/05/12/onos-pof-channel/" class="article-date">
+    <time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onos/">onos</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Pof交换机和ONOS控制器建立连接的过程"><a href="#Pof交换机和ONOS控制器建立连接的过程" class="headerlink" title="Pof交换机和ONOS控制器建立连接的过程"></a>Pof交换机和ONOS控制器建立连接的过程</h2><h3 id="1、PofControllerImpl类开始。"><a href="#1、PofControllerImpl类开始。" class="headerlink" title="1、PofControllerImpl类开始。"></a>1、PofControllerImpl类开始。</h3><p>这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务</p>
+<pre><code>protected ConcurrentMap&lt;Dpid, PofSwitch&gt; connectedSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+protected ConcurrentMap&lt;Dpid, PofSwitch&gt; activeMasterSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+protected ConcurrentMap&lt;Dpid, PofSwitch&gt; activeEqualSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+
+protected PofSwitchAgent agent = new PofSwitchAgent();
+protected Set&lt;PofSwitchListener&gt; ofSwitchListener = new CopyOnWriteArraySet&lt;&gt;();
+
+protected Multimap&lt;Integer, PacketListener&gt; ofPacketListener =
+        ArrayListMultimap.create();
+
+protected Set&lt;PofEventListener&gt; ofEventListener = new CopyOnWriteArraySet&lt;&gt;();
+</code></pre><p>这个类里有个实现了switchAgent接口的内部类PofSwitchAgent，主要处理逻辑都实现在这个内部类里。</p>
+<pre><code>public class PofSwitchAgent implements PofAgent {
+
+  private final Logger log = LoggerFactory.getLogger(PofSwitchAgent.class);
+  private final Lock switchLock = new ReentrantLock();
+
+  @Override
+  public boolean addConnectedSwitch(Dpid dpid, PofSwitch sw) {
+
+  if (connectedSwitches.get(dpid) != null) {
+      log.error(&quot;Trying to add connectedSwitch buts found a previous &quot;
+              + &quot;value for dpid: {}&quot;, dpid);
+      return false;
+  } else {
+      log.info(&quot;Added switch {}&quot;, dpid);
+      connectedSwitches.put(dpid, sw);
+      for (PofSwitchListener l : ofSwitchListener) {
+          l.switchAdded(dpid);
+      }
+      return true;
+  }
+  }
+
+@Override
+public void handleConnectionUp(Dpid dpid, PofSwitch sw) {
+  for (PofSwitchListener l : ofSwitchListener) {
+      l.handleConnectionUp(dpid);
+  }
+}
+
+// *******ingore some functions
+@Override
+public boolean addActivatedMasterSwitch(Dpid dpid, PofSwitch sw) {
+  switchLock.lock();
+  try {
+      if (!validActivation(dpid)) {
+          return false;
+      }
+      activeMasterSwitches.put(dpid, sw);
+      return true;
+  } finally {
+      switchLock.unlock();
+  }
+}
+
+@Override
+public void removeConnectedSwitch(Dpid dpid) {
+  connectedSwitches.remove(dpid);
+  PofSwitch sw = activeMasterSwitches.remove(dpid);
+  if (sw == null) {
+      log.debug(&quot;sw was null for {}&quot;, dpid);
+      sw = activeEqualSwitches.remove(dpid);
+  }
+  for (PofSwitchListener l : ofSwitchListener) {
+      l.switchRemoved(dpid);
+  }
+}
+
+@Override
+  public void processMessage(Dpid dpid, OFMessage m) {
+  processPacket(dpid, m);
+  }
+}
+</code></pre><p>由于底层使用Netty来进行通信，PofControllerImpl 类启动后，会另外启动一个Controller类来实际上进行初始化，和监听端口。在PofControllerImpl的activave函数中，传入内部类agent。</p>
+<pre><code>@Activate
+public void activate(ComponentContext context) {
+    log.info(&quot;+++++ PofControllerimpl is started&quot;);
+    coreService.registerApplication(APP_ID, this::preDeactivate);
+    cfgService.registerProperties(getClass());
+    ctrl.setConfigParams(context.getProperties());
+    ctrl.start(agent, driverService);
+}
+</code></pre><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>Controller类中的start方法会调用run方法</p>
+<pre><code>public void run() {
+
+    try {
+        final ServerBootstrap bootstrap = createServerBootStrap();
+
+        bootstrap.setOption(&quot;reuseAddr&quot;, true);
+        bootstrap.setOption(&quot;child.keepAlive&quot;, true);
+        bootstrap.setOption(&quot;child.tcpNoDelay&quot;, true);
+        bootstrap.setOption(&quot;child.sendBufferSize&quot;, Controller.SEND_BUFFER_SIZE);
+
+        ChannelPipelineFactory pfact =
+                new PofPipelineFactory(this, null, sslContext);
+        bootstrap.setPipelineFactory(pfact);
+        cg = new DefaultChannelGroup();
+        openFlowPorts.forEach(port -&gt; {
+            InetSocketAddress sa = new InetSocketAddress(port);
+            cg.add(bootstrap.bind(sa));
+            log.info(&quot;Listening for switch connections on {}&quot;, sa);
+        });
+
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+
+}
+</code></pre><p>主要是做一些netty的初始化工作，最后监听在6643端口。其中的PofPipelineFactory也是Netty相关，设置一些ChannelPipline，编码解码器，其中包括OFChannerlHandler，这样接下来的和交换机握手就由OFChannerHandler来做。</p>
+<h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>这个类主要是有一个ChanelState的枚举类，他表明了和当前交换机的握手状态，分为(INIT, WAIT_HELLO, WAIT_FEATURES_REPLY, WAIT_PORT_DESC_REPLY, WAIT_CONFIG_REPLY, WAIT_DESCRIPTION_STAT_REPLY, WAIT_SWITCH_DRIVER_SUB_HANDSHAKE, ACTIVE)，初始时，构造函数将其设为INIT状态，最后握手完毕处在ACTIVE状态，进行正常的处理，（具体每个状态做了什么见童浩杰师兄的状态信息改变）基本的逻辑为处理不同的消息然后通过遍历已经注册的监听器调用监听器对应的方法。</p>
+<pre><code>OFChannelHandler(Controller controller) {
+  this.controller = controller;
+  this.state = ChannelState.INIT;
+  this.pendingResourceReportMsg = new CopyOnWriteArrayList&lt;OFFlowTableResource&gt;();
+  this.pendingPortStatusMsg = new CopyOnWriteArrayList&lt;OFPortStatus&gt;();
+  this.factory = controller.getOFMessageFactory();
+  duplicateDpidFound = Boolean.FALSE;
+}
+</code></pre><p>当Channel检测到交换机连接时，会调用OFChannelHandler类中的channelConnected函数，将其状态设为WAIT_HELLO,即等待交换机的HELLO包</p>
+<pre><code>@Override
+public void channelConnected(ChannelHandlerContext ctx,
+        ChannelStateEvent e) throws Exception {
+    channel = e.getChannel();
+    log.info(&quot;New switch connection from {}&quot;,
+            channel.getRemoteAddress());
+
+    SocketAddress address = channel.getRemoteAddress();
+    if (address instanceof InetSocketAddress) {
+        final InetSocketAddress inetAddress = (InetSocketAddress) address;
+        final IpAddress ipAddress = IpAddress.valueOf(inetAddress.getAddress());
+        if (ipAddress.isIp4()) {
+            channelId = ipAddress.toString() + &apos;:&apos; + inetAddress.getPort();
+        } else {
+            channelId = &apos;[&apos; + ipAddress.toString() + &quot;]:&quot; + inetAddress.getPort();
+        }
+    } else {
+        channelId = channel.toString();
+    }
+
+    dispatcher = Executors.newSingleThreadExecutor(groupedThreads(&quot;onos/of/dispatcher&quot;, channelId, log));
+
+    setState(ChannelState.WAIT_HELLO);
+}
+</code></pre><p>当Channel收到消息，会调用messageReceived函数，其中会调用state的processOFMessage，其中对应与每个不通的OFMessage<br>类型对应由不同的处理方法 。注意内部枚举类实质上也是其子类，在不同的状态是会覆写很多不通的方法，因此不同的状态对应着不通的消息处理函数。</p>
+<pre><code>@Override
+public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
+        throws Exception {
+    if (e.getMessage() instanceof List) {
+        @SuppressWarnings(&quot;unchecked&quot;)
+        List&lt;OFMessage&gt; msglist = (List&lt;OFMessage&gt;) e.getMessage();
+
+
+        for (OFMessage ofm : msglist) {
+            // Do the actual packet processing
+            state.processOFMessage(this, ofm);
+        }
+    } else {
+        state.processOFMessage(this, (OFMessage) e.getMessage());
+    }
+}
+</code></pre><p>processOFMessage函数</p>
+<pre><code>void  processOFMessage(OFChannelHandler h, OFMessage m)
+           throws IOException, SwitchStateException {
+       switch(m.getType()) {
+       case HELLO:
+           processOFHello(h, (OFHello) m);
+           break;
+       case BARRIER_REPLY:
+           processOFBarrierReply(h, (OFBarrierReply) m);
+           break;
+       case ECHO_REPLY:
+           processOFEchoReply(h, (OFEchoReply) m);
+           break;
+       case ECHO_REQUEST:
+           processOFEchoRequest(h, (OFEchoRequest) m);
+           break;
+       case ERROR:
+           processOFError(h, (OFError) m);
+           break;
+       case FEATURES_REPLY:
+           processOFFeaturesReply(h, (OFFeaturesReply) m);
+           break;
+       case FLOW_REMOVED:
+           processOFFlowRemoved(h, (OFFlowRemoved) m);
+           break;
+       case GET_CONFIG_REPLY:
+           processOFGetConfigReply(h, (OFGetConfigReply) m);
+           break;
+       case PACKET_IN:
+           processOFPacketIn(h, (OFPacketIn) m);
+           break;
+       case PORT_STATUS:
+           processOFPortStatus(h, (OFPortStatus) m);
+           break;
+
+       case QUEUE_GET_CONFIG_REPLY:
+           processOFQueueGetConfigReply(h, (OFQueueGetConfigReply) m);
+           break;
+           //edited by hdy
+       case RESOURCE_REPORT:
+           processOFStatisticsReply(h, (OFFlowTableResource)m);
+           //processOFFlowTableResourceReply(h, (OFFlowTableResource) m);
+           break;
+       case EXPERIMENTER:
+           processOFExperimenter(h, (OFExperimenter) m);
+           break;
+       case ROLE_REPLY:
+           processOFRoleReply(h, (OFRoleReply) m);
+           break;
+       case GET_ASYNC_REPLY:
+           processOFGetAsyncReply(h, (OFGetAsyncReply) m);
+           break;
+
+           // The following messages are sent to switches. The controller
+           // should never receive them
+       case SET_CONFIG:
+       case GET_CONFIG_REQUEST:
+       case PACKET_OUT:
+       case PORT_MOD:
+       case QUEUE_GET_CONFIG_REQUEST:
+       case BARRIER_REQUEST:
+       //case STATS_REQUEST: // multipart request in 1.3//wenjian
+       case MULTIPART_REPLY:
+       case FEATURES_REQUEST:
+       case FLOW_MOD:
+       case GROUP_MOD:
+       case TABLE_MOD:
+       case GET_ASYNC_REQUEST:
+       case SET_ASYNC:
+       case METER_MOD:
+       default:
+           illegalMessageReceived(h, m);
+           break;
+       }
+   }
+</code></pre><p>到此为止，控制器就和交换机建立了连接。<br>之后进入正常的处理的逻辑。以PacketIn为例， 调用栈为<br>processOFMessage-&gt;dispatchMessage-&gt;AbstractPofSwitch.handleMessage-&gt;agent.processMessage<br>此处的agent就是文初讲的PofControllerImpl的内部类 PofSwitchAgent。然后会通知相关的监听器进行相应的操作。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2020/05/12/onos-pof-channel/" data-id="cka3ztwus001c6e5v1z4ih3te" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2020/05/12/onos-pof-channel/" data-title="Pof交换机和ONOS控制器建立连接" data-url="http://yoursite.com/2020/05/12/onos-pof-channel/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/smartlxh/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/05/12/onos-pof/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">onos-pof下发流表的过程</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/09/ECMP/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
+                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
+                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/05/19/前序-后序建树-z层次遍历/" class="title">前序-后序建树+z层次遍历</a></p>
+                            <p class="item-date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://gold.xitu.io">掘金</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 八阿哥</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'smartlxh'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

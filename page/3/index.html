@@ -148,6 +148,165 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2017/01/31/状态模式/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/17-7-28/87615808.jpg)" alt="状态模式" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="ds-thread-count" data-thread-key="2017/01/31/状态模式/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <p class="category">
+            
+            </p>
+            <p class="date"><time datetime="2017-01-31T01:11:01.000Z" itemprop="datePublished">2017-01-31</time></p>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/01/31/状态模式/">状态模式</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+定义允许对象在内部状态改变时改变它的行为，对像看起来好像修改了它的类
+状态机示例插图 p386
+因为状态机的状态可能会经常改变，所以将状态单独实现从状态机的类中解耦出来成为一个接口，每个状态都要实现这个接口，使每个状态都有当前状态的对应动作。否则的话，在状态机中将会有很多if 和else语句。感觉跟命令模式有点相像（将不同的命令对象从控制类中解离出来）。
+
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/01/30/迭代器模式/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/145c62NFA8.png)" alt="迭代器模式" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="ds-thread-count" data-thread-key="2017/01/30/迭代器模式/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <p class="category">
+            
+            </p>
+            <p class="date"><time datetime="2017-01-30T05:51:54.000Z" itemprop="datePublished">2017-01-30</time></p>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/01/30/迭代器模式/">迭代器模式</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
+层次结构(以数组为例)public interface Iterator {
+    boolean hasnext（）；
+    Object next（）；
+}
+
+public class iteratorDemo{
+   int data[];
+   int pisistion = 0;
+    public ite
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/01/29/模版方法模式/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/17-7-28/51737972.jpg)" alt="模版方法模式" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="ds-thread-count" data-thread-key="2017/01/29/模版方法模式/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <p class="category">
+            
+            </p>
+            <p class="date"><time datetime="2017-01-29T05:57:35.000Z" itemprop="datePublished">2017-01-29</time></p>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/01/29/模版方法模式/">模版方法模式</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+定义在一个算法中定义一个算法的骨架，把一些步骤的实现延迟到子类中，。使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。
+典型模版public abstract AbstractClass{
+        //定义为final 防止子类修改，定义算法步骤
+    final void templateMethod(){
+
+        primitiveOperation1();
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2017/01/27/适配器模式/" class="thumbnail">
     
     
@@ -189,10 +348,14 @@ public interface Enumeration{
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -242,14 +405,10 @@ public class LightOnCommand implememts C
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -300,10 +459,14 @@ public class Singleton {
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -353,8 +516,6 @@ class PizzaStore    {
         </p>
     </div>
 </article>
-    
-        </div>
     
 
     
@@ -525,156 +686,6 @@ repla
 </article>
     
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/22/java序列化多个对象/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/daf9d119cd09e5689bcac383c060c92f.jpeg)" alt="java序列化多个对象" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/22/java序列化多个对象/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-22T11:41:05.000Z" itemprop="datePublished">2016-10-22</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/22/java序列化多个对象/">java序列化多个对象</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-今天写程序的时候，需要将多个对象序列化到文件中去，但是写的时没有问题，当读的时候就会报错 invalid type code: AC。原因是ObjectOutputStream 会在将对象写到文件之前，先添加一个header到文件中去，当有多个对象时，读到，这个header就会报错，解决的方法有两种
-
-继承ObjectOututStream，复写writeStreamHeader()方法然后在写
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/21/Flume学习笔记/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/645043a34b113eaa94776a5e87b0ff5b.jpeg)" alt="Flume学习笔记" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/21/Flume学习笔记/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-21T12:50:57.000Z" itemprop="datePublished">2016-10-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/21/Flume学习笔记/">Flume学习笔记</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-最近要写一个日志手机系统，打算采用flume+kafka+storm的技术栈所以先学习了一下Flume
-Flume是apache下的一款开源的日志收集系统。它支持分布式，和高吞吐率。但是Flume不仅仅可以用来收集日志，它也常被用来传输消息，比如媒体流，email消息等等。
-基本概念| Agent 使用JVM运行Flume，每台机器一个agnet || Source | 从服务器上监测和收集日志
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/10/15/docker-compose编排应用/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/aa5c6664412017688da4bd37326e6182.jpeg)" alt="docker-compose编排应用" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/10/15/docker-compose编排应用/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-10-15T07:44:19.000Z" itemprop="datePublished">2016-10-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/15/docker-compose编排应用/">docker-compose编排应用</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）来自动构建。
-其它大部分指令都跟 docker run 中的类似。
-如果使用 build 指令，在 Dockerfile 中设置的选项(例如：CMD, EXPOSE, VOLUME, ENV 等) 将会自动被获取，无需在
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
 
     </div></section>
 
@@ -748,6 +759,66 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/09/ECMP/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
+                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
     
     
@@ -785,66 +856,6 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/18/AVL/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg)" alt="AVL" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/05/18/AVL/" class="title">AVL</a></p>
-                            <p class="item-date"><time datetime="2018-05-18T12:43:46.000Z" itemprop="datePublished">2018-05-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/23/Dfs枚举剪枝/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9461c26080e4c58ffe013b24e8c09eaf.jpeg)" alt="1103.cpp" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/23/Dfs枚举剪枝/" class="title">1103.cpp</a></p>
-                            <p class="item-date"><time datetime="2018-04-23T15:28:33.000Z" itemprop="datePublished">2018-04-23</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/22/qucksort/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b9e4a6d9b757a83ea5e8e842d8d2274a.jpeg)" alt="qucksort" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/22/qucksort/" class="title">qucksort</a></p>
-                            <p class="item-date"><time datetime="2018-04-22T13:05:18.000Z" itemprop="datePublished">2018-04-22</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -857,7 +868,7 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -867,7 +878,7 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -877,7 +888,7 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
         </div>
     </div>
 
@@ -913,7 +924,7 @@ YAML 模板文件默认的模板文件是 docker-compose.yml，其中定义的�
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2019 八阿哥</p>
+                <p>&copy; 2020 八阿哥</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

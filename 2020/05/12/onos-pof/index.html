@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>onos-pof下发流表的过程 | 八阿哥</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="onos" />
+    
+    <meta name="description" content="onos-pof下发流表的过程流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。UML图如图所示
+
+
+下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onos-pof下发流表的过程">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/onos-pof/index.html">
+<meta property="og:site_name" content="八阿哥">
+<meta property="og:description" content="onos-pof下发流表的过程流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。UML图如图所示
+
+
+下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实">
+<meta property="og:image" content="https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png">
+<meta property="og:updated_time" content="2020-05-12T14:11:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="onos-pof下发流表的过程">
+<meta name="twitter:description" content="onos-pof下发流表的过程流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。UML图如图所示
+
+
+下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实">
+<meta name="twitter:image" content="https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84078415-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">八阿哥</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-onos-pof" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        onos-pof下发流表的过程
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2020/05/12/onos-pof/" class="article-date">
+    <time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onos/">onos</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="onos-pof下发流表的过程"><a href="#onos-pof下发流表的过程" class="headerlink" title="onos-pof下发流表的过程"></a>onos-pof下发流表的过程</h3><p>流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。<br>UML图如图所示</p>
+<p><img src="https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png" alt="FlowRuleManager"></p>
+<p><img src="https://lxhblog.oss-cn-beijing.aliyuncs.com/DistributedFlowRuleStore.png" alt="DistributedFlowRuleStore"></p>
+<p>下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实际上执行的是FlowRuleManager的applyFlowRule方法</p>
+<pre><code>@Override
+public void applyFlowRules(FlowRule... flowRules) {
+    checkPermission(FLOWRULE_WRITE);
+
+    FlowRuleOperations.Builder builder = FlowRuleOperations.builder();
+    for (FlowRule flowRule : flowRules) {
+        builder.add(flowRule);
+    }
+    apply(builder.build());
+}
+</code></pre><p>首先每一个flowRule被封装成一个FlowRuleOperation，不同flowRule的集合被封装成一个FlowRuleOperations，然后调用apply方法。FlowRuleOperations是被分解成不同stage的FlowRuleOperation的集合，每一个stage是一组FlowRuleOperation的集合，不同stage的FlowRuleOperation集合保存在list中，FlowRuleOptions的代码如下</p>
+<pre><code>public class FlowRuleOperations {
+
+private final List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages;
+private final FlowRuleOperationsContext callback;
+
+private FlowRuleOperations(List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages,
+                           FlowRuleOperationsContext cb) {
+    this.stages = stages;
+    this.callback = cb;
+}
+
+// kryo-constructor
+protected FlowRuleOperations() {
+    this.stages = Lists.newArrayList();
+    this.callback = null;
+}
+</code></pre><p>接下来看FlowRuleManger中的apply方法,其中将FlowRuleOperations放到一个线程容量为32的线程池中处理：</p>
+<pre><code>protected ExecutorService operationsService =
+         Executors.newFixedThreadPool(32, groupedThreads(&quot;onos/flowservice&quot;, &quot;operations-%d&quot;, log));
+
+@Override
+public void apply(FlowRuleOperations ops) {
+   checkPermission(FLOWRULE_WRITE);
+   operationsService.execute(new FlowOperationsProcessor(ops));
+ }
+</code></pre><p>下面是flowOperationsProcessor的代码</p>
+<pre><code>private class FlowOperationsProcessor implements Runnable {
+    // Immutable
+    private final FlowRuleOperations fops;
+
+    // Mutable
+    private final List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages;
+    private final Set&lt;DeviceId&gt; pendingDevices = new HashSet&lt;&gt;();
+    private boolean hasFailed = false;
+
+    FlowOperationsProcessor(FlowRuleOperations ops) {
+        this.stages = Lists.newArrayList(ops.stages());
+        this.fops = ops;
+    }
+
+    @Override
+    public synchronized void run() {
+        if (!stages.isEmpty()) {
+            process(stages.remove(0));
+        } else if (!hasFailed) {
+            fops.callback().onSuccess(fops);
+        }
+    }
+
+    private void process(Set&lt;FlowRuleOperation&gt; ops) {
+        Multimap&lt;DeviceId, FlowRuleBatchEntry&gt; perDeviceBatches = ArrayListMultimap.create();
+
+        for (FlowRuleOperation op : ops) {
+            perDeviceBatches.put(op.rule().deviceId(),
+                    new FlowRuleBatchEntry(mapOperationType(op.type()), op.rule()));
+        }
+        pendingDevices.addAll(perDeviceBatches.keySet());
+
+        for (DeviceId deviceId : perDeviceBatches.keySet()) {
+            long id = idGenerator.getNewId();
+            final FlowRuleBatchOperation b = new FlowRuleBatchOperation(perDeviceBatches.get(deviceId),
+                                           deviceId, id);
+            pendingFlowOperations.put(id, this);
+            deviceInstallers.execute(() -&gt; store.storeBatch(b));
+        }
+    }
+</code></pre><p>java多线程中会自动执行run方法，run方法调用了process方法。这里使用了一个Multimap (Multimap perDeviceBatches) 来保存要下发到每个Device的FlowRules的集合，每个FlowRule被封装成一个FlowRuleBatchEntry类型的对象，保存在perDeviceBatches中。这样就以Device为单位将所有的FLow Rules进行归类，然后针对不同的Device逐个下发FlowRuleBatchOperation（就是一组待下发的Flow Rules集合）</p>
+<p>Manager有关数据信息的操作都会通过store来完成。通过调用store.storeBatch将Flow rule信息添加到FlowRuleStore中。store.storeBatch也是在一个新的线程池中处理的,跟上文中的operationService的声明相同。storeBatch具体的实现细节比较复杂，如要判断FlowRuleBatchOperation的设备是否有对应的master控制器节点，以及当前的节点是否就是master控制器节点，这是因为FlowRule需要存储到device对应的master控制器节点的FlowRuleStore中，并由master节点下发到对应的device，具体的操作过程看DistributedFlowRuleStore的源码。</p>
+<pre><code>public void storeBatch(FlowRuleBatchOperation operation) {
+    if (operation.getOperations().isEmpty()) {
+        notifyDelegate(FlowRuleBatchEvent.completed(
+                new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                new CompletedBatchOperation(true, Collections.emptySet(), operation.deviceId())));
+        return;
+    }
+
+    DeviceId deviceId = operation.deviceId();
+    NodeId master = mastershipService.getMasterFor(deviceId);
+
+    if (master == null) {
+        log.warn(&quot;No master for {} : flows will be marked for removal&quot;, deviceId);
+
+        updateStoreInternal(operation);
+
+        notifyDelegate(FlowRuleBatchEvent.completed(
+                new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                new CompletedBatchOperation(true, Collections.emptySet(), operation.deviceId())));
+        return;
+    }
+
+    if (Objects.equals(local, master)) {
+        //log.info(&quot;judge whether this flowRule belongs to POF&quot;);
+        if (deviceId.uri().getScheme().equals(&quot;pof&quot;)) {
+            FlowRule flowRule = operation.getOperations().get(0).target();
+            FlowTable flowTable = flowTableStore.getFlowTableInternal(flowRule.deviceId(),
+                                                                      FlowTableId.valueOf(flowRule.tableId()));
+            Set&lt;Criterion&gt; criterions = flowRule.selector().criteria();
+            Optional&lt;Criterion&gt; criterionOptional = criterions.stream()
+                    .filter(criterion -&gt; criterion.type() != Criterion.Type.POF)
+                    .findFirst();
+            if (flowTable != null &amp;&amp; !criterionOptional.isPresent()) {
+                storeBatchInternal(operation);
+            }
+        } else {
+            storeBatchInternal(operation);
+        }
+        return;
+    }
+
+    log.trace(&quot;Forwarding storeBatch to {}, which is the primary (master) for device {}&quot;,
+              master, deviceId);
+
+    clusterCommunicator.unicast(operation,
+                                APPLY_BATCH_FLOWS,
+                                serializer::encode,
+                                master)
+                       .whenComplete((result, error) -&gt; {
+                           if (error != null) {
+                               log.warn(&quot;Failed to storeBatch: {} to {}&quot;, operation, master, error);
+
+                               Set&lt;FlowRule&gt; allFailures = operation.getOperations()
+                                       .stream()
+                                       .map(op -&gt; op.target())
+                                       .collect(Collectors.toSet());
+
+                               notifyDelegate(FlowRuleBatchEvent.completed(
+                                       new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                                       new CompletedBatchOperation(false, allFailures, deviceId)));
+                           }
+                       });
+}
+</code></pre><p>若当前控制器不是对应device的master节点，storeBatch会使用ClusterCommunicationService服务的unicast方法，将该FlowRuleBatchOperation发送到对应的master控制器节点，Remote节点处理完成后会将处理的结果告诉该控制器节点。同时，DistributedFlowRuleStore使用ClusterCommunicationService服务的addSubscriber来监听东西向发送的FlowRule消息，并做出对应的处理。最后会调用notifyDelegate方法，然后调用delegate.notify方法，这个delegate是FlowRuleManager中的一个内部类对象，FlowruleManger激活时注入到store中</p>
+<pre><code>@Activate
+public void activate(ComponentContext context) {
+    modified(context);
+    store.setDelegate(delegate);
+    eventDispatcher.addSink(FlowRuleEvent.class, listenerRegistry);
+    deviceService.addListener(deviceListener);
+    cfgService.registerProperties(getClass());
+    idGenerator = coreService.getIdGenerator(FLOW_OP_TOPIC);
+    log.info(&quot;Started&quot;);
+}
+</code></pre><p>notify函数中，通过获取注册的provider的相关provider实例，执行excutebatch方法<br>对应的provider为PofRuleProvider</p>
+<pre><code>private class InternalStoreDelegate implements FlowRuleStoreDelegate {
+
+
+   // TODO: Right now we only dispatch events at individual flowEntry level.
+   // It may be more efficient for also dispatch events as a batch.
+   @Override
+   public void notify(FlowRuleBatchEvent event) {
+       final FlowRuleBatchRequest request = event.subject();
+       switch (event.type()) {
+       case BATCH_OPERATION_REQUESTED:
+           // Request has been forwarded to MASTER Node, and was
+           request.ops().forEach(
+                   op -&gt; {
+                       switch (op.operator()) {
+                           case ADD:
+                               post(new FlowRuleEvent(RULE_ADD_REQUESTED, op.target()));
+                               break;
+                           case REMOVE:
+                               post(new FlowRuleEvent(RULE_REMOVE_REQUESTED, op.target()));
+                               break;
+                           case MODIFY:
+                               //TODO: do something here when the time comes.
+                               break;
+                           default:
+                               log.warn(&quot;Unknown flow operation operator: {}&quot;, op.operator());
+                       }
+                   }
+           );
+
+           DeviceId deviceId = event.deviceId();
+           FlowRuleBatchOperation batchOperation = request.asBatchOperation(deviceId);
+           // getProvider is customized to favor driverProvider
+           FlowRuleProvider flowRuleProvider = getProvider(deviceId);
+           if (flowRuleProvider != null) {
+               flowRuleProvider.executeBatch(batchOperation);
+           }
+
+           break;
+
+       case BATCH_OPERATION_COMPLETED:
+
+           FlowOperationsProcessor fops = pendingFlowOperations.remove(
+                   event.subject().batchId());
+           if (event.result().isSuccess()) {
+               if (fops != null) {
+                   fops.satisfy(event.deviceId());
+               }
+           } else {
+               fops.fail(event.deviceId(), event.result().failedItems());
+           }
+
+           break;
+
+       default:
+           break;
+       }
+   }
+</code></pre><p>   }</p>
+<p>看PofRuleProvider 的executeBatch函数</p>
+<pre><code>@Override
+   public void executeBatch(FlowRuleBatchOperation batch) {
+       checkNotNull(batch);
+       //log.info(&quot;PofFlowRuleProvider executeBatch()&quot;);
+       pendingBatches.put(batch.id(), new InternalCacheEntry(batch));
+
+
+       Dpid dpid = Dpid.dpid(batch.deviceId().uri());
+
+       PofSwitch sw = controller.getSwitch(dpid);
+       OFFlowMod mod;
+
+       for (FlowRuleBatchEntry fbe : batch.getOperations()) {
+           // flow is the third party privacy flow
+
+           FlowRuleExtPayLoad flowRuleExtPayLoad = fbe.target().payLoad();
+
+           if (hasPayload(flowRuleExtPayLoad)) {
+               log.info(&quot;+++++ PofFlowRuleProvider hasPayload(flowRuleExtPayLoad)?&quot;);
+               OFMessage msg = new ThirdPartyMessage(flowRuleExtPayLoad.payLoad());
+               sw.sendMsg(msg);
+               continue;
+           }
+           //log.info(&quot;+++++ before flowModBuilder&quot;);
+           FlowModBuilder builder =
+                   FlowModBuilder.builder(fbe.target(), sw.factory(), flowTableStore,
+                           Optional.empty(), Optional.of(driverService));
+
+           //log.info(&quot;+++++ PofFlowRuleProvider fbe.operator() :{}&quot;, fbe.operator());
+           switch (fbe.operator()) {
+               case ADD:
+                   mod = builder.buildFlowAdd();
+
+                  //                    flowEntry.setState(FlowEntry.FlowEntryState.ADDED);
+
+                   break;
+               case REMOVE:
+                   mod = builder.buildFlowDel();
+                   //                    flowEntry.setState(FlowEntry.FlowEntryState.REMOVED);
+                   break;
+               case MODIFY:
+                   mod = builder.buildFlowMod();
+                   //                    flowEntry.setState(FlowEntry.FlowEntryState.ADDED);
+                   break;
+               default:
+                   log.error(&quot;Unsupported batch operation {}; skipping flowmod {}&quot;,
+                           fbe.operator(), fbe);
+                   continue;
+           }
+           sw.sendMsg(mod);
+       }
+
+       //In pof, no BARRIER_REPLY yet
+       CompletedBatchOperation op =
+               new CompletedBatchOperation(true, Collections.emptySet(),
+                                           batch.deviceId());
+       providerService.batchOperationCompleted(batch.id(), op);
+
+   }
+</code></pre><p>该方法中最终通过sw.sendmessage发送具体的OFMessage。<br>sw是AbstractPofSwitch的一个对象，通过调用底层Netty的channel来发送消息。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>下发流表的过程与下发流表项的过程基本一样，但是注意<br>下发流表时用到的store是newDistributedFlowTableStore，而下发流表项用到的是onos本身的DistributedFlowRuleStore（有修改）</p>
+<p>参考链接 ：<a href="https://baymaxhuang.github.io/2017/01/15/Flow-Rule-Subsystem%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" target="_blank" rel="external">博客</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2020/05/12/onos-pof/" data-id="cka3ztwuu001f6e5v5uy6tasf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2020/05/12/onos-pof/" data-title="onos-pof下发流表的过程" data-url="http://yoursite.com/2020/05/12/onos-pof/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/smartlxh/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/05/12/onos-pof-channel/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pof交换机和ONOS控制器建立连接
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/04/09/ECMP/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ECMP</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
+                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/09/ECMP/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
+                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
+                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/05/19/前序-后序建树-z层次遍历/" class="title">前序-后序建树+z层次遍历</a></p>
+                            <p class="item-date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://gold.xitu.io">掘金</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 八阿哥</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'smartlxh'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
