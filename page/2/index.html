@@ -1,237 +1,430 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
 <head>
-    <meta charset="utf-8">
-    
-    <title>八阿哥</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="八阿哥">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="八阿哥">
-    
 
-    
 
-    
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
-    
-    
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-84078415-1', 'auto');
-ga('send', 'pageview');
-
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
-    
-    
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+
+
+
+  <title>八阿哥</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">八阿哥</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                        
-                                    
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">八阿哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">八阿哥</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
 
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    <em class="page-title-link" data-url="home">Home</em>
-    </h1>
-</div>
-                        <div class="main-body-content">
-                            
+<nav class="site-nav">
+  
 
-    
-    
+  
+    <ul id="menu" class="menu">
+      
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/25/gcd/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/03/25/gcd/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-            </p>
-            <p class="date"><time datetime="2018-03-25T06:50:06.000Z" itemprop="datePublished">2018-03-25</time></p>
-        </div>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/25/gcd/">gcd</a>
-        </h1>
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/gcd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/gcd/" itemprop="url">gcd</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T14:50:06+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
 
-        <p class="article-excerpt">
-            long int gcd(long int i, long int j)
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>long int gcd(long int i, long int j)
 {
     int r = i % j;
     return r == 0 ? j : gcd(j, r);
 }
-
-        </p>
+</code></pre>
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/24/判断是否质数/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/34ca9f6332da2f69fecbc5d47a1e24d9.jpeg)" alt="判断是否质数" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/03/24/判断是否质数/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/判断是否质数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/判断是否质数/" itemprop="url">判断是否质数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-03-24T08:52:15.000Z" itemprop="datePublished">2018-03-24</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-24T16:52:15+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/24/判断是否质数/">判断是否质数</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
- bool isPrime(int a){
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/34ca9f6332da2f69fecbc5d47a1e24d9.jpeg" alt="pexels-photo-1168764.jpeg"></p>
+<pre><code> bool isPrime(int a){
     if(a == 1) return false;
     for(int i=2;i * i &lt;= a;i++){
         if(a % 2 == 0) return false;
@@ -241,691 +434,1881 @@ ga('send', 'pageview');
 
 int func(int a){
     while(!isPrime(a)){
+        a++;
+    }
+    return a;
+}
+</code></pre>
+          
         
-        </p>
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/20/树状数组-stars/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/652e229bfe8284eab89c99e59e6f5dd8.jpeg)" alt="树状数组-stars" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/03/20/树状数组-stars/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/树状数组-stars/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/树状数组-stars/" itemprop="url">树状数组-stars</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-03-20T05:56:12.000Z" itemprop="datePublished">2018-03-20</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T13:56:12+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/20/树状数组-stars/">树状数组-stars</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-【题目描述】    夜空中有N颗恒星（N≤100000），每颗恒星具有其坐标(x, y)（0≤x, y≤100000）。现在，天文学家要对这些恒星进行分类，分类的标准如下：对于任意一颗恒星S(x,y)，如果存在k颗恒星，其x, y坐标均不大于S，则恒星S属于k类星。如下图所示：第5颗恒星为3类星，这是由1、2、4三颗恒星均在其左下方而得出的，类似地第2、4两颗恒星为1类星，第3颗恒星为2类星。因
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/652e229bfe8284eab89c99e59e6f5dd8.jpeg" alt="pexels-photo-1699030.jpeg"></p>
+<p>【题目描述】<br>    夜空中有N颗恒星（N≤100000），每颗恒星具有其坐标(x, y)（0≤x, y≤100000）。现在，天文学家要对这些恒星进行分类，分类的标准如下：对于任意一颗恒星S(x,y)，如果存在k颗恒星，其x, y坐标均不大于S，则恒星S属于k类星。<br>如下图所示：第5颗恒星为3类星，这是由1、2、4三颗恒星均在其左下方而得出的，类似地第2、4两颗恒星为1类星，第3颗恒星为2类星。因此在这幅图中只有一颗0类星，共有二颗1类星，2类星和3类星各有一颗。<br>现给出N颗恒星的坐标，要求统计出0～N-1类星的个数。</p>
+<pre><code>【输入格式】
+输入文件第一行包含一个整数N，表示恒星总数。
+接下来的N行每行两个整数表示一颗恒星的坐标。不存在两颗星拥有相    同的坐标。
+
+【输出格式】
+输出文件包含N行，每行包含一个整数，第i行表示第i-1类星的数量。
+
+【样例输入】
+ 5
+ 3 3
+ 5 1
+ 5 5
+ 1 1
+ 7 1
+【样例输出】
+1
+2
+1
+1
+0
+
+
+
+
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+#define lowbit(x) x&amp;-x
+int n;
+int tr[32005];//树状数组
+int ans[15005];//存每个等级星星数
+void update(int q,int x)
+{
+    for(int i=q;i&lt;=32001;i+=lowbit(i))//注意i&lt;=32001，这里我调了2天，之前写的是i&lt;=32000，然而我x++了，所以……
+        tr[i]+=x;
+}
+int getsum(int q)
+{
+    int ans=0;
+    for(int i=q;i&gt;0;i-=lowbit(i))
+        ans+=tr[i];
+    return ans;
+}//模板
+int main()
+{
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i=1;i&lt;=n;i++)
+    {
+        int x,y;
+        scanf(&quot;%d%d&quot;,&amp;x,&amp;y);
+        x++;//为了防止x为0
+        update(x,1);
+        ans[getsum(x)-1]++;//前面x++了，后边要减回来
+    }
+    for(int i=0;i&lt;n;i++)
+        printf(&quot;%d\n&quot;,ans[i]);
+}
+</code></pre>
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/20/树状数组/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a31b781d670f86455fa6efc4e25b2b89.jpeg)" alt="树状数组" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/03/20/树状数组/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/树状数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/树状数组/" itemprop="url">树状数组</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-03-20T05:17:59.000Z" itemprop="datePublished">2018-03-20</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T13:17:59+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/20/树状数组/">树状数组</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-Stack is one of the most fundamental data structures, which is based on the principle of Last In First Out (LIFO). The basic operations include Push (inserting an element onto the top position) and P
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a31b781d670f86455fa6efc4e25b2b89.jpeg" alt="pexels-photo-1710795.jpeg"></p>
+<p>Stack is one of the most fundamental data structures, which is based on the principle of Last In First Out (LIFO). The basic operations include Push (inserting an element onto the top position) and Pop (deleting the top element). Now you are supposed to implement a stack with an extra operation: PeekMedian – return the median value of all the elements in the stack. With N elements, the median value is defined to be the (N/2)-th smallest element if N is even, or ((N+1)/2)-th if N is odd.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line contains a positive integer N (&lt;= 105). Then N lines follow, each contains a command in one of the following 3 formats:</p>
+<p>Push key<br>Pop<br>PeekMedian<br>where key is a positive integer no more than 105.</p>
+<p>Output Specification:</p>
+<p>For each Push command, insert key into the stack and output nothing. For each Pop or PeekMedian command, print in a line the corresponding returned value. If the command is invalid, print “Invalid” instead.</p>
+<pre><code>Sample Input:
+17
+Pop
+PeekMedian
+Push 3
+PeekMedian
+Push 2
+PeekMedian
+Push 1
+PeekMedian
+Pop
+Pop
+Push 5
+Push 4
+PeekMedian
+Pop
+Pop
+Pop
+Pop
+Sample Output:
+Invalid
+Invalid
+3
+2
+2
+1
+2
+4
+4
+5
+3
+Invalid
+</code></pre><p>代码</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+#define lowbit(i) ((i) &amp; (-i))
+const int maxn = 100010;
+using namespace std;
+int c[maxn];
+stack&lt;int&gt; s;
+void update(int x, int v) {
+    for(int i = x; i &lt; maxn; i += lowbit(i))
+        c[i] += v;
+}
+int getsum(int x) {
+    int sum = 0;
+    for(int i = x; i &gt;= 1; i -= lowbit(i))
+        sum += c[i];
+    return sum;
+}
+void PeekMedian() {
+    int left = 1, right = maxn, mid, k = (s.size() + 1) / 2;
+    while(left &lt; right) {
+        mid = (left + right) / 2;
+        if(getsum(mid) &gt;= k)// 此处getSum(mid)==k 必须包含在这里，即相等时 要使得区间想小的方向变化
+            right = mid;
+        else
+            left = mid + 1;
+    }
+    printf(&quot;%d\n&quot;, left);
+}
+int main() {
+    int n, temp;
+    scanf(&quot;%d&quot;, &amp;n);
+    char str[15];
+    for(int i = 0; i &lt; n; i++) {
+        scanf(&quot;%s&quot;, str);
+        if(str[1] == &apos;u&apos;) {
+            scanf(&quot;%d&quot;, &amp;temp);
+            s.push(temp);
+            update(temp, 1);
+        } else if(str[1] == &apos;o&apos;) {
+            if(!s.empty()) {
+                update(s.top(), -1);
+                printf(&quot;%d\n&quot;, s.top());
+                s.pop();
+            } else {
+                printf(&quot;Invalid\n&quot;);
+            }
+        } else {
+            if(!s.empty())
+                PeekMedian();
+            else
+                printf(&quot;Invalid\n&quot;);
+        }
+    }
+    return 0;
+}
+</code></pre><p>注意 树状数组的下标必须从1开始</p>
+
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/02/23/scanf用法/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/c5c2cde36491f317578fd860ff3ab4e6.jpeg)" alt="scanf用法" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/02/23/scanf用法/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/scanf用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/scanf用法/" itemprop="url">scanf用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-02-23T07:32:16.000Z" itemprop="datePublished">2018-02-23</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T15:32:16+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/02/23/scanf用法/">scanf用法</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-If you are a fan of Harry Potter, you would know the world of magic has its own currency system – as Hagrid explained it to Harry, “Seventeen silver Sickles to a Galleon and twenty-nine Knuts to a Si
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/c5c2cde36491f317578fd860ff3ab4e6.jpeg" alt=""></p>
+<p>If you are a fan of Harry Potter, you would know the world of magic has its own currency system – as Hagrid explained it to Harry, “Seventeen silver Sickles to a Galleon and twenty-nine Knuts to a Sickle, it’s easy enough.” Your job is to write a program to compute A+B where A and B are given in the standard form of “Galleon.Sickle.Knut” (Galleon is an integer in [0, 107], Sickle is an integer in [0, 17), and Knut is an integer in [0, 29)).</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case which occupies a line with A and B in the standard form, separated by one space.</p>
+<p>Output Specification:</p>
+<p>For each test case you should output the sum of A and B in one line, with the same format as the input.</p>
+<pre><code>Sample Input:
+3.2.1 10.16.27
+Sample Output:
+14.1.28
+
+
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+int main(int agrc,char **argv){
+
+    long long a,b,c,d,e,f,sum;
+    scanf(&quot;%lld.%lld.%lld&quot;,&amp;a,&amp;b,&amp;c);
+    scanf(&quot;%lld.%lld.%lld&quot;,&amp;d,&amp;e,&amp;f);
+    sum = (a+d)*29*17+(b+e)*29+(c+f);
+    long long  x = sum/(29*17);
+    long long y = (sum -x*29*17)/29;
+    long long z = sum % 29;
+    printf(&quot;%lld.%lld.%lld&quot;,x,y,z);
+       return 0;
+
+}
+</code></pre><p>###scanf(“%lld.%lld.%lld”,&amp;a,&amp;b,&amp;c);</p>
+
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/02/12/LIS/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/1e0fdcca4c0144e57e1d25952bf39ecf.jpeg)" alt="LIS" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/02/12/LIS/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/LIS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/12/LIS/" itemprop="url">LIS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-02-12T14:52:17.000Z" itemprop="datePublished">2018-02-12</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T22:52:17+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/02/12/LIS/">LIS</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-#LIS
-Eva is trying to make her own color stripe out of a given one. She would like to keep only her favorite colors in her favorite order by cutting off those unwanted pieces and sewing the remaining
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/1e0fdcca4c0144e57e1d25952bf39ecf.jpeg" alt="pexels-photo-2044868.jpeg"></p>
+<p>#LIS</p>
+<p>Eva is trying to make her own color stripe out of a given one. She would like to keep only her favorite colors in her favorite order by cutting off those unwanted pieces and sewing the remaining parts together to form her favorite color stripe.</p>
+<p>It is said that a normal human eye can distinguish about less than 200 different colors, so Eva’s favorite colors are limited. However the original stripe could be very long, and Eva would like to have the remaining favorite stripe with the maximum length. So she needs your help to find her the best result.</p>
+<p>Note that the solution might not be unique, but you only have to tell her the maximum length. For example, given a stripe of colors {2 2 4 1 5 5 6 3 1 1 5 6}. If Eva’s favorite colors are given in her favorite order as {2 3 1 5 6}, then she has 4 possible best solutions {2 2 1 1 1 5 6}, {2 2 1 5 5 5 6}, {2 2 1 5 5 6 6}, and {2 2 3 1 1 5 6}.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line contains a positive integer N (&lt;=200) which is the total number of colors involved (and hence the colors are numbered from 1 to N). Then the next line starts with a positive integer M (&lt;=200) followed by M Eva’s favorite color numbers given in her favorite order. Finally the third line starts with a positive integer L (&lt;=10000) which is the length of the given stripe, followed by L colors on the stripe. All the numbers in a line are separated by a space.</p>
+<p>Output Specification:</p>
+<p>For each test case, simply print in a line the maximum length of Eva’s favorite stripe.</p>
+<pre><code>Sample Input:
+6
+5 2 3 1 5 6
+12 2 2 4 1 5 5 6 3 1 1 5 6
+Sample Output:
+7
+
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+#include &lt;queue&gt;
+#include&lt;algorithm&gt;
+#include &lt;map&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int n,m,k;
+int color[202];
+int a[10002];
+int dp[10002];
+int main(int agrc,char **argv){
+
+cin&gt;&gt;n&gt;&gt;m;
+for(int i=1;i&lt;=m;i++){
+    int col;
+    cin&gt;&gt;col;
+    color[col] = i;
+}
+cin&gt;&gt;k;
+int num=0;
+for(int j=0;j&lt;k;j++){
+    int col;
+    cin&gt;&gt;col;
+    if(color[col]){
+        a[num] = color[col];
+        num++;
+    }
+}
+
+int maxN=0;
+for(int i=0;i&lt;num;i++){
+
+    dp[i]=1;
+    for(int j=0;j&lt;i;j++){
+        if(a[i] &gt;= a[j]){
+            dp[i] = max(dp[j]+1,dp[i]);
+        }
+    }
+    maxN=max(maxN,dp[i]);
+}
+
+cout&lt;&lt;maxN;
+return 0;
+
+}
+</code></pre>
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/02/11/Head-Of-Gang/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9ff877a6b1ce10d9634bed722036d832.jpeg)" alt="Head-Of-Gang" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/02/11/Head-Of-Gang/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/11/Head-Of-Gang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/11/Head-Of-Gang/" itemprop="url">Head-Of-Gang</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-02-11T05:16:27.000Z" itemprop="datePublished">2018-02-11</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-11T13:16:27+08:00">
+                2018-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/02/11/Head-Of-Gang/">Head-Of-Gang</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-One way that the police finds the head of a gang is to check people’s phone calls. If there is a phone call between A and B, we say that A and B is related. The weight of a relation is defined to be 
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9ff877a6b1ce10d9634bed722036d832.jpeg" alt="pexels-photo-2031726.jpeg"></p>
+<p>One way that the police finds the head of a gang is to check people’s phone calls. If there is a phone call between A and B, we say that A and B is related. The weight of a relation is defined to be the total time length of all the phone calls made between the two persons. A “Gang” is a cluster of more than 2 persons who are related to each other with total relation weight being greater than a given threshold K. In each gang, the one with maximum total weight is the head. Now given a list of phone calls, you are supposed to find the gangs and the heads.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line contains two positive numbers N and K (both less than or equal to 1000), the number of phone calls and the weight threthold, respectively. Then N lines follow, each in the following format:</p>
+<p>Name1 Name2 Time</p>
+<p>where Name1 and Name2 are the names of people at the two ends of the call, and Time is the length of the call. A name is a string of three capital letters chosen from A-Z. A time length is a positive integer which is no more than 1000 minutes.</p>
+<p>Output Specification:</p>
+<p>For each test case, first print in a line the total number of gangs. Then for each gang, print in a line the name of the head and the total number of the members. It is guaranteed that the head is unique for each gang. The output must be sorted according to the alphabetical order of the names of the heads.</p>
+<pre><code>Sample Input 1:
+8 59
+AAA BBB 10
+BBB AAA 20
+AAA CCC 40
+DDD EEE 5
+EEE DDD 70
+FFF GGG 30
+GGG HHH 20
+HHH FFF 10
+Sample Output 1:
+2
+AAA 3
+GGG 3
+Sample Input 2:
+8 70
+AAA BBB 10
+BBB AAA 20
+AAA CCC 40
+DDD EEE 5
+EEE DDD 70
+FFF GGG 30
+GGG HHH 20
+HHH FFF 10
+Sample Output 2:
+0
+
+
+
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+#include &lt;queue&gt;
+#include&lt;algorithm&gt;
+#include &lt;map&gt;
+using namespace std;
+int Graph[2030][2030];
+bool visit[2030];
+int n,k;
+int totalTime;
+map&lt;string,int&gt; stringToInt;
+map&lt;int,string&gt; intToString;
+map&lt;string,int&gt; result;
+vector&lt;int&gt; q;
+int ind;
+int gang=-100000;
+int idNub=1;
+void dfs(int src,int &amp;c,int&amp; total){
+    int tot=0;
+    visit[src] = true;
+    for(int i=1;i&lt;idNub;i++){
+
+        if(Graph[src][i] &gt; 0) {
+
+            total+=Graph[src][i];
+            tot+=Graph[src][i];
+            if(!visit[i]){
+                c++;
+                dfs(i,c,total);
+            }
+
+        }
+
+    }
+    if(tot &gt; gang){ind = src;gang = tot;}
+}
+
+int change(string s){
+    if(stringToInt[s] == 0) {
+        stringToInt[s] = idNub;
+        intToString[idNub] = s;
+        idNub++;
+        return idNub-1;
+    }
+    else return stringToInt[s];
+
+}
+int main(int agrc,char **argv){
+
+
+        cin&gt;&gt;n&gt;&gt;k;
+       for(int i=0;i&lt;n;i++){
+        string name1,name2;
+        int length;
+        cin&gt;&gt;name1&gt;&gt;name2&gt;&gt;length;
+
+        int id1 = change(name1);
+        int id2 = change(name2);
+
+         Graph[id1][id2]+=length;
+         Graph[id2][id1]+=length;
+
+
+    }
+    int count=0;
+    int total=0;
+    for(int i=1;i&lt;idNub;i++){
+        gang = -100000;
+        int c=1;
+        int total=0;
+        if(!visit[i]){
+            dfs(i,c,total);
+
+            if(c&gt;2 &amp;&amp; (total/2)&gt;k){
+
+                 result[intToString[ind]]=c;
+                 count++;
+            }
+        }
+    }
+    cout&lt;&lt;count&lt;&lt;endl;
+
+    for(auto it = result.begin();it!=result.end();it++){
+         cout&lt;&lt;it-&gt;first&lt;&lt;&quot; &quot;&lt;&lt;it-&gt;second&lt;&lt;endl;
+    }
+    return 0;
+
+}
+</code></pre><p>##Notice:<br>map：经过排序了的二元组的集合，所以按字母表顺序输出自然已经是有序啦。</p>
+
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/01/21/level-traversal/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/0c8e2d775fdfc94f6ffc213b8a3ff05f.jpeg)" alt="level traversal" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/01/21/level-traversal/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/21/level-traversal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/21/level-traversal/" itemprop="url">level traversal</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-01-21T01:33:00.000Z" itemprop="datePublished">2018-01-21</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-21T09:33:00+08:00">
+                2018-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/21/level-traversal/">level traversal</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.Input
-Each input file contains one test case. Each case starts with a line cont
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/0c8e2d775fdfc94f6ffc213b8a3ff05f.jpeg" alt="pexels-photo-2043590.jpeg"></p>
+<p>A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.<br>Input</p>
+<p>Each input file contains one test case. Each case starts with a line containing 0 &lt; N &lt; 100, the number of nodes in a tree, and M (&lt; N), the number of non-leaf nodes. Then M lines follow, each in the format:</p>
+<p>ID K ID[1] ID[2] … ID[K]<br>where ID is a two-digit number representing a given non-leaf node, K is the number of its children, followed by a sequence of two-digit ID’s of its children. For the sake of simplicity, let us fix the root ID to be 01.<br>Output</p>
+<p>For each test case, you are supposed to count those family members who have no child for every seniority level starting from the root. The numbers must be printed in a line, separated by a space, and there must be no extra space at the end of each line.</p>
+<p>The sample case represents a tree with only 2 nodes, where 01 is the root and 02 is its only child. Hence on the root 01 level, there is 0 leaf node; and on the next level, there is 1 leaf node. Then we should output “0 1” in a line.</p>
+<pre><code>Sample Input
+2 1
+01 1 02
+Sample Output
+0 1
+
+
+
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+using namespace std;
+#define INF 100000
+int levels[100];
+vector&lt;int&gt; child[100];
+
+int main(int argc, const char * argv[]){
+
+int n,m;
+cin&gt;&gt;n&gt;&gt;m;
+
+for(int i  = 0;i &lt; m;i++){
+    int id,k;
+    cin&gt;&gt;id&gt;&gt;k;
+    for(int j=0;j&lt;k;j++){
+        int childId;
+        cin&gt;&gt;childId;
+        child[id].push_back(childId);
+
+    }
+}
+
+queue&lt;int&gt; q;
+
+int lastNode=1;
+int newLastNode = 1;
+int level = 0;
+q.push(1);
+while(!q.empty()){
+    int temp = q.front();
+    q.pop();
+    int count = child[temp].size();
+    if(count == 0) levels[level]++;
+
+    for(int i = 0;i &lt; count;i++){
+        q.push(child[temp][i]);
+        newLastNode = child[temp][i];
+    }
+
+    if(temp == lastNode) {
+        lastNode = newLastNode;
+        level ++;
+    }
+
+
+}
+
+for(int i = 0;i&lt;level;i++){
+    cout&lt;&lt;levels[i];
+    if(i != level-1) cout&lt;&lt;&quot; &quot;;
+}
+
+
+return 0;
+}
+</code></pre>
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/01/18/Dijkstra/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/1c5188da89ec4c550cae0609799c0cd7.jpeg)" alt="Dijkstra" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/01/18/Dijkstra/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/Dijkstra/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/18/Dijkstra/" itemprop="url">Dijkstra</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2018-01-18T06:00:22.000Z" itemprop="datePublished">2018-01-18</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T14:00:22+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/18/Dijkstra/">Dijkstra</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-pat 1003
-As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/1c5188da89ec4c550cae0609799c0cd7.jpeg" alt="pexels-photo-1154619.jpeg"></p>
+<p>pat 1003</p>
+<p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<p>Input</p>
+<p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (&lt;= 500) - the number of cities (and the cities are numbered from 0 to N-1), M - the number of roads, C1 and C2 - the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c1, c2 and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C1 to C2.</p>
+<p>Output</p>
+<p>For each test case, print in one line two numbers: the number of different shortest paths between C1 and C2, and the maximum amount of rescue teams you can possibly gather.<br>All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<pre><code>Sample Input
+5 6 0 2
+1 2 1 5 3
+0 1 1
+0 2 2
+0 3 1
+1 2 1
+2 4 1
+3 4 1
+Sample Output
+2 4
+</code></pre><p>代码实现</p>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+#define INF 100000
+
+int Graphy[500][500];
+int dist[500];
+bool visit[500];
+int num[500];
+
+int ans=0;
+int maxSum;
+void Dijkstra(int s,int num_nodes){
+
+
+//init
+for(int i =0 ;i &lt; num_nodes;i++){
+    if(Graphy[s][i] &gt; 0) dist[i] = Graphy[s][i];
+    else dist[i] = false;
+}
+
+visit[s] = true;
+dist[s] = 0;
+
+// circulate number
+
+for(int i = 1;i &lt; num_nodes;i++){
+
+    int min = INF;
+    int u;
+
+    for(int i = 0;i&lt;num_nodes;i++){
+        if(!visit[i] &amp;&amp; dist[i] &gt; min){
+            min = dist[i];
+            u = i;
+        }
+    }
+
+    visit[u] = true;
+
+    //update the dist array
+
+    for(int i = 0;i&lt;num_nodes;i++){
+        int newDist = dist[u] + Graphy[u][i];
+        if(!visit[true] &amp;&amp; Graphy[s][i] &gt;0 &amp;&amp; newDist &lt; dist[i]) dist[i] = newDist;// cautious Graphy[s][i] &gt; 0 condition ,because Graphy[s][i] = 0 means that there is a road between city s and i
+    }
+}
+
+}
+
+
+void dfs(int num_nodes,int src,int dest,int     curdist,int maxnum){
+
+    visit[src] = true;
+    if(src == dest){
+        if(curdist == dist[dest]){
+            ans++;
+            if(maxnum &gt; maxSum) maxSum = maxnum;
+            return ;
+        }
+    }
+
+    if(curdist &gt; dist[dest]) return; //剪枝
+
+    for(int i = 0;i&lt;num_nodes;i++){
+        if(!visit[i] &amp;&amp; Graphy[src][i] &gt; 0) {
+            dfs(num_nodes,i,dest,Graphy[src][i]+curdist,maxnum+num[i]);
+                visit[i] = false;
+    }
+    }
+   }
+
+
+int main(int argc, const char * argv[]){
+
+int n,m,c1,c2;
+cin&gt;&gt;n&gt;&gt;m&gt;&gt;c1&gt;&gt;c2;
+for( int i = 0;i&lt;n;i++){
+    cin&gt;&gt;num[i];
+}
+
+for(int i = 0;i &lt; m;i++){
+    int L,R,D;
+    cin&gt;&gt;L&gt;&gt;R&gt;&gt;D;
+    Graphy[L][R] = D;
+    Graphy[R][L] = D;
+}
+Graphy[c1][c1] = 0;
+
+Dijkstra(c1, n);
+
+memset(visit,0,sizeof(visit));
+dfs(n,c1,c2,0,num[c1]);
+
+cout&lt;&lt;ans&lt;&lt;&quot; &quot;&lt;&lt;maxSum;
+
+
+return 0;
+
+
+
+}
+</code></pre><p>注意:Graphy数组 为零表示不连通</p>
+
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/31/观察者模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/15ad877faf4b479e5352641a178b15d6.jpeg)" alt="观察者模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/31/观察者模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/31/观察者模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/31/观察者模式/" itemprop="url">观察者模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-31T12:12:54.000Z" itemprop="datePublished">2017-01-31</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-31T20:12:54+08:00">
+                2017-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/31/观察者模式/">观察者模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-定义定义了对象之间的一对多依赖，这样一来，当一个对象改变状态改变时，它的所有依赖者都会收到通知并自动更新
-示例//被观察者接口
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/15ad877faf4b479e5352641a178b15d6.jpeg" alt="pexels-photo-1978126.jpeg"></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>定义了对象之间的一对多依赖，这样一来，当一个对象改变状态改变时，它的所有依赖者都会收到通知并自动更新</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>//被观察者接口
 public interface Subject{
     //实现类中持有Observer对象的collection，当状态有变化时，通过调用observer的update方法通知更新
-    public void registerObserver(Observer
-        </p>
-    </div>
-</article>
-    
+    public void registerObserver(Observer o);
+
+    public void removeObserver(Observer o);
+    public void notifyObservers();
+}
 
 
-    </div></section>
+//观察者接口
+public interface Observer {
+    public void update(args[]);
+}
+</code></pre><h4 id="JAVA内置观察者模式"><a href="#JAVA内置观察者模式" class="headerlink" title="JAVA内置观察者模式"></a>JAVA内置观察者模式</h4><p>java.util.Obserable类 对应上面的Subject接口</p>
+<pre><code>Observable:
 
+addObserver()
+deleteObserver()
+notifyObservers()
+setChanged()
+</code></pre><p>java.util.Observer接口 对应上面的Observer接口</p>
+<pre><code>Observer:
+update()
+</code></pre><p>可观察者送出通知：<br>先调用setChanged（）方法，标记状态已经改变的事实<br>然后调用notifyObservers（）或notifyObservers（Object arg）</p>
+<p>观察者接受通知：<br>实现了update（Observable o,object org）方法</p>
 
-    <nav id="page-nav">
-        <span class="pages">Page 2 of 5</span>
-        <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
-    </nav>
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
-                        <i class="icon fa fa-google-plus"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/smartlxh/" target="_blank">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
+          
         
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/04/09/ECMP/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
-                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
-                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/05/19/前序-后序建树-z层次遍历/" class="title">前序-后序建树+z层次遍历</a></p>
-                            <p class="item-date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+      
     </div>
+    
+    
+    
 
-            
-                
+    
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
         </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://gold.xitu.io">掘金</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-</aside>
-                </div>
-            </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2020 八阿哥</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-        </div>
+      </section>
+
+      
+
+      
+
     </div>
-</footer>
+  </aside>
+
+
         
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'smartlxh'};
-    (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-
-
-
-    
-        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
+    
 
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
+  </div>
 
-    </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

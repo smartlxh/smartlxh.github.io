@@ -1,924 +1,2442 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
 <head>
-    <meta charset="utf-8">
-    
-    <title>八阿哥</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="八阿哥">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="八阿哥">
-    
 
-    
 
-    
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
-    
-    
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-84078415-1', 'auto');
-ga('send', 'pageview');
-
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
-    
-    
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>八阿哥</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">八阿哥</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                        
-                                    
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">八阿哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">八阿哥</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/onos-pof-channel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/onos-pof-channel/" itemprop="url">Pof交换机和ONOS控制器建立连接</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T15:56:07+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Pof交换机和ONOS控制器建立连接的过程"><a href="#Pof交换机和ONOS控制器建立连接的过程" class="headerlink" title="Pof交换机和ONOS控制器建立连接的过程"></a>Pof交换机和ONOS控制器建立连接的过程</h2><h3 id="1、PofControllerImpl类开始。"><a href="#1、PofControllerImpl类开始。" class="headerlink" title="1、PofControllerImpl类开始。"></a>1、PofControllerImpl类开始。</h3><p>这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务</p>
+<pre><code>protected ConcurrentMap&lt;Dpid, PofSwitch&gt; connectedSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+protected ConcurrentMap&lt;Dpid, PofSwitch&gt; activeMasterSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+protected ConcurrentMap&lt;Dpid, PofSwitch&gt; activeEqualSwitches =
+        new ConcurrentHashMap&lt;&gt;();
+
+protected PofSwitchAgent agent = new PofSwitchAgent();
+protected Set&lt;PofSwitchListener&gt; ofSwitchListener = new CopyOnWriteArraySet&lt;&gt;();
+
+protected Multimap&lt;Integer, PacketListener&gt; ofPacketListener =
+        ArrayListMultimap.create();
+
+protected Set&lt;PofEventListener&gt; ofEventListener = new CopyOnWriteArraySet&lt;&gt;();
+</code></pre><p>这个类里有个实现了switchAgent接口的内部类PofSwitchAgent，主要处理逻辑都实现在这个内部类里。</p>
+<pre><code>public class PofSwitchAgent implements PofAgent {
+
+  private final Logger log = LoggerFactory.getLogger(PofSwitchAgent.class);
+  private final Lock switchLock = new ReentrantLock();
+
+  @Override
+  public boolean addConnectedSwitch(Dpid dpid, PofSwitch sw) {
+
+  if (connectedSwitches.get(dpid) != null) {
+      log.error(&quot;Trying to add connectedSwitch buts found a previous &quot;
+              + &quot;value for dpid: {}&quot;, dpid);
+      return false;
+  } else {
+      log.info(&quot;Added switch {}&quot;, dpid);
+      connectedSwitches.put(dpid, sw);
+      for (PofSwitchListener l : ofSwitchListener) {
+          l.switchAdded(dpid);
+      }
+      return true;
+  }
+  }
+
+@Override
+public void handleConnectionUp(Dpid dpid, PofSwitch sw) {
+  for (PofSwitchListener l : ofSwitchListener) {
+      l.handleConnectionUp(dpid);
+  }
+}
+
+// *******ingore some functions
+@Override
+public boolean addActivatedMasterSwitch(Dpid dpid, PofSwitch sw) {
+  switchLock.lock();
+  try {
+      if (!validActivation(dpid)) {
+          return false;
+      }
+      activeMasterSwitches.put(dpid, sw);
+      return true;
+  } finally {
+      switchLock.unlock();
+  }
+}
+
+@Override
+public void removeConnectedSwitch(Dpid dpid) {
+  connectedSwitches.remove(dpid);
+  PofSwitch sw = activeMasterSwitches.remove(dpid);
+  if (sw == null) {
+      log.debug(&quot;sw was null for {}&quot;, dpid);
+      sw = activeEqualSwitches.remove(dpid);
+  }
+  for (PofSwitchListener l : ofSwitchListener) {
+      l.switchRemoved(dpid);
+  }
+}
+
+@Override
+  public void processMessage(Dpid dpid, OFMessage m) {
+  processPacket(dpid, m);
+  }
+}
+</code></pre><p>由于底层使用Netty来进行通信，PofControllerImpl 类启动后，会另外启动一个Controller类来实际上进行初始化，和监听端口。在PofControllerImpl的activave函数中，传入内部类agent。</p>
+<pre><code>@Activate
+public void activate(ComponentContext context) {
+    log.info(&quot;+++++ PofControllerimpl is started&quot;);
+    coreService.registerApplication(APP_ID, this::preDeactivate);
+    cfgService.registerProperties(getClass());
+    ctrl.setConfigParams(context.getProperties());
+    ctrl.start(agent, driverService);
+}
+</code></pre><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>Controller类中的start方法会调用run方法</p>
+<pre><code>public void run() {
+
+    try {
+        final ServerBootstrap bootstrap = createServerBootStrap();
+
+        bootstrap.setOption(&quot;reuseAddr&quot;, true);
+        bootstrap.setOption(&quot;child.keepAlive&quot;, true);
+        bootstrap.setOption(&quot;child.tcpNoDelay&quot;, true);
+        bootstrap.setOption(&quot;child.sendBufferSize&quot;, Controller.SEND_BUFFER_SIZE);
+
+        ChannelPipelineFactory pfact =
+                new PofPipelineFactory(this, null, sslContext);
+        bootstrap.setPipelineFactory(pfact);
+        cg = new DefaultChannelGroup();
+        openFlowPorts.forEach(port -&gt; {
+            InetSocketAddress sa = new InetSocketAddress(port);
+            cg.add(bootstrap.bind(sa));
+            log.info(&quot;Listening for switch connections on {}&quot;, sa);
+        });
+
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+
+}
+</code></pre><p>主要是做一些netty的初始化工作，最后监听在6643端口。其中的PofPipelineFactory也是Netty相关，设置一些ChannelPipline，编码解码器，其中包括OFChannerlHandler，这样接下来的和交换机握手就由OFChannerHandler来做。</p>
+<h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>OFChannerHandler这个类主要是有一个ChanelState的枚举类，他表明了和当前交换机的握手状态，分为(INIT, WAIT_HELLO, WAIT_FEATURES_REPLY, WAIT_PORT_DESC_REPLY, WAIT_CONFIG_REPLY, WAIT_DESCRIPTION_STAT_REPLY, WAIT_SWITCH_DRIVER_SUB_HANDSHAKE, ACTIVE)，初始时，构造函数将其设为INIT状态，最后握手完毕处在ACTIVE状态，进行正常的处理，（具体每个状态做了什么见童浩杰师兄的状态信息改变）基本的逻辑为处理不同的消息然后通过遍历已经注册的监听器调用监听器对应的方法。</p>
+<pre><code>OFChannelHandler(Controller controller) {
+  this.controller = controller;
+  this.state = ChannelState.INIT;
+  this.pendingResourceReportMsg = new CopyOnWriteArrayList&lt;OFFlowTableResource&gt;();
+  this.pendingPortStatusMsg = new CopyOnWriteArrayList&lt;OFPortStatus&gt;();
+  this.factory = controller.getOFMessageFactory();
+  duplicateDpidFound = Boolean.FALSE;
+}
+</code></pre><p>当Channel检测到交换机连接时，会调用OFChannelHandler类中的channelConnected函数，将其状态设为WAIT_HELLO,即等待交换机的HELLO包</p>
+<pre><code>@Override
+public void channelConnected(ChannelHandlerContext ctx,
+        ChannelStateEvent e) throws Exception {
+    channel = e.getChannel();
+    log.info(&quot;New switch connection from {}&quot;,
+            channel.getRemoteAddress());
+
+    SocketAddress address = channel.getRemoteAddress();
+    if (address instanceof InetSocketAddress) {
+        final InetSocketAddress inetAddress = (InetSocketAddress) address;
+        final IpAddress ipAddress = IpAddress.valueOf(inetAddress.getAddress());
+        if (ipAddress.isIp4()) {
+            channelId = ipAddress.toString() + &apos;:&apos; + inetAddress.getPort();
+        } else {
+            channelId = &apos;[&apos; + ipAddress.toString() + &quot;]:&quot; + inetAddress.getPort();
+        }
+    } else {
+        channelId = channel.toString();
+    }
+
+    dispatcher = Executors.newSingleThreadExecutor(groupedThreads(&quot;onos/of/dispatcher&quot;, channelId, log));
+
+    setState(ChannelState.WAIT_HELLO);
+}
+</code></pre><p>当Channel收到消息，会调用messageReceived函数，其中会调用state的processOFMessage，其中对应与每个不通的OFMessage<br>类型对应由不同的处理方法 。注意内部枚举类实质上也是其子类，在不同的状态是会覆写很多不通的方法，因此不同的状态对应着不通的消息处理函数。</p>
+<pre><code>@Override
+public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
+        throws Exception {
+    if (e.getMessage() instanceof List) {
+        @SuppressWarnings(&quot;unchecked&quot;)
+        List&lt;OFMessage&gt; msglist = (List&lt;OFMessage&gt;) e.getMessage();
+
+
+        for (OFMessage ofm : msglist) {
+            // Do the actual packet processing
+            state.processOFMessage(this, ofm);
+        }
+    } else {
+        state.processOFMessage(this, (OFMessage) e.getMessage());
+    }
+}
+</code></pre><p>processOFMessage函数</p>
+<pre><code>void  processOFMessage(OFChannelHandler h, OFMessage m)
+           throws IOException, SwitchStateException {
+       switch(m.getType()) {
+       case HELLO:
+           processOFHello(h, (OFHello) m);
+           break;
+       case BARRIER_REPLY:
+           processOFBarrierReply(h, (OFBarrierReply) m);
+           break;
+       case ECHO_REPLY:
+           processOFEchoReply(h, (OFEchoReply) m);
+           break;
+       case ECHO_REQUEST:
+           processOFEchoRequest(h, (OFEchoRequest) m);
+           break;
+       case ERROR:
+           processOFError(h, (OFError) m);
+           break;
+       case FEATURES_REPLY:
+           processOFFeaturesReply(h, (OFFeaturesReply) m);
+           break;
+       case FLOW_REMOVED:
+           processOFFlowRemoved(h, (OFFlowRemoved) m);
+           break;
+       case GET_CONFIG_REPLY:
+           processOFGetConfigReply(h, (OFGetConfigReply) m);
+           break;
+       case PACKET_IN:
+           processOFPacketIn(h, (OFPacketIn) m);
+           break;
+       case PORT_STATUS:
+           processOFPortStatus(h, (OFPortStatus) m);
+           break;
+
+       case QUEUE_GET_CONFIG_REPLY:
+           processOFQueueGetConfigReply(h, (OFQueueGetConfigReply) m);
+           break;
+           //edited by hdy
+       case RESOURCE_REPORT:
+           processOFStatisticsReply(h, (OFFlowTableResource)m);
+           //processOFFlowTableResourceReply(h, (OFFlowTableResource) m);
+           break;
+       case EXPERIMENTER:
+           processOFExperimenter(h, (OFExperimenter) m);
+           break;
+       case ROLE_REPLY:
+           processOFRoleReply(h, (OFRoleReply) m);
+           break;
+       case GET_ASYNC_REPLY:
+           processOFGetAsyncReply(h, (OFGetAsyncReply) m);
+           break;
+
+           // The following messages are sent to switches. The controller
+           // should never receive them
+       case SET_CONFIG:
+       case GET_CONFIG_REQUEST:
+       case PACKET_OUT:
+       case PORT_MOD:
+       case QUEUE_GET_CONFIG_REQUEST:
+       case BARRIER_REQUEST:
+       //case STATS_REQUEST: // multipart request in 1.3//wenjian
+       case MULTIPART_REPLY:
+       case FEATURES_REQUEST:
+       case FLOW_MOD:
+       case GROUP_MOD:
+       case TABLE_MOD:
+       case GET_ASYNC_REQUEST:
+       case SET_ASYNC:
+       case METER_MOD:
+       default:
+           illegalMessageReceived(h, m);
+           break;
+       }
+   }
+</code></pre><p>到此为止，控制器就和交换机建立了连接。<br>之后进入正常的处理的逻辑。以PacketIn为例， 调用栈为<br>processOFMessage-&gt;dispatchMessage-&gt;AbstractPofSwitch.handleMessage-&gt;agent.processMessage<br>此处的agent就是文初讲的PofControllerImpl的内部类 PofSwitchAgent。然后会通知相关的监听器进行相应的操作。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/onos-pof/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/onos-pof/" itemprop="url">onos-pof下发流表的过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T09:38:15+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="onos-pof下发流表的过程"><a href="#onos-pof下发流表的过程" class="headerlink" title="onos-pof下发流表的过程"></a>onos-pof下发流表的过程</h3><p>流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。<br>UML图如图所示</p>
+<p><img src="https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png" alt="FlowRuleManager"></p>
+<p><img src="https://lxhblog.oss-cn-beijing.aliyuncs.com/DistributedFlowRuleStore.png" alt="DistributedFlowRuleStore"></p>
+<p>下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实际上执行的是FlowRuleManager的applyFlowRule方法</p>
+<pre><code>@Override
+public void applyFlowRules(FlowRule... flowRules) {
+    checkPermission(FLOWRULE_WRITE);
+
+    FlowRuleOperations.Builder builder = FlowRuleOperations.builder();
+    for (FlowRule flowRule : flowRules) {
+        builder.add(flowRule);
+    }
+    apply(builder.build());
+}
+</code></pre><p>首先每一个flowRule被封装成一个FlowRuleOperation，不同flowRule的集合被封装成一个FlowRuleOperations，然后调用apply方法。FlowRuleOperations是被分解成不同stage的FlowRuleOperation的集合，每一个stage是一组FlowRuleOperation的集合，不同stage的FlowRuleOperation集合保存在list中，FlowRuleOptions的代码如下</p>
+<pre><code>public class FlowRuleOperations {
+
+private final List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages;
+private final FlowRuleOperationsContext callback;
+
+private FlowRuleOperations(List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages,
+                           FlowRuleOperationsContext cb) {
+    this.stages = stages;
+    this.callback = cb;
+}
+
+// kryo-constructor
+protected FlowRuleOperations() {
+    this.stages = Lists.newArrayList();
+    this.callback = null;
+}
+</code></pre><p>接下来看FlowRuleManger中的apply方法,其中将FlowRuleOperations放到一个线程容量为32的线程池中处理：</p>
+<pre><code>protected ExecutorService operationsService =
+         Executors.newFixedThreadPool(32, groupedThreads(&quot;onos/flowservice&quot;, &quot;operations-%d&quot;, log));
+
+@Override
+public void apply(FlowRuleOperations ops) {
+   checkPermission(FLOWRULE_WRITE);
+   operationsService.execute(new FlowOperationsProcessor(ops));
+ }
+</code></pre><p>下面是flowOperationsProcessor的代码</p>
+<pre><code>private class FlowOperationsProcessor implements Runnable {
+    // Immutable
+    private final FlowRuleOperations fops;
+
+    // Mutable
+    private final List&lt;Set&lt;FlowRuleOperation&gt;&gt; stages;
+    private final Set&lt;DeviceId&gt; pendingDevices = new HashSet&lt;&gt;();
+    private boolean hasFailed = false;
+
+    FlowOperationsProcessor(FlowRuleOperations ops) {
+        this.stages = Lists.newArrayList(ops.stages());
+        this.fops = ops;
+    }
+
+    @Override
+    public synchronized void run() {
+        if (!stages.isEmpty()) {
+            process(stages.remove(0));
+        } else if (!hasFailed) {
+            fops.callback().onSuccess(fops);
+        }
+    }
+
+    private void process(Set&lt;FlowRuleOperation&gt; ops) {
+        Multimap&lt;DeviceId, FlowRuleBatchEntry&gt; perDeviceBatches = ArrayListMultimap.create();
+
+        for (FlowRuleOperation op : ops) {
+            perDeviceBatches.put(op.rule().deviceId(),
+                    new FlowRuleBatchEntry(mapOperationType(op.type()), op.rule()));
+        }
+        pendingDevices.addAll(perDeviceBatches.keySet());
+
+        for (DeviceId deviceId : perDeviceBatches.keySet()) {
+            long id = idGenerator.getNewId();
+            final FlowRuleBatchOperation b = new FlowRuleBatchOperation(perDeviceBatches.get(deviceId),
+                                           deviceId, id);
+            pendingFlowOperations.put(id, this);
+            deviceInstallers.execute(() -&gt; store.storeBatch(b));
+        }
+    }
+</code></pre><p>java多线程中会自动执行run方法，run方法调用了process方法。这里使用了一个Multimap (Multimap perDeviceBatches) 来保存要下发到每个Device的FlowRules的集合，每个FlowRule被封装成一个FlowRuleBatchEntry类型的对象，保存在perDeviceBatches中。这样就以Device为单位将所有的FLow Rules进行归类，然后针对不同的Device逐个下发FlowRuleBatchOperation（就是一组待下发的Flow Rules集合）</p>
+<p>Manager有关数据信息的操作都会通过store来完成。通过调用store.storeBatch将Flow rule信息添加到FlowRuleStore中。store.storeBatch也是在一个新的线程池中处理的,跟上文中的operationService的声明相同。storeBatch具体的实现细节比较复杂，如要判断FlowRuleBatchOperation的设备是否有对应的master控制器节点，以及当前的节点是否就是master控制器节点，这是因为FlowRule需要存储到device对应的master控制器节点的FlowRuleStore中，并由master节点下发到对应的device，具体的操作过程看DistributedFlowRuleStore的源码。</p>
+<pre><code>public void storeBatch(FlowRuleBatchOperation operation) {
+    if (operation.getOperations().isEmpty()) {
+        notifyDelegate(FlowRuleBatchEvent.completed(
+                new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                new CompletedBatchOperation(true, Collections.emptySet(), operation.deviceId())));
+        return;
+    }
+
+    DeviceId deviceId = operation.deviceId();
+    NodeId master = mastershipService.getMasterFor(deviceId);
+
+    if (master == null) {
+        log.warn(&quot;No master for {} : flows will be marked for removal&quot;, deviceId);
+
+        updateStoreInternal(operation);
+
+        notifyDelegate(FlowRuleBatchEvent.completed(
+                new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                new CompletedBatchOperation(true, Collections.emptySet(), operation.deviceId())));
+        return;
+    }
+
+    if (Objects.equals(local, master)) {
+        //log.info(&quot;judge whether this flowRule belongs to POF&quot;);
+        if (deviceId.uri().getScheme().equals(&quot;pof&quot;)) {
+            FlowRule flowRule = operation.getOperations().get(0).target();
+            FlowTable flowTable = flowTableStore.getFlowTableInternal(flowRule.deviceId(),
+                                                                      FlowTableId.valueOf(flowRule.tableId()));
+            Set&lt;Criterion&gt; criterions = flowRule.selector().criteria();
+            Optional&lt;Criterion&gt; criterionOptional = criterions.stream()
+                    .filter(criterion -&gt; criterion.type() != Criterion.Type.POF)
+                    .findFirst();
+            if (flowTable != null &amp;&amp; !criterionOptional.isPresent()) {
+                storeBatchInternal(operation);
+            }
+        } else {
+            storeBatchInternal(operation);
+        }
+        return;
+    }
+
+    log.trace(&quot;Forwarding storeBatch to {}, which is the primary (master) for device {}&quot;,
+              master, deviceId);
+
+    clusterCommunicator.unicast(operation,
+                                APPLY_BATCH_FLOWS,
+                                serializer::encode,
+                                master)
+                       .whenComplete((result, error) -&gt; {
+                           if (error != null) {
+                               log.warn(&quot;Failed to storeBatch: {} to {}&quot;, operation, master, error);
+
+                               Set&lt;FlowRule&gt; allFailures = operation.getOperations()
+                                       .stream()
+                                       .map(op -&gt; op.target())
+                                       .collect(Collectors.toSet());
+
+                               notifyDelegate(FlowRuleBatchEvent.completed(
+                                       new FlowRuleBatchRequest(operation.id(), Collections.emptySet()),
+                                       new CompletedBatchOperation(false, allFailures, deviceId)));
+                           }
+                       });
+}
+</code></pre><p>若当前控制器不是对应device的master节点，storeBatch会使用ClusterCommunicationService服务的unicast方法，将该FlowRuleBatchOperation发送到对应的master控制器节点，Remote节点处理完成后会将处理的结果告诉该控制器节点。同时，DistributedFlowRuleStore使用ClusterCommunicationService服务的addSubscriber来监听东西向发送的FlowRule消息，并做出对应的处理。最后会调用notifyDelegate方法，然后调用delegate.notify方法，这个delegate是FlowRuleManager中的一个内部类对象，FlowruleManger激活时注入到store中</p>
+<pre><code>@Activate
+public void activate(ComponentContext context) {
+    modified(context);
+    store.setDelegate(delegate);
+    eventDispatcher.addSink(FlowRuleEvent.class, listenerRegistry);
+    deviceService.addListener(deviceListener);
+    cfgService.registerProperties(getClass());
+    idGenerator = coreService.getIdGenerator(FLOW_OP_TOPIC);
+    log.info(&quot;Started&quot;);
+}
+</code></pre><p>notify函数中，通过获取注册的provider的相关provider实例，执行excutebatch方法<br>对应的provider为PofRuleProvider</p>
+<pre><code>private class InternalStoreDelegate implements FlowRuleStoreDelegate {
+
+
+   // TODO: Right now we only dispatch events at individual flowEntry level.
+   // It may be more efficient for also dispatch events as a batch.
+   @Override
+   public void notify(FlowRuleBatchEvent event) {
+       final FlowRuleBatchRequest request = event.subject();
+       switch (event.type()) {
+       case BATCH_OPERATION_REQUESTED:
+           // Request has been forwarded to MASTER Node, and was
+           request.ops().forEach(
+                   op -&gt; {
+                       switch (op.operator()) {
+                           case ADD:
+                               post(new FlowRuleEvent(RULE_ADD_REQUESTED, op.target()));
+                               break;
+                           case REMOVE:
+                               post(new FlowRuleEvent(RULE_REMOVE_REQUESTED, op.target()));
+                               break;
+                           case MODIFY:
+                               //TODO: do something here when the time comes.
+                               break;
+                           default:
+                               log.warn(&quot;Unknown flow operation operator: {}&quot;, op.operator());
+                       }
+                   }
+           );
+
+           DeviceId deviceId = event.deviceId();
+           FlowRuleBatchOperation batchOperation = request.asBatchOperation(deviceId);
+           // getProvider is customized to favor driverProvider
+           FlowRuleProvider flowRuleProvider = getProvider(deviceId);
+           if (flowRuleProvider != null) {
+               flowRuleProvider.executeBatch(batchOperation);
+           }
+
+           break;
+
+       case BATCH_OPERATION_COMPLETED:
+
+           FlowOperationsProcessor fops = pendingFlowOperations.remove(
+                   event.subject().batchId());
+           if (event.result().isSuccess()) {
+               if (fops != null) {
+                   fops.satisfy(event.deviceId());
+               }
+           } else {
+               fops.fail(event.deviceId(), event.result().failedItems());
+           }
+
+           break;
+
+       default:
+           break;
+       }
+   }
+</code></pre><p>   }</p>
+<p>看PofRuleProvider 的executeBatch函数</p>
+<pre><code>@Override
+   public void executeBatch(FlowRuleBatchOperation batch) {
+       checkNotNull(batch);
+       //log.info(&quot;PofFlowRuleProvider executeBatch()&quot;);
+       pendingBatches.put(batch.id(), new InternalCacheEntry(batch));
+
+
+       Dpid dpid = Dpid.dpid(batch.deviceId().uri());
+
+       PofSwitch sw = controller.getSwitch(dpid);
+       OFFlowMod mod;
+
+       for (FlowRuleBatchEntry fbe : batch.getOperations()) {
+           // flow is the third party privacy flow
+
+           FlowRuleExtPayLoad flowRuleExtPayLoad = fbe.target().payLoad();
+
+           if (hasPayload(flowRuleExtPayLoad)) {
+               log.info(&quot;+++++ PofFlowRuleProvider hasPayload(flowRuleExtPayLoad)?&quot;);
+               OFMessage msg = new ThirdPartyMessage(flowRuleExtPayLoad.payLoad());
+               sw.sendMsg(msg);
+               continue;
+           }
+           //log.info(&quot;+++++ before flowModBuilder&quot;);
+           FlowModBuilder builder =
+                   FlowModBuilder.builder(fbe.target(), sw.factory(), flowTableStore,
+                           Optional.empty(), Optional.of(driverService));
+
+           //log.info(&quot;+++++ PofFlowRuleProvider fbe.operator() :{}&quot;, fbe.operator());
+           switch (fbe.operator()) {
+               case ADD:
+                   mod = builder.buildFlowAdd();
+
+                  //flowEntry.setState(FlowEntry.FlowEntryState.ADDED);
+
+                   break;
+               case REMOVE:
+                   mod = builder.buildFlowDel();
+                   //flowEntry.setState(FlowEntry.FlowEntryState.REMOVED);
+                   break;
+               case MODIFY:
+                   mod = builder.buildFlowMod();
+                   //flowEntry.setState(FlowEntry.FlowEntryState.ADDED);
+                   break;
+               default:
+                   log.error(&quot;Unsupported batch operation {}; skipping flowmod {}&quot;,
+                           fbe.operator(), fbe);
+                   continue;
+           }
+           sw.sendMsg(mod);
+       }
+
+       //In pof, no BARRIER_REPLY yet
+       CompletedBatchOperation op =
+               new CompletedBatchOperation(true, Collections.emptySet(),
+                                           batch.deviceId());
+       providerService.batchOperationCompleted(batch.id(), op);
+
+   }
+</code></pre><p>该方法中最终通过sw.sendmessage发送具体的OFMessage。<br>sw是AbstractPofSwitch的一个对象，通过调用底层Netty的channel来发送消息。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>下发流表的过程与下发流表项的过程基本一样，但是注意<br>下发流表时用到的store是newDistributedFlowTableStore，而下发流表项用到的是onos本身的DistributedFlowRuleStore（有修改）</p>
+<p>参考链接 ：<a href="https://baymaxhuang.github.io/2017/01/15/Flow-Rule-Subsystem%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" target="_blank" rel="external">博客</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/ECMP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/09/ECMP/" itemprop="url">ECMP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-09T13:15:13+08:00">
+                2020-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ECMP<br>1简介 Equal-CostMultipathRouting，等价多路径。即存在多条到达同一个目的地址的相同开销的路径。当设备支持等价路由时，发往该目的 IP 或者目的网段的三层转发流量就可以通过不同的路径分担，实现网络的负载均衡，并在其中某些路径出现故障时，由其它路径代替完成转发处理，实现路由冗余备份功能。</p>
+<p>3、分配包的基本方式</p>
+<p>1）基于数据流的负载分担</p>
+<p>目的地址和源地址相同的报文属于一个数据流。基于数据流的负载分担的方式就是，假定有10个数据流，有2条路径可选择，一边各走5个。</p>
+<p>2）基于数据报文的负载分担</p>
+<p>假定有10个数据报文，有2个路径可选择，一边各走5个。</p>
+<p>在做ns3仿真数据中心网络，需要使用ns3 ECMP<br>发现ns3中的ECMP，RandomEcmpRouting采用的是随机方式，即对于每个packet路由到哪个路径是随机的。注意的是</p>
+<pre><code>Config::SetDefault (&quot;ns3::Ipv4GlobalRouting::RespondToInterfaceEvents&quot;, BooleanValue (true));
+</code></pre><p>要写在创建interface之前，不然ECMP不起作用，所有的数据流都经过一个path。<br>ns3暂不支持 基于数据流的分担，但是网上已经可以找到patch</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/中序-层序建树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/27/中序-层序建树/" itemprop="url">中序+层序建树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-27T20:32:04+08:00">
+                2018-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg" alt="pexels-photo-1142984.jpeg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;stack&gt;</div><div class="line">#include&lt;math.h&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;set&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#define MAX 1010</div><div class="line">using namespace std;</div><div class="line">vector&lt;int&gt; post;</div><div class="line">vector&lt;int&gt; in;</div><div class="line">vector&lt;int&gt; pre;</div><div class="line">vector&lt;int&gt; level;</div><div class="line">vector&lt;int&gt; result;</div><div class="line">bool flag1,flag2,flag3,flag4;</div><div class="line">int n;</div><div class="line">int num=0;</div><div class="line">struct node&#123;</div><div class="line">    int val;</div><div class="line">    struct node* le;</div><div class="line">    struct node* ri;</div><div class="line">    node(int value)&#123;</div><div class="line">        le=NULL;</div><div class="line">        ri=NULL;</div><div class="line">        val = value;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">typedef struct node  node;</div><div class="line"></div><div class="line">void buildTree(node*&amp; root,int val,int index)&#123;</div><div class="line">    if(root==NULL)&#123;</div><div class="line">        root=new node(val);</div><div class="line">        return ;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    int rootIndex;</div><div class="line">    for(rootIndex=0;rootIndex&lt;n;rootIndex++)&#123;</div><div class="line">        if(in[rootIndex]==root-&gt;val)&#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(rootIndex&lt;index)&#123;</div><div class="line">        buildTree(root-&gt;ri, val, index);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        buildTree(root-&gt;le, val, index);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void preTrav(node* root)&#123;</div><div class="line">    if(root!=NULL)&#123;</div><div class="line">        cout&lt;&lt;root-&gt;val&lt;&lt;endl;</div><div class="line">        preTrav(root-&gt;le);</div><div class="line">        preTrav(root-&gt;ri);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        int temp;</div><div class="line">        scanf(&quot;%d&quot;,&amp;temp);</div><div class="line">        level.push_back(temp);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        int temp;</div><div class="line">        scanf(&quot;%d&quot;,&amp;temp);</div><div class="line">        in.push_back(temp);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    node* root=NULL;</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line"></div><div class="line">        int index;</div><div class="line">        for(index=0;index&lt;n;index++)&#123;</div><div class="line">            if(in[index]==level[i])&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        buildTree(root,level[i],index);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    preTrav(root);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/前序-后序建树-z层次遍历/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/19/前序-后序建树-z层次遍历/" itemprop="url">前序-后序建树+z层次遍历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T21:43:11+08:00">
+                2018-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg" alt="pexels-photo-1198817.jpeg"></p>
+<p>PAT 1127. ZigZagging on a Tree (30)-甲级<br>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple standard routine to print the numbers in level-order. However, if you think the problem is too simple, then you are too naive. This time you are supposed to print the numbers in “zigzagging order” — that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left. For example, for the following tree you must output: 1 11 5 8 17 12 20 15.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line gives a positive integer N (&lt;= 30), the total number of nodes in the binary tree. The second line gives the inorder sequence and the third line gives the postorder sequence. All the numbers in a line are separated by a space.</p>
+<p>Output Specification:</p>
+<p>For each test case, print the zigzagging sequence of the tree in a line. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.</p>
+<p>##注意<br>Z层次遍历使用两个栈，注意的是一个装入栈的时候先填右孩子然后填左孩子，另一个则相反，先填左孩子然后是右孩子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Sample Input:</div><div class="line">8</div><div class="line">12 11 20 17 1 15 8 5</div><div class="line">12 20 17 11 15 8 5 1</div><div class="line">Sample Output:</div><div class="line">1 11 5 8 17 12 20 15</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;stack&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int lef[1000];</div><div class="line">int righ[1000];</div><div class="line">int post[1000];</div><div class="line">int in[1000];</div><div class="line">int n;</div><div class="line">struct node &#123;</div><div class="line">    int val;</div><div class="line">    struct node *left,*right;</div><div class="line">    node()&#123;val=0;left=NULL;right=NULL;&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">typedef  struct node node;</div><div class="line"></div><div class="line">int createTree(int start1,int end1,int start2,int end2)&#123;</div><div class="line">    if(end1-start1==0) return in[start1];</div><div class="line">    int root = post[end2];</div><div class="line"></div><div class="line">    int temp=start1;</div><div class="line">    for(temp;temp&lt;=end1;temp++)&#123;</div><div class="line">        if(in[temp]==root)</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">    //cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">    int left = temp-start1;</div><div class="line">    int right = end1-temp;</div><div class="line">  //  cout&lt;&lt;left&lt;&lt;&quot; &quot;&lt;&lt;right&lt;&lt;endl;</div><div class="line">    if(left&gt;=1)&#123;</div><div class="line">      //  cout&lt;&lt;&quot;d&quot;&lt;&lt;start1&lt;&lt;&quot; &quot;&lt;&lt;temp-1&lt;&lt;&quot; &quot;&lt;&lt;start2&lt;&lt;&quot; &quot;&lt;&lt;start2+left-1&lt;&lt;endl;</div><div class="line">        lef[root]=createTree(start1,temp-1,start2,start2+left-1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(right&gt;=1)&#123;</div><div class="line">       // cout&lt;&lt;&quot;d&quot;&lt;&lt;temp+1&lt;&lt;&quot; &quot;&lt;&lt;end1&lt;&lt;&quot; &quot;&lt;&lt;end2-right&lt;&lt;&quot; &quot;&lt;&lt;end2-1&lt;&lt;endl;</div><div class="line"></div><div class="line">        righ[root]=createTree(temp+1,end1,end2-right,end2-1);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return root;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void preTravel(int x)&#123;</div><div class="line">    cout&lt;&lt;x&lt;&lt;&quot; &quot;;</div><div class="line">    if(x!=0)&#123;</div><div class="line"></div><div class="line">        if(lef[x]!=0) preTravel(lef[x]);</div><div class="line">        if(righ[x]!=0) preTravel(righ[x]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void levelTravel()&#123;</div><div class="line">    int flag=0;</div><div class="line">    stack&lt;int&gt; q;</div><div class="line">    stack&lt;int&gt; s;</div><div class="line">    s.push(post[n-1]);</div><div class="line"></div><div class="line">    while(!(s.empty()&amp;&amp;q.empty()))&#123;</div><div class="line"></div><div class="line">        if(!q.empty())&#123;</div><div class="line">            while(!q.empty())&#123;</div><div class="line">                int temp = q.top();</div><div class="line">                cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">                q.pop();</div><div class="line"></div><div class="line">                if(righ[temp]!=0)&#123;</div><div class="line">                    s.push(righ[temp]);</div><div class="line">                &#125;</div><div class="line">                if(lef[temp]!=0)&#123;</div><div class="line">                    s.push(lef[temp]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            while(!s.empty())&#123;</div><div class="line"></div><div class="line">                int temp = s.top();</div><div class="line">                cout&lt;&lt;temp&lt;&lt;&quot; &quot;;</div><div class="line">                s.pop();</div><div class="line">                //cout&lt;&lt;lef[temp]&lt;&lt;&quot; &quot;&lt;&lt;righ[temp]&lt;&lt;endl;</div><div class="line">                if(lef[temp]!=0)&#123;</div><div class="line">                    q.push(lef[temp]);</div><div class="line">                &#125;</div><div class="line">                if(righ[temp]!=0)&#123;</div><div class="line">                    q.push(righ[temp]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()&#123;</div><div class="line"></div><div class="line">    cin&gt;&gt;n;</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        cin&gt;&gt;in[i];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line"></div><div class="line">        cin&gt;&gt;post[i];</div><div class="line">    &#125;</div><div class="line">    createTree(0, n-1, 0, n-1);</div><div class="line">    levelTravel();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/AVL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/AVL/" itemprop="url">AVL</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T20:43:46+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg" alt="pexels-photo-2007191.jpeg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">struct node &#123;</div><div class="line">    int val;</div><div class="line">    struct node *left,*right;</div><div class="line">    node()&#123;val=0;left=NULL;right=NULL;&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">typedef  struct node node;</div><div class="line"></div><div class="line">node* leftRotate(node* tree)&#123;</div><div class="line">    node *temp = tree-&gt;right;</div><div class="line">    tree-&gt;right = temp-&gt;left;</div><div class="line">    temp-&gt;left = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightRotate(node* tree)&#123;</div><div class="line">    node* temp = tree-&gt;left;</div><div class="line">    tree-&gt;left= temp-&gt;right;</div><div class="line">    temp-&gt;right = tree;</div><div class="line">    return temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* leftRightRotate(node* tree)&#123;</div><div class="line">    tree-&gt;left = leftRotate(tree-&gt;left);</div><div class="line">    return rightRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* rightLeftRotate(node* tree)&#123;</div><div class="line">    tree-&gt;right = rightRotate(tree-&gt;right);</div><div class="line">    return leftRotate(tree);</div><div class="line">&#125;</div><div class="line"></div><div class="line">int getHeight(node* tree)&#123;</div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        int l = getHeight(tree-&gt;left);</div><div class="line">        int r = getHeight(tree-&gt;right);</div><div class="line">        return max(l,r)+1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">node* insert(node* tree,int val)&#123;</div><div class="line"></div><div class="line">    if(tree==NULL)&#123;</div><div class="line">        tree = new node();</div><div class="line">        tree-&gt;val = val;</div><div class="line">        return tree;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        if(val &lt; tree-&gt;left-&gt;val)&#123;</div><div class="line">            tree-&gt;left = insert(tree-&gt;left, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(l-r &gt;=2)&#123;</div><div class="line">                if(val&lt;tree-&gt;left-&gt;val)&#123;</div><div class="line">                    tree = rightRotate(tree);</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree=leftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        else&#123;</div><div class="line">            tree-&gt;right = insert(tree-&gt;right, val);</div><div class="line">            int l = getHeight(tree-&gt;left);</div><div class="line">            int r = getHeight(tree-&gt;right);</div><div class="line">            if(r-l&gt;=2)&#123;</div><div class="line">                if(val&gt;tree-&gt;right-&gt;val)&#123;</div><div class="line">                    tree = leftRotate(tree);</div><div class="line"></div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    tree = rightLeftRotate(tree);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return tree;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/Dfs枚举剪枝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/Dfs枚举剪枝/" itemprop="url">1103.cpp</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T23:28:33+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9461c26080e4c58ffe013b24e8c09eaf.jpeg" alt="pexels-photo-1109561.jpeg"></p>
+<ol>
+<li>Integer Factorization (30)</li>
+</ol>
+<p>The K-P factorization of a positive integer N is to write N as the sum of the P-th power of K positive integers. You are supposed to write a program to find the K-P factorization of N for any positive integers N, K and P.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case which gives in a line the three positive integers N (&lt;=400), K (&lt;=N) and P (1&lt;P&lt;=7). The numbers in a line are separated by a space.</p>
+<p>Output Specification:</p>
+<p>For each case, if the solution exists, output in the format:</p>
+<p>N = n1^P + … nK^P</p>
+<p>where ni (i=1, … K) is the i-th factor. All the factors must be printed in non-increasing order.</p>
+<p>Note: the solution may not be unique. For example, the 5-2 factorization of 169 has 9 solutions, such as 122 + 42 + 22 + 22 + 12, or 112 + 62 + 22 + 22 + 22, or more. You must output the one with the maximum sum of the factors. If there is a tie, the largest factor sequence must be chosen – sequence { a1, a2, … aK } is said to be larger than { b1, b2, … bK } if there exists 1&lt;=L&lt;=K such that ai=bi for i<l and="" al="">bL</l></p>
+<p>If there is no solution, simple output “Impossible”.</p>
+<p>Dfs 枚举+剪枝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Sample Input 1:</div><div class="line">169 5 2</div><div class="line">Sample Output 1:</div><div class="line">169 = 6^2 + 6^2 + 6^2 + 6^2 + 5^2</div><div class="line">Sample Input 2:</div><div class="line">169 167 3</div><div class="line">Sample Output 2:</div><div class="line">Impossible</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#include&lt;set&gt;</div><div class="line">#define ll long long</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">vector&lt;int&gt; tempPath;</div><div class="line">vector&lt;int&gt; ansPath;</div><div class="line">vector&lt;int&gt; data;</div><div class="line">int N,P,K;</div><div class="line">int maxSum;</div><div class="line"></div><div class="line">void init()&#123;</div><div class="line">    int temp = 0;</div><div class="line">    int index = 1;</div><div class="line">    while(temp&lt;=N)&#123;</div><div class="line">        data.push_back(temp);</div><div class="line">        temp = pow(index,P);</div><div class="line">        index++;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void Dfs(int index,int curSum,int num,int indexSum)&#123;</div><div class="line"></div><div class="line">    if(num == K &amp;&amp; curSum ==N &amp;&amp; indexSum &gt; maxSum)&#123;</div><div class="line">        ansPath = tempPath;</div><div class="line"></div><div class="line">        maxSum = indexSum;</div><div class="line">        return ;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(curSum &gt; N || num &gt; K)</div><div class="line">        return ;</div><div class="line"></div><div class="line">    if(index&gt;=1)&#123;</div><div class="line">        tempPath.push_back(index);</div><div class="line">        Dfs(index,curSum+data[index],num+1,indexSum+index);</div><div class="line">        tempPath.pop_back();</div><div class="line">        if(index&gt;1)</div><div class="line">        Dfs(index-1,curSum,num,indexSum);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    maxSum = -1;</div><div class="line">    scanf(&quot;%d%d%d&quot;,&amp;N,&amp;K,&amp;P);</div><div class="line">    init();</div><div class="line">    Dfs(data.size()-1,0,0,0);</div><div class="line">    if(maxSum == -1)&#123;</div><div class="line">        printf(&quot;Impossible&quot;);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        printf(&quot;%d = &quot;,N);</div><div class="line">        for(int i = 0;i&lt;ansPath.size();i++)&#123;</div><div class="line">            printf(&quot;%d^%d&quot;,ansPath[i],P);</div><div class="line">            if(i!=ansPath.size()-1)</div><div class="line">                printf(&quot; + &quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/qucksort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/22/qucksort/" itemprop="url">qucksort</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T21:05:18+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b9e4a6d9b757a83ea5e8e842d8d2274a.jpeg" alt="pexels-photo-2090763.jpeg"></p>
+<ol>
+<li>Quick Sort (25)</li>
+</ol>
+<p>There is a classical process named partition in the famous quick sort algorithm. In this process we typically choose one element as the pivot. Then the elements less than the pivot are moved to its left and those larger than the pivot to its right. Given N distinct positive integers after a run of partition, could you tell how many elements could be the selected pivot for this partition?</p>
+<p>For example, given N = 5 and the numbers 1, 3, 2, 4, and 5. We have:</p>
+<p>1 could be the pivot since there is no element to its left and all the elements to its right are larger than it;<br>3 must not be the pivot since although all the elements to its left are smaller, the number 2 to its right is less than it as well;<br>2 must not be the pivot since although all the elements to its right are larger, the number 3 to its left is larger than it as well;<br>and for the similar reason, 4 and 5 could also be the pivot.<br>Hence in total there are 3 pivot candidates.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line gives a positive integer N (&lt;= 105). Then the next line contains N distinct positive integers no larger than 109. The numbers in a line are separated by spaces.</p>
+<p>Output Specification:</p>
+<p>For each test case, output in the first line the number of pivot candidates. Then in the next line print these candidates in increasing order. There must be exactly 1 space between two adjacent numbers, and no extra space at the end of each line.</p>
+<pre><code>Sample Input:
+5
+1 3 2 4 5
+Sample Output:
+1 4 5
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">#include&lt;vector&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;queue&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#include&lt;set&gt;</div><div class="line">#define ll long long</div><div class="line">using namespace std;</div><div class="line"></div><div class="line"></div><div class="line">vector&lt;ll&gt; data;</div><div class="line">vector&lt;ll&gt; inorder;</div><div class="line">vector&lt;ll&gt; elem;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line"></div><div class="line">    int n;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    for(int i = 0;i&lt;n;i++)&#123;</div><div class="line">        ll temp;</div><div class="line">        scanf(&quot;%lld&quot;,&amp;temp);</div><div class="line">        data.push_back(temp);</div><div class="line">        inorder.push_back(temp);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    sort(inorder.begin(),inorder.end());</div><div class="line">    int cnt = 0;</div><div class="line">    ll max = 0;</div><div class="line">    for(int i=0;i&lt;n;i++)&#123;</div><div class="line">        if(inorder[i] == data[i] &amp;&amp; data[i] &gt;= max)&#123;</div><div class="line">            cnt++;</div><div class="line">            elem.push_back(data[i]);</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        if(data[i] &gt; max)&#123;</div><div class="line">            max = data[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;,cnt);</div><div class="line"></div><div class="line">    for(int i = 0;i &lt; cnt;i++)&#123;</div><div class="line">        printf(&quot;%lld&quot;,elem[i]);</div><div class="line">        if(i!=cnt-1) printf(&quot; &quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printf(&quot;\n&quot;);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>开始是并没有采用max变量，而是从头开始遍历，确保左边的都比当前值小。会超时，后来考虑只要记录当前出现的最大值就可以了</p>
+<p>还有注意最后一行的printf(“\n”),测试点2 是零个，如果不输入换行则格式错误</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/sscanf与sprintf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/sscanf与sprintf/" itemprop="url">sscanf与sprintf</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T21:16:08+08:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/92af5e3f98cf5eecdd234f4035257a88.jpeg" alt="pexels-photo-931018.jpeg"></p>
+<p>pat1108. Finding Average (20)</p>
+<p>The basic task is simple: given N real numbers, you are supposed to calculate their average. But what makes it complicated is that some of the input numbers might not be legal. A “legal” input is a real number in [-1000, 1000] and is accurate up to no more than 2 decimal places. When you calculate the average, those illegal numbers must not be counted in.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line gives a positive integer N (&lt;=100). Then N numbers are given in the next line, separated by one space.</p>
+<p>Output Specification:</p>
+<p>For each illegal input number, print in a line “ERROR: X is not a legal number” where X is the input. Then finally print in a line the result: “The average of K numbers is Y” where K is the number of legal inputs and Y is their average, accurate to 2 decimal places. In case the average cannot be calculated, output “Undefined” instead of Y. In case K is only 1, output “The average of 1 number is Y” instead.</p>
+<pre><code>Sample Input 1:
+7
+5 -3.2 aaa 9999 2.3.4 7.123 2.35
+Sample Output 1:
+ERROR: aaa is not a legal number
+ERROR: 9999 is not a legal number
+ERROR: 2.3.4 is not a legal number
+ERROR: 7.123 is not a legal number
+The average of 3 numbers is 1.38
+Sample Input 2:
+2
+aaa -9999
+Sample Output 2:
+ERROR: aaa is not a legal number
+ERROR: -9999 is not a legal number
+The average of 0 numbers is Undefined
+</code></pre><p>Code</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+int main() {
+    int n, cnt = 0;
+    char a[50], b[50];
+    double temp, sum = 0.0;
+    cin &gt;&gt; n;
+    for(int i = 0; i &lt; n; i++) {
+        scanf(&quot;%s&quot;, a);
+        sscanf(a, &quot;%lf&quot;, &amp;temp);
+        sprintf(b, &quot;%.2lf&quot;,temp);
+        int flag = 0;
+        for(int j = 0; j &lt; strlen(a); j++) {
+            if(a[j] != b[j]) {
+                flag = 1;
+            }
+        }
+        if(flag || temp &lt; -1000 || temp &gt; 1000) {
+            printf(&quot;ERROR: %s is not a legal number\n&quot;, a);
+            continue;
+        } else {
+            sum += temp;
+            cnt++;
+        }
+    }
+    if(cnt == 1) {
+        printf(&quot;The average of 1 number is %.2lf&quot;, sum);
+    } else if(cnt &gt; 1) {
+        printf(&quot;The average of %d numbers is %.2lf&quot;, cnt, sum / cnt);
+    } else {
+        printf(&quot;The average of 0 numbers is Undefined&quot;);
+    }
+    return 0;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/pat-1091/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/27/pat-1091/" itemprop="url">pat-1091</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T20:27:26+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/0b20d824a7b3d6fcd3f4d3089f2b3941.jpeg" alt="pexels-photo-2061536.jpeg"></p>
+<ol>
+<li>Acute Stroke (30)</li>
+</ol>
+<p>One important factor to identify acute stroke (急性脑卒中) is the volume of the stroke core. Given the results of image analysis in which the core regions are identified in each MRI slice, your job is to calculate the volume of the stroke core.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line contains 4 positive integers: M, N, L and T, where M and N are the sizes of each slice (i.e. pixels of a slice are in an M by N matrix, and the maximum resolution is 1286 by 128); L (&lt;=60) is the number of slices of a brain; and T is the integer threshold (i.e. if the volume of a connected core is less than T, then that core must not be counted).</p>
+<p>Then L slices are given. Each slice is represented by an M by N matrix of 0’s and 1’s, where 1 represents a pixel of stroke, and 0 means normal. Since the thickness of a slice is a constant, we only have to count the number of 1’s to obtain the volume. However, there might be several separated core regions in a brain, and only those with their volumes no less than T are counted. Two pixels are “connected” and hence belong to the same region if they share a common side, as shown by Figure 1 where all the 6 red pixels are connected to the blue one.</p>
+<p>Figure 1<br>Output Specification:</p>
+<p>For each case, output in a line the total volume of the stroke core.</p>
+<pre><code>Sample Input:
+3 4 5 2
+1 1 1 1
+1 1 1 1
+1 1 1 1
+0 0 1 1
+0 0 1 1
+0 0 1 1
+1 0 1 1
+0 1 0 0
+0 0 0 0
+1 0 1 1
+0 0 0 0
+0 0 0 0
+0 0 0 1
+0 0 0 1
+1 0 0 0
+Sample Output:
+26
+</code></pre><p>//小技巧链</p>
+<p>将三个方向上的位移用dx,dy,dz三个数组表示，</p>
+<pre><code>int dx[6] = {1,-1,0,0,0,0};
+int dy[6] = {0,0,1,-1,0,0};
+int dz[6] = {0,0,0,0,1,-1};、
+</code></pre><hr>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;math.h&gt;
+#include &lt;map&gt;
+#define INF 100000000;
+using namespace std;
+
+int cube[61][1287][129];
+bool visited[61][1287][129];
+int M,N,L,T;
+int total;
+queue&lt;int&gt; q;
+
+
+int neighbor[6][3] = {{0,0,1},{0,0,-1},{0,1,0},{0,-1,0},{1,0,0},{-1,0,0}};
+//深搜段错误，可能递归层数太多
+/*int Dfs(int i,int j,int k){
+
+//cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;&quot; &quot;&lt;&lt;k&lt;&lt;endl;
+if(i&lt;0 || i&gt;=L||j&lt;0||j&gt;=M||k&lt;0||k&gt;=N||cube[i][j][k] == 0||visited[i][j][k]){
+    return 0;
+}
+visited[i][j][k] = true;
+int ans = Dfs(i-1,j,k)+Dfs(i+1,j,k)+Dfs(i,j-1,k)+Dfs(i,j+1,k)+Dfs(i,j,k-1)+Dfs(i,j,k+1);
+return ans+1;
+
+}*/
+
+bool isValid(int x, int y, int z)
+{     return x&lt;L &amp;&amp; x&gt;=0 &amp;&amp; y&lt;M &amp;&amp; y&gt;=0 &amp;&amp; z&lt;N &amp;&amp; z&gt;=0;
+}
+
+int Bfs(int i,int j,int k){
+    visited[i][j][k] = true;
+    int ans=0;
+    q.push(i);q.push(j);q.push(k);
+    while(!q.empty()){
+        ans++;
+        int x = q.front();q.pop();
+        int y = q.front();q.pop();
+        int z = q.front();q.pop();
+        for(int i=0;i&lt;6;i++){
+            int a = x+neighbor[i][0];
+            int b = y+neighbor[i][1];
+            int c = z+neighbor[i][2];
+            if(isValid(a,b,c) &amp;&amp; cube[a][b][c] == 1 &amp;&amp; !visited[a][b][c]){
+                visited[a][b][c] = true;
+                q.push(a);q.push(b);q.push(c);
+            }
+        }
+    }
+    return ans;
+}
+int main(int agrc,char **argv){
+
+    scanf(&quot;%d%d%d%d&quot;,&amp;M,&amp;N,&amp;L,&amp;T);
+    for(int i=0;i&lt;L;i++){
+        for(int j=0;j&lt;M;j++){
+            for(int k=0;k&lt;N;k++){
+                scanf(&quot;%d&quot;,&amp;cube[i][j][k]);
+            }
+        }
+    }
+
+
+    for(int i=0;i&lt;L;i++){
+        for(int j=0;j&lt;M;j++){
+            for(int k=0;k&lt;N;k++){
+                if(!visited[i][j][k] &amp;&amp; cube[i][j][k] == 1){
+                    int ans = Bfs(i, j, k);
+                    if(ans &gt;=T) total+=ans;
+                }
+            }
+        }
+    }
+
+    printf(&quot;%d&quot;,total);
+    return 0;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-<script src="/js/insight.js"></script>
-
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    <em class="page-title-link" data-url="home">Home</em>
-    </h1>
-</div>
-                        <div class="main-body-content">
-                            
-
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2020" class="archive-year"><i class="icon fa fa-calendar-o"></i>2020</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2020/05/12/onos-pof-channel/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/05/12/onos-pof-channel/">Pof交换机和ONOS控制器建立连接</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Pof交换机和ONOS控制器建立连接的过程1、PofControllerImpl类开始。这个类主要使用了Map来保存建立连接的switch，可以看到其中交换机分MasterSwitch和EqualSwitch。还有相关的switch，packet，event监听器，以便于在收到时间能够调用上层的服务
-protected ConcurrentMap&lt;Dpid, PofSwitch&gt; co
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/05/12/onos-pof/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2020/05/12/onos-pof/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/05/12/onos-pof/">onos-pof下发流表的过程</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            onos-pof下发流表的过程流表的下发主要涉及这两个类 FlowRuleManager和DistributedFlowRuleStore，在pof中为修改的newDistributedFlowRuleStore，其继承关系和接口实现是一样的。UML图如图所示
-
-
-下发流表从调用FlowRuleService接口的applyFlowRule开始，FlowRuleManager实现了这个接口，因此实
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/04/09/ECMP/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2020/04/09/ECMP/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/04/09/ECMP/">ECMP</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            ECMP1简介 Equal-CostMultipathRouting，等价多路径。即存在多条到达同一个目的地址的相同开销的路径。当设备支持等价路由时，发往该目的 IP 或者目的网段的三层转发流量就可以通过不同的路径分担，实现网络的负载均衡，并在其中某些路径出现故障时，由其它路径代替完成转发处理，实现路由冗余备份功能。
-3、分配包的基本方式
-1）基于数据流的负载分担
-目的地址和源地址相同的报文属于一
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/08/27/中序-层序建树/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/08/27/中序-层序建树/">中序+层序建树</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#include&lt;iostream&gt;#i
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/05/19/前序-后序建树-z层次遍历/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/19/前序-后序建树-z层次遍历/">前序-后序建树+z层次遍历</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-PAT 1127. ZigZagging on a Tree (30)-甲级Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traver
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/18/AVL/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/4f08f28fbd49cadcb3fdaeade90bc703.jpeg)" alt="AVL" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/05/18/AVL/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-05-18T12:43:46.000Z" itemprop="datePublished">2018-05-18</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/18/AVL/">AVL</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687#include&lt;iostream&gt;#include&l
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/04/23/Dfs枚举剪枝/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/9461c26080e4c58ffe013b24e8c09eaf.jpeg)" alt="1103.cpp" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/04/23/Dfs枚举剪枝/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-04-23T15:28:33.000Z" itemprop="datePublished">2018-04-23</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/04/23/Dfs枚举剪枝/">1103.cpp</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-Integer Factorization (30)
-
-The K-P factorization of a positive integer N is to write N as the sum of the P-th power of K positive integers. You are supposed to write a program to find the K-P facto
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/04/22/qucksort/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b9e4a6d9b757a83ea5e8e842d8d2274a.jpeg)" alt="qucksort" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/04/22/qucksort/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-04-22T13:05:18.000Z" itemprop="datePublished">2018-04-22</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/04/22/qucksort/">qucksort</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-Quick Sort (25)
-
-There is a classical process named partition in the famous quick sort algorithm. In this process we typically choose one element as the pivot. Then the elements less than the pivot 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/04/21/sscanf与sprintf/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/92af5e3f98cf5eecdd234f4035257a88.jpeg)" alt="sscanf与sprintf" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/04/21/sscanf与sprintf/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-04-21T13:16:08.000Z" itemprop="datePublished">2018-04-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/04/21/sscanf与sprintf/">sscanf与sprintf</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-pat1108. Finding Average (20)
-The basic task is simple: given N real numbers, you are supposed to calculate their average. But what makes it complicated is that some of the input numbers might not be
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/27/pat-1091/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/0b20d824a7b3d6fcd3f4d3089f2b3941.jpeg)" alt="pat-1091" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2018/03/27/pat-1091/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2018-03-27T12:27:26.000Z" itemprop="datePublished">2018-03-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/27/pat-1091/">pat-1091</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-Acute Stroke (30)
-
-One important factor to identify acute stroke (急性脑卒中) is the volume of the stroke core. Given the results of image analysis in which the core regions are identified in each MRI sl
-        </p>
-    </div>
-</article>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 5</span>
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-    </nav>
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
-                        <i class="icon fa fa-google-plus"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/smartlxh/" target="_blank">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
-        
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/04/09/ECMP/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
-                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
-                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/05/19/前序-后序建树-z层次遍历/" class="title">前序-后序建树+z层次遍历</a></p>
-                            <p class="item-date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://gold.xitu.io">掘金</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2020 八阿哥</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-        
-    
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'smartlxh'};
-    (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-
-
-
-    
-        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
-    
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

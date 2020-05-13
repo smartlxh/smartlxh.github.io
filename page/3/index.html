@@ -1,237 +1,430 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
 <head>
-    <meta charset="utf-8">
-    
-    <title>八阿哥</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="八阿哥">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="八阿哥">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="八阿哥">
-    
 
-    
 
-    
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
-    
-    
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-84078415-1', 'auto');
-ga('send', 'pageview');
-
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
-    
-    
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
+
+  <title>八阿哥</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">八阿哥</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                        
-                                    
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">八阿哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+      
+        <p class="site-subtitle">八阿哥</p>
+      
+  </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/31/状态模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/31/状态模式/" itemprop="url">状态模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-31T09:11:01+08:00">
+                2017-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/64c657efd57cb1f721cbe1616af44695.jpeg" alt="pexels-photo-1936936.jpeg"></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>允许对象在内部状态改变时改变它的行为，对像看起来好像修改了它的类</p>
+<h3 id="状态机示例"><a href="#状态机示例" class="headerlink" title="状态机示例"></a>状态机示例</h3><p>插图 p386</p>
+<p>因为状态机的状态可能会经常改变，所以将状态单独实现从状态机的类中解耦出来成为一个接口，每个状态都要实现这个接口，使每个状态都有当前状态的对应动作。否则的话，在状态机中将会有很多if 和else语句。<br>感觉跟命令模式有点相像（将不同的命令对象从控制类中解离出来）。</p>
+
+          
+        
+      
     </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
-    </h1>
-</div>
-                        <div class="main-body-content">
-                            
+    
+    
 
     
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/31/状态模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/17-7-28/87615808.jpg)" alt="状态模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/31/状态模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/30/迭代器模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/30/迭代器模式/" itemprop="url">迭代器模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-31T01:11:01.000Z" itemprop="datePublished">2017-01-31</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T13:51:54+08:00">
+                2017-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/31/状态模式/">状态模式</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-定义允许对象在内部状态改变时改变它的行为，对像看起来好像修改了它的类
-状态机示例插图 p386
-因为状态机的状态可能会经常改变，所以将状态单独实现从状态机的类中解耦出来成为一个接口，每个状态都要实现这个接口，使每个状态都有当前状态的对应动作。否则的话，在状态机中将会有很多if 和else语句。感觉跟命令模式有点相像（将不同的命令对象从控制类中解离出来）。
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/30/迭代器模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/145c62NFA8.png)" alt="迭代器模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/30/迭代器模式/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2017-01-30T05:51:54.000Z" itemprop="datePublished">2017-01-30</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/30/迭代器模式/">迭代器模式</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-定义提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示
-层次结构(以数组为例)public interface Iterator {
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/c7ccec072925ee1fbc939fe482f6c856.jpeg" alt="pexels-photo-1994904.jpeg"></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示</p>
+<h3 id="层次结构-以数组为例"><a href="#层次结构-以数组为例" class="headerlink" title="层次结构(以数组为例)"></a>层次结构(以数组为例)</h3><pre><code>public interface Iterator {
     boolean hasnext（）；
     Object next（）；
 }
@@ -239,438 +432,1421 @@ ga('send', 'pageview');
 public class iteratorDemo{
    int data[];
    int pisistion = 0;
-    public ite
-        </p>
+    public itertorDemo(int data[]){
+        this.data =data;
+    }
+    public boolean hasNext(){
+        if(position &gt;= data.length||items[position] == null){
+            return false;
+        else{
+            return true;
+        }
+    }
+
+    public Object next( ){
+        return data[position];
+        position = position + 1;
+    }
+
+public class DataClass{
+        private int data[100];
+        public Iterator createIterator(
+            return new itertorDemo(data);
+        }
+    }
+
+public class testIterator{
+    public statci void main(String []args){
+
+        DataClass data = new Dataclass();
+        Iterator iterator = data.createIterator();
+        while(iterator.hasNext()){
+            System.out.pritnln(iterator.next());
+        }
+    }
+}
+</code></pre><h5 id="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"><a href="#注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中" class="headerlink" title="注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中"></a>注意：为什么要将遍历集合写在独立一个接口中，而不是直接实现在DemoClass类中</h5><p>遵循单一责任编码原则，即一个类中最好只有一个可能变的地方</p>
+<h4 id="JAVA语法糖"><a href="#JAVA语法糖" class="headerlink" title="JAVA语法糖"></a>JAVA语法糖</h4><pre><code>for（Object obj: collectioon){
+        ...
+}
+这是java 1.5以后提供的java语法糖，如果你反编译一下会发现就是使用的Iterator
+</code></pre><h3 id="Composite-Pattern"><a href="#Composite-Pattern" class="headerlink" title="Composite Pattern"></a>Composite Pattern</h3><p>定义：<br>允许你将对象组合成树形结构来表现“整体／部分”层次结构，组合能让客户以一致的方式处理个别对象以及对象组合</p>
+<h4 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h4><p>Componet：有两种，composites 和leaf elements<br>Composite：Composite 包含companents，包含一些孩子的集合，这些孩子可能是其他Composite也可能是叶子节点<br>Trees：以这种数据结构组织程序，就组成了一棵树</p>
+<p>截图演示结构</p>
+
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/29/模版方法模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/17-7-28/51737972.jpg)" alt="模版方法模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/29/模版方法模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/29/模版方法模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/29/模版方法模式/" itemprop="url">模版方法模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-29T05:57:35.000Z" itemprop="datePublished">2017-01-29</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T13:57:35+08:00">
+                2017-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/29/模版方法模式/">模版方法模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-定义在一个算法中定义一个算法的骨架，把一些步骤的实现延迟到子类中，。使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。
-典型模版public abstract AbstractClass{
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/5a316c2b75ac7d6eac2396ac82a3814f.jpeg" alt="pexels-photo-1730560.jpeg"></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在一个算法中定义一个算法的骨架，把一些步骤的实现延迟到子类中，。使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。</p>
+<h3 id="典型模版"><a href="#典型模版" class="headerlink" title="典型模版"></a>典型模版</h3><pre><code>public abstract AbstractClass{
         //定义为final 防止子类修改，定义算法步骤
     final void templateMethod(){
 
         primitiveOperation1();
-        </p>
+        primitiveOperation2();
+        concreteOperation();
+    }
+    hook();
+    final void concreteOperation(){
+
+    }
+    void hook(){}        //钩子，可以在子类中覆盖或者保持不变，采用默认的实现
+
+}
+</code></pre><h3 id="使用钩子变形实例-JAVA-API"><a href="#使用钩子变形实例-JAVA-API" class="headerlink" title="使用钩子变形实例(JAVA API)"></a>使用钩子变形实例(JAVA API)</h3><ol>
+<li><p>数组排序</p>
+<pre><code>public static void  sort(Object[] a){
+    Object aux[] = (object[])a.clone();
+    mergeSort(aux,a,0,a.length,0);
+}
+//模版方法，即是要求数组中的对象实现Comparable接口并覆盖compareTo()方法
+private static void mergeSort(Object src[],Object     dest[],int low ,int hight ,int off){
+    for (int i = low ,i&lt;high;i++){
+
+    if((Comparable)dest[j-1]).compareTo((Comparable)dest[j])&gt;0;j--){
+        swap(dest,j,j-1);
+    }
+    return ;
+}
+</code></pre></li>
+</ol>
+<ol>
+<li>Applet</li>
+</ol>
+<pre><code>public class MyApplet extends Applet{
+    String message;
+    //钩子方法
+    public void init(){
+        message = &quot;Hello World,I&apos;m alive&quot;;
+        repaint(); //Applet中的具体方法
+    }
+        //钩子方法
+    public void start(){
+        message = &quot;Now I&apos;m starting up ...&quot;;
+        repaint();
+    }
+        //钩子方法
+    public void stop() {
+        message = Oh , now I&apos;m being stopped ...&quot;&quot;;
+        repaint();
+    }
+        //钩子方法
+    public void paint(Graphics g) {
+        g.drawString(message,5,15);
+    }
+}
+</code></pre>
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/27/适配器模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://otraqunhe.bkt.clouddn.com/714359-20151130211358265-2027970857.jpg)" alt="适配器模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/27/适配器模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/27/适配器模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/27/适配器模式/" itemprop="url">适配器模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-27T02:00:59.000Z" itemprop="datePublished">2017-01-27</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-27T10:00:59+08:00">
+                2017-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/27/适配器模式/">适配器模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-定义讲一个类的接口转化成客户需求的接口，而无需改变原来类的代码，从而让原来接口不兼容的接口可以合作无间
-示例早期的java版本的集合类，有一个elements方法，会返回一个Enumeration类型的对象，然后借用这个对象来遍历这个集合类,因为集合类为泛型，所以为了表达方便，就以集合类型为int表示
-public interface Enumeration{
-     bool hasMore
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/ecfb1d66175035a9f2a420c94d548882.jpeg" alt="pexels-photo-1998165.jpeg"></p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>讲一个类的接口转化成客户需求的接口，而无需改变原来类的代码，从而让原来接口不兼容的接口可以合作无间</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>早期的java版本的集合类，有一个elements方法，会返回一个Enumeration类型的对象，然后借用这个对象来遍历这个集合类,<br>因为集合类为泛型，所以为了表达方便，就以集合类型为int表示</p>
+<pre><code>public interface Enumeration{
+     bool hasMoreElements();
+     int nextElement();
+}
+</code></pre><p>后来SUN公司推出了Iterator接口，不但实现了Enumertaion的基本功能，还添加了remove方法</p>
+<pre><code>pubic interface  Iterator {
+    bool hasNext();
+    int next();
+    bool remove();
+}
+</code></pre><p>当我们面对遗留代码时，经常会遇到暴露Enumertaion接口的情况，但是我们有不想在新代码里使用它，而更倾向于使用Iterator，这时适配器时很好的选择</p>
+<pre><code>public class EnumerationIterator implememts Iterator{
+    Enumeration emum;
+    public EnumerationIterator(Enumeration enum){
+        this.enum = enum;
+    }
+
+    public boolean hasNext(){
+        return enum.hasMoreElements();
+    }
+
+    public void remove(){
+        throw new UnsupportedOperationException();
+    }
+}
+</code></pre><h4 id="修饰器模式与装饰器的区别"><a href="#修饰器模式与装饰器的区别" class="headerlink" title="修饰器模式与装饰器的区别"></a>修饰器模式与装饰器的区别</h4><p>两者在代码结构上很相似，都是封装对象。然后它们的目的却有本质的区别，修饰器模式是要实现接口转换，而装饰器是要将新的行为加入到对象中。</p>
+<h4 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h4><p>提供一个统一的接口，用来访问子系统中的一群接口，提供一个简洁的接口</p>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><p>如果你有一个家庭影院，当你要看电影时，需要按照步骤将电源打开，打开电视，打开功放，打开dvd，将电视输入设置为dvd… 等等一系列操作</p>
+<p>所以可以<br>设计一个类</p>
+<pre><code>public class HomeTheater{
+     private Projector projector;
+     private DVD dvd;
+     private TV tv;
+
+     public HomeTheater (Projector projector ,DVD dvd,TV tv){
+         this.projecor = projecor;
+         this.dvd = dvd;
+         this.tv =tv;
+     }
+     public void watchMovie(){
+         tv.on();
+         dvd.on();
+         projector.on();
+     }
+ }
+</code></pre><h4 id="外观模式与适配器的区别"><a href="#外观模式与适配器的区别" class="headerlink" title="外观模式与适配器的区别"></a>外观模式与适配器的区别</h4><p>外观模式目的在于提供一个简洁的借口，让客户使用方便简洁，适配器目的在于接口的转换，并不是表面上的适配器封装一个接口，外观模式封装多类接口，事实上，适配也可以将多个接口适配成一个接口，真正的区别在于封装接口的目的。</p>
+
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/26/命令模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b84beabc044436f343b6a24e1b70034f.jpeg)" alt="命令模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/26/命令模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/26/命令模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/26/命令模式/" itemprop="url">命令模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-26T03:03:39.000Z" itemprop="datePublished">2017-01-26</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-26T11:03:39+08:00">
+                2017-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/26/命令模式/">命令模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-定义：将请求封装成对象 ，以便使用不同的请求、队列或者日志来参数化其他对象，命令模式也支持可撤销操作（目的为了实现请求执行者和请求发起这的解耦）
-实现//封装请求
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/b84beabc044436f343b6a24e1b70034f.jpeg" alt="pexels-photo-1236694.jpeg"></p>
+<h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p>将请求封装成对象 ，以便使用不同的请求、队列或者日志来参数化其他对象，命令模式也支持可撤销操作（目的为了实现请求执行者和请求发起这的解耦）</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre><code>//封装请求
 public interface Command{
     public void execute();
 }
 
 //实现一个控制灯开关的命令类（核心类）
-public class LightOnCommand implememts C
-        </p>
+public class LightOnCommand implememts Command{
+        Light light;//命令的执行者（Recevier），参数化将Receiver和action联系起来
+        public LightOnCommand (Light light){
+            this.light = light;
+        }
+        public void execute (){
+             light.on();
+        }
+
+    }
+
+public class SimpleRemoteControl {
+        Command slot;
+        public SimpleRemoteControl(){}
+        public void setCommand(Command command){
+            slot = command;
+        }
+        public void buttonWasPressed(){
+            slot.execute();
+        }
+    }
+</code></pre><h3 id="常见使用场景"><a href="#常见使用场景" class="headerlink" title="常见使用场景"></a>常见使用场景</h3><ol>
+<li><p>队列请求<br>想象一个工作队列，一端添加命令，另一端则是线程，线程不断的从队列里取一个命令，然后执行他的execute方法，这个命令对象本身和执行他的线程并没有什么关系，线程只需知道执</p>
+</li>
+<li><p>日志请求</p>
+</li>
+</ol>
+<p>把应用的所有动作记录下来，当系统崩溃时，重新调用这些动作来恢复之前的状态。</p>
+
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/25/单例模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/982a80f31d013c380abde26e4d24eea8.jpeg)" alt="单例模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/25/单例模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/单例模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/25/单例模式/" itemprop="url">单例模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-25T00:40:41.000Z" itemprop="datePublished">2017-01-25</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T08:40:41+08:00">
+                2017-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/25/单例模式/">单例模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-定义: 确保一个类只有一个实例，并提供一个全局访问点 一般的实现
- import util.*;
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/982a80f31d013c380abde26e4d24eea8.jpeg" alt="pexels-photo-1229846.jpeg"></p>
+<h4 id="定义-确保一个类只有一个实例，并提供一个全局访问点"><a href="#定义-确保一个类只有一个实例，并提供一个全局访问点" class="headerlink" title="定义: 确保一个类只有一个实例，并提供一个全局访问点"></a>定义: 确保一个类只有一个实例，并提供一个全局访问点</h4><p> 一般的实现</p>
+<pre><code> import util.*;
 
 public class Singleton {
     private static Singleton uniqueInstance;
 
     private Singleton(){}
     public Singleton getInstance(){
-        if(uniqu
-        </p>
+        if(uniqueInstance == null){
+            reuturn new Singleton();
+        }else{
+            return uniqueInstance;
+        }
+    }
+}
+</code></pre><h4 id="单例模式的破坏"><a href="#单例模式的破坏" class="headerlink" title="单例模式的破坏"></a>单例模式的破坏</h4><ol>
+<li><p>多线程–由于Singleton的getInstance函数并不是原语操作，可能两个线程同时处于</p>
+<pre><code>if（uniqueInstance == null）
+</code></pre><p> 所以都认为uniqueInstance 为空，所以返回两个不同的对象</p>
+</li>
+</ol>
+<pre><code>&lt;strong&gt;解决方法&lt;/strong&gt;
+1. 不使用延迟实例化的做法
+
+        import util.*;
+
+        public class Singleton {
+                private static Singleton uniqueInstance = new Singleton();
+
+               private Singleton(){}
+            public static Singleton getInstance(){
+                return uniqueInstance;
+                }
+        }
+
+2. 添加同步操作
+
+        import util.*;
+
+        public class Singleton {
+            private static Singleton uniqueInstance;
+
+            private Singleton(){}
+            public static synchronized Singleton getInstance(){
+                if(uniqueInstance == null){
+                    reuturn new Singleton();
+                    }else{
+                        return uniqueInstance;
+                    }
+            }
+        }
+
+    由于对整个getInstance函数上锁，所以有时会造成性能瓶颈，可进一步优化
+
+
+        import util.*;
+
+        public class Singleton {
+            private volatile static Singleton uniqueInstance;
+
+            private Singleton(){}
+            public Singleton getInstance(){
+                synchronized(Singleton.class){
+
+                    if(uniqueInstance == null){
+                        reuturn new Singleton();
+                        }else{
+                            return uniqueInstance;
+                        }
+                    }
+            }
+        }
+
+    这样只在第一次初始化的时候会进行同步操作，volatile关键字确保多线程对uniqueInstance 的初始化可见
+</code></pre><ol>
+<li><p>反射破坏</p>
+<p>枚举解决—-</p>
+</li>
+</ol>
+
+          
+        
+      
     </div>
-</article>
     
-        </div>
+    
     
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/19/工厂模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/22dbecf77437465e775cec030896e2b7.jpeg)" alt="工厂模式" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2017/01/19/工厂模式/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/19/工厂模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/19/工厂模式/" itemprop="url">工厂模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2017-01-19T13:24:07.000Z" itemprop="datePublished">2017-01-19</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-19T21:24:07+08:00">
+                2017-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/19/工厂模式/">工厂模式</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-设想一个Pizza 店，可以销售各种Pizza。如下设计
-class PizzaStore    {
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/22dbecf77437465e775cec030896e2b7.jpeg" alt="pexels-photo-1524620.jpeg"></p>
+<p>设想一个Pizza 店，可以销售各种Pizza。如下设计</p>
+<pre><code>class PizzaStore    {
     Pizza orderPizza (String type) {
         Pizza pizza;
         if (type.equals.(&quot;cheese&quot;)){
 
             pizza = new CheesePizza();
 
+        } else if (type.equals(&quot;greek&quot;)){
+
+            pizza = new GreekPizza();
+
+        } else if (type.equals(&quot;pepperoni&quot;) {
+
+            pizza = new PepperoniPizza();
+        }
+
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut()
+        pizza.box();
+        return pizza;
+     }
+}
+</code></pre><p>如果这么设计方法的话，当Pizza店增加Pizza种类时，必须得改变这个Pizza的代码</p>
+<h3 id="一-简单工厂方法"><a href="#一-简单工厂方法" class="headerlink" title="一 简单工厂方法"></a>一 简单工厂方法</h3><p>简单工厂并不是一种设计模式，而是一种常用的设计风格。它为了程序的可扩展性，将将来可能变化的部分提出来(经常设计为static)。</p>
+<pre><code>public class SimplePizzaFactory {
+
+   public static Pizza createPizza (String type) {
+
+   Pizza pizza = null;
+
+   if (type.equals.(&quot;cheese&quot;)){
+
+       pizza = new CheesePizza();
+
+   } else if (type.equals(&quot;greek&quot;)){
+
+       pizza = new GreekPizza();
+
+   } else if (type.equals(&quot;pepperoni&quot;) {
+
+       pizza = new PepperoniPizza();
+   }
+
+   pizza.prepare();
+   pizza.bake();
+   pizza.cut()
+   pizza.box();
+   return pizza;
+
+       }
+}
+
+
+
+Pizza orderPizza (String type) {
+    Pizza pizza;
+    pizza = SimplePizzaFactory.createPizza(type);
+    pizza.prepare();
+    pizza.bake();
+    pizza.cut()
+    pizza.box();
+    return pizza;
+}
+
+这里读者可能会产生一个问题，就是这样看起来问题并没有得到解决，之不过是把问题代码换到另一个对象里而已。其实这样做的好处在于，这里虽然只有orderPizza()这个方法里引用里这段代码，但是仔细想一下，可能其他对象或方法也会应用到这段代码，比如Pizza菜单。这样我们只需修改这一处代码就好了
+</code></pre><h3 id="二-工厂设计模式"><a href="#二-工厂设计模式" class="headerlink" title="二 工厂设计模式"></a>二 工厂设计模式</h3><p>定义：通过让子类来决定创建什么对象从而达到将对象创建的过程封装</p>
+<p>看完这个官方定义肯定也是一头雾水，下面继续以上面的例子来说明什么是设计模式</p>
+<pre><code>abstract class PizzaStore {
+    public Pizza orderPizza (String type) {
+        Pizza pizza;
+        pizza = createPizza(type);
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+           pizza.box();
+
+        return pizza;
+}
+
+abstract Pizza createPizza (String type);
+</code></pre><p>}</p>
+<pre><code>class ExamplePizzaStore extends PizzaStore {
+@Override
+Pizza createPizza(String type) {
+
+    Pizza pizza = null;
+    if (type.equals.(&quot;cheese&quot;)){
+
+        pizza = new CheesePizza();
+
+    } else if (type.equals(&quot;greek&quot;)){
+
+        pizza = new GreekPizza();
+
+    } else if (type.equals(&quot;pepperoni&quot;) {
+
+        pizza = new PepperoniPizza();
+    }
+    else return null;
+
+    return pizza;
+
+}
+</code></pre><p>}</p>
+<p>简单工厂和工厂设计模式的区别：两者很像，但是仔细想想，简单工厂在一个地方做了全部的事，而工厂模式则更类似于一种框架，让子类决定采用哪一个实现，比如，orderPizza方法定义了一个框架通过依赖工厂方法产生的具体的类对象来创造Pizza实例。和简单工厂相比，更灵活一些，因为简单工厂不能够改变Pizza产品</p>
+<p>注意到orderPizza 方法并不是参数安全的，这是通过传递一个String类型的参数，最后使用Enum类型</p>
+<h3 id="三-抽象工厂模式"><a href="#三-抽象工厂模式" class="headerlink" title="三 抽象工厂模式"></a>三 抽象工厂模式</h3><p> 定义：提供相关或依赖对象的家族接口，无需指定具体的实现类。</p>
+<p> 抽象工厂模式和工厂模式的差别：</p>
+<ol>
+<li>工厂模式提供的是一个抽象类，而抽象工厂提供的是一个接口</li>
+<li>工厂模式提供一个抽象工厂方法，而抽象工厂提供的是一系列的相关对象的抽象方法</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
   
-        </p>
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/16/非有序数组的二分查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/16/非有序数组的二分查找/" itemprop="url">二分查找</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-16T22:28:18+08:00">
+                2016-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/e06fdf4ea5c24ecd1027c0179c8df19c.jpeg" alt="pexels-photo-2002571.jpeg"></p>
+<h3 id="有序数组的二分查找"><a href="#有序数组的二分查找" class="headerlink" title="有序数组的二分查找"></a>有序数组的二分查找</h3><p>有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。<br>我们随机从数组中选取一个数a[i]，对于需要查找的数K：</p>
+<p>若K<a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)； 若k="a[i]，则i就是我们要找的答案；">a[i]，则K的下标一定不小于等于K。<br>利用上面这个性质，我们可以得到这样一个算法：<br>假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。</a[i]，则k的下标一定不大于等于i(也有可能k不存在于数组中)；></p>
+<p>若K<a[mid]，则更新区间为 r="Mid-1" 若k="a[Mid]，则Mid为所查询值">a[Mid]，则更新区间为 L=Mid+1</a[mid]，则更新区间为></p>
+<p>在任意时刻出现L&gt;R时判定K不存在于该数组。<br>这便是最简单，最基本的二分查找。时间复杂度为O(logN)</p>
+<h3 id="无序数组的二分查找"><a href="#无序数组的二分查找" class="headerlink" title="无序数组的二分查找"></a>无序数组的二分查找</h3><p>数组长度为N，保证没有重复的数。<br>一个简单有效的方法是对数组进行排序后使用有序数组的二分查找，时间复杂度为O(NlogN)。</p>
+<p>观察我们第一个算法，对于选定的Mid。如果数组满足a[L..Mid-1]&lt;a[Mid]且a[Mid]&lt;a[Mid+1..R]，即可进行区间的分割，从而使得区间范围减半。<br>既然如此，那么我们可以通过一次遍历交换将比a[Mid]小的数放到a[Mid]左边，比a[Mid]大的数放到a[Mid]右边。(这里使用了快速排序的思想)<br>其他部分仍然同有序数组的二分查找相同，但由于每一次都遍历了整个数组，所以时间复杂度变为：O(N/2^0+N/2^1+N/2^2+1)=O(2N)</p>
+<h3 id="以hihocoder-1128为例"><a href="#以hihocoder-1128为例" class="headerlink" title="以hihocoder 1128为例"></a>以hihocoder 1128为例</h3><p>Nettle最近在玩《艦これ》，因此Nettle收集了很多很多的船(这里我们假设Nettle氪了很多金，开了无数个船位)。去除掉重复的船之后，还剩下N(1≤N≤1,000,000)种不同的船。每一艘船有一个稀有值，任意两艘船的稀有值都不相同，稀有值越小的船越稀有，价值也就越高。<br>Nettle现在通过大建又造出了一艘船，他想知道这艘船是不是重复的。如果是重复的，那么这艘船在Nettle所有的船里面稀有值排多少位。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>第1行：2个整数N,K。N表示数组长度，K表示需要查找的数；<br>第2行：N个整数，表示a[1..N]，保证不会出现重复的数，1≤a[i]≤2,000,000,000。</p>
+<h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>第1行：一个整数t，表示K在数组中是第t小的数，若K不在数组中，输出-1。</p>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+#define MAX 10000
+int n,k;
+int a[MAX];
+int mark=0;
+void swap(int left,int right){
+  int temp = a[left];
+  a[left] = a[right];
+  a[right] = temp;
+}
+
+int parti(int left,int right){
+  int l = left;
+  int r = right+1;
+  do{
+do l++; while(a[l] &lt; a[left]);
+do r--; while(a[r] &gt; a[left]);
+if(l&lt;r){
+  swap(l,r);
+}
+  }while(l&lt;r);
+
+  swap(left,r);
+  return r;
+}
+
+int find(int left,int right){
+  if(left &lt; right){
+    int middle = parti(left,right);
+
+if(a[middle] == k) {mark=1;return middle-left+1;}
+else{
+  if(k &gt; a[middle]) {return find(middle+1,right)+middle-left+1;}
+  else {return find(left,middle-1);}
+}
+  }
+  else if(left == right){
+
+if(a[left]== k){
+  mark =1;
+  return 1;
+}
+else return 0;
+
+  }
+  else return 0;
+}
+
+
+int main(){
+
+
+  cin&gt;&gt;n&gt;&gt;k;
+  for(int i=1;i&lt;=n;i++){
+    cin&gt;&gt;a[i];
+  }
+  // cout&lt;&lt;k;
+
+  int ans = find(1,n);
+  if(mark ==0 ) ans=-1;
+  cout&lt;&lt;ans&lt;&lt;endl;
+
+  return 0;
+}
+</code></pre>
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/11/16/非有序数组的二分查找/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/e06fdf4ea5c24ecd1027c0179c8df19c.jpeg)" alt="二分查找" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/16/非有序数组的二分查找/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/Scaner-nextLine无法读取/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/14/Scaner-nextLine无法读取/" itemprop="url">Scaner.nextLine无法读取</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2016-11-16T14:28:18.000Z" itemprop="datePublished">2016-11-16</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-14T19:26:45+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/16/非有序数组的二分查找/">二分查找</a>
-        </h1>
+      </header>
     
 
-        <p class="article-excerpt">
-            
-有序数组的二分查找有序数组长度为N，且满足a[1]&lt;a[2]&lt;…&lt;a[N]。我们随机从数组中选取一个数a[i]，对于需要查找的数K：
-若Ka[i]，则K的下标一定不小于等于K。利用上面这个性质，我们可以得到这样一个算法：假定K所在的区间为[L,R]，即a[L]≤K≤a[R]。每次我们从[L,R]中选取一个数Mid，一般情况下选择Mid=(L+R)/2。
-若Ka[Mid]，则更新
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/194cdb36f835c971d9b5f5b6e75836ba.jpeg" alt="pexels-photo-2092453.jpeg"></p>
+<p>今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。</p>
+<p>首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。</p>
+<p>nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。</p>
+<p>了解了这两个方法特性和区别，就知道了上边的代码究竟是怎么回事，以及知道了解决的方法。像是上边的代码nextInt()方法之后在缓冲区中留下了“\r”，然后nextLine()方法再去缓冲区找数据的时候首先看到了“\r”，然后就把这个“\r”扫描接收进来，并在缓冲区内清除掉。其实，nextLine()方法是执行过的，并没有不执行。</p>
+<p>所以可以在nextInt()方法后面多加一句nextLine()方法专门用来取出缓冲区中留下的空白符</p>
+
+          
+        
+      
     </div>
-</article>
+    
+    
     
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/11/14/Scaner-nextLine无法读取/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/194cdb36f835c971d9b5f5b6e75836ba.jpeg)" alt="Scaner.nextLine无法读取" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/14/Scaner-nextLine无法读取/">0</span>
-    
-</span>
 
     
-</a>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/14/java不区分大小写替换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="八阿哥">
+    </span>
+
+    
+      <header class="post-header">
 
         
-        <div class="article-meta">
-            <p class="category">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/14/java不区分大小写替换/" itemprop="url">java不区分大小写替换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            </p>
-            <p class="date"><time datetime="2016-11-14T11:26:45.000Z" itemprop="datePublished">2016-11-14</time></p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-14T15:23:46+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/14/Scaner-nextLine无法读取/">Scaner.nextLine无法读取</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-今天写程序的时候先用nextInt()再用nextLine()就不会有接收字符串的效果。然后去网上查了一些资料，原来如此。
-首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
-nextInt()方法在
-        </p>
-    </div>
-</article>
-    
-        </div>
+      </header>
     
 
     
     
     
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/11/14/java不区分大小写替换/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/8ab719be77dc56a00bf214a3d0a02e03.jpeg)" alt="java不区分大小写替换" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/11/14/java不区分大小写替换/">0</span>
-    
-</span>
+    <div class="post-body" itemprop="articleBody">
 
-    
-</a>
+      
+      
 
+      
         
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-11-14T07:23:46.000Z" itemprop="datePublished">2016-11-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/14/java不区分大小写替换/">java不区分大小写替换</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-public class ReplaceS {
+          
+            <p><img src="http://ppmtv6c75.bkt.clouddn.com/2019/04/08/8ab719be77dc56a00bf214a3d0a02e03.jpeg" alt="pexels-photo-2038743.jpeg"></p>
+<pre><code>public class ReplaceS {
 
 public static void main(String[] args) {
 
@@ -680,288 +1856,369 @@ public static void main(String[] args) {
 
 replaceString(&quot;AabcAaB&quot;,&quot;a&quot;,&quot;G&quot;);
 
-repla
-        </p>
-    </div>
-</article>
-    
+replaceStringP(&quot;AabcAaB&quot;,&quot;a&quot;,&quot;G&quot;);
 
 
-    </div></section>
+
+}
+
+public static void replaceString(String source,String oldstring,String newstring){
+
+    System.out.println(&quot;原来的字符串：&quot;+source);
 
 
-    <nav id="page-nav">
-        <span class="pages">Page 3 of 5</span>
-        <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
-    </nav>
+
+    String result1 = source.replaceAll(&quot;(?i)&quot;+oldstring, newstring); //大小写不敏感
+
+    System.out.println(&quot;不区分大小写的替换结果：&quot;+result1);
 
 
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
-                        <i class="icon fa fa-google-plus"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/smartlxh/" target="_blank">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
+
+    String result2 = source.replaceAll(oldstring, newstring);//大小写敏感
+
+    System.out.println(&quot;区分大小写的替换结果：&quot;+result2);
+
+}
+
+//使用正则表达式实现不区分大小写替换
+
+public static void replaceStringP(String source, String oldstring,
+
+   String newstring){
+
+Matcher m = Pattern.compile(oldstring,     Pattern.CASE_INSENSITIVE).matcher(source);
+
+String result=m.replaceAll(newstring);
+
+System.out.println(&quot;使用正则表达式不区分大小写的替换结果&quot;+result);
+
+
+
+ Matcher m1 = Pattern.compile(oldstring, Pattern.CANON_EQ).matcher(source);
+
+ String result1=m1.replaceAll(newstring);
+
+ System.out.println(&quot;使用正则表达式区分大小写的替换结果&quot;+result1);
+
+}
+
+}
+</code></pre><p> <a href="&quot;http://blog.csdn.net/wensiqun/article/details/6059331&quot;">转载自</a></p>
+
+          
         
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof-channel/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof-channel/" class="title">Pof交换机和ONOS控制器建立连接</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T07:56:07.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/05/12/onos-pof/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://lxhblog.oss-cn-beijing.aliyuncs.com/FlowRuleManger.png)" alt="onos-pof下发流表的过程" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/05/12/onos-pof/" class="title">onos-pof下发流表的过程</a></p>
-                            <p class="item-date"><time datetime="2020-05-12T01:38:15.000Z" itemprop="datePublished">2020-05-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/04/09/ECMP/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/04/09/ECMP/" class="title">ECMP</a></p>
-                            <p class="item-date"><time datetime="2020-04-09T05:15:13.000Z" itemprop="datePublished">2020-04-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/27/中序-层序建树/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/a94b6ae0c3569107aa16b0b43515d956.jpeg)" alt="中序+层序建树" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/27/中序-层序建树/" class="title">中序+层序建树</a></p>
-                            <p class="item-date"><time datetime="2018-08-27T12:32:04.000Z" itemprop="datePublished">2018-08-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/19/前序-后序建树-z层次遍历/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ppmtv6c75.bkt.clouddn.com/2019/04/08/f8775ce6d3d30d49a775a4e53930f231.jpeg)" alt="前序-后序建树+z层次遍历" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/05/19/前序-后序建树-z层次遍历/" class="title">前序-后序建树+z层次遍历</a></p>
-                            <p class="item-date"><time datetime="2018-05-19T13:43:11.000Z" itemprop="datePublished">2018-05-19</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+      
     </div>
+    
+    
+    
 
-            
-                
+    
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li></ul>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
         </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flume/">Flume</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDb/">MongoDb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Network/">Network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onos/">onos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-爬虫/">python+爬虫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 18px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 14px;">Docker</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 16px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/onos/" style="font-size: 12px;">onos</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/python-爬虫/" style="font-size: 10px;">python+爬虫</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://gold.xitu.io">掘金</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
         
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-</aside>
-                </div>
-            </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2020 八阿哥</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-        </div>
+      </section>
+
+      
+
+      
+
     </div>
-</footer>
+  </aside>
+
+
         
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'smartlxh'};
-    (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-
-
-
-    
-        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
+    
 
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
+  </div>
 
-    </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
